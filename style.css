@@ -1,0 +1,628 @@
+/* style.css
+   NO CRÍTICO: estilos para el resto de la landing (secciones debajo del fold).
+   Importante: NO repetir aquí lo del header/nav/botones porque ya va inline crítico.
+*/
+
+/* Helpers generales para secciones */
+.section {
+  padding: 56px 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tipografía base para títulos en secciones (NO afecta el header) */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+p {
+  line-height: 1.55;
+}
+
+/* Utilidades */
+.muted {
+  opacity: 0.85;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Responsive para secciones (no header) */
+@media (max-width: 900px) {
+  h2 { font-size: 1.6rem; }
+  .section { padding: 44px 16px; }
+}
+
+
+/* Hover links menú desktop */
+.nav-desktop a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-desktop a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #22c55e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-desktop a:hover {
+  color: #22c55e;
+}
+
+.nav-desktop a:hover::after {
+  transform: scaleX(1);
+}
+/* Hover botones */
+.btn {
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #16a34a; /* verde más oscuro */
+  transform: translateY(-1px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+/* Hover / tap feedback menú mobile */
+.nav-mobile a {
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-mobile a:hover {
+  color: #22c55e;
+}
+
+
+/* ===== CARDS SUPERPUESTAS ===== */
+.cats{
+  position: relative;
+  margin-top: -70px; /* superposición */
+  padding-bottom: 40px;
+}
+
+.cats__grid{
+  display: grid;
+grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.cat-card{
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 28px rgba(2, 8, 23, .18);
+  border: 1px solid rgba(15, 23, 42, .08);
+}
+
+/* imagen placeholder */
+.cat-card__img{
+  height: 86px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#e6edf6,#cfdbea);
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.cat-card h3{
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+/* 👇 este texto es el que absorbe la diferencia */
+.cat-card p{
+  font-size: .92rem;
+  line-height: 1.45;
+  color: rgba(15, 23, 42, .78);
+  margin-bottom: 12px;
+  flex-grow: 1;          /* CLAVE */
+}
+
+/* botón siempre abajo */
+.cat-card__cta{
+  margin-top: auto;     /* CLAVE */
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, .12);
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: .92rem;
+  background: #fff;
+  transition: background-color .2s ease, transform .15s ease;
+}
+
+.cat-card__cta:hover{
+  background: rgba(34,197,94,.10);
+  transform: translateY(-1px);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px){
+  .hero{ padding: 44px 0 120px; }
+  .cats__grid{ grid-template-columns: 1fr; }
+  .cats{ margin-top: -52px; }
+  .cat-card p{ min-height: auto; }
+}
+/* ===== SECCIÓN: Por qué Forte Metal (3 columnas) ===== */
+.benefits{
+  padding: 56px 0;
+  background: #ffffff;
+}
+
+.benefits__title{
+  text-align: center;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 22px;
+}
+
+.benefits__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.benefit{
+  text-align: center;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 12px;
+  padding: 18px 16px;
+  background: #fff;
+}
+
+.benefit__icon{
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 58, 95, 0.08);
+  color: #1e3a5f;
+  margin: 0 auto 10px;
+}
+
+.benefit__h{
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.benefit__p{
+  color: rgba(15, 23, 42, .78);
+  line-height: 1.55;
+  font-size: .95rem;
+}
+
+/* CTA centrado (solo WhatsApp) */
+.benefits__cta{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .benefits{ padding: 42px 0; }
+  .benefits__grid{ grid-template-columns: 1fr; }
+  .benefit{ padding: 16px; }
+}
+/* ===== CÓMO COTIZAR (3 PASOS) ===== */
+.howto{
+  padding: 56px 0;
+  background: #f8fafc;
+}
+
+.howto__title{
+  text-align: center;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 22px;
+}
+
+.howto__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.howto__step{
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 16px;
+  border: 1px solid rgba(15, 23, 42, .08);
+  text-align: center;
+}
+
+.howto__icon{
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.howto__h{
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.howto__p{
+  font-size: .95rem;
+  line-height: 1.55;
+  color: rgba(15, 23, 42, .78);
+}
+
+/* CTA doble */
+.howto__cta{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .howto{
+    padding: 42px 0;
+  }
+
+  .howto__grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== SECCIÓN FORM (texto izq + form der) ===== */
+.leadform{
+  padding: 64px 0;
+  background: linear-gradient(135deg,#0f2742 0%, #244b6b 55%, #2a5a78 100%);
+  color: #fff;
+}
+
+.leadform__grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.leadform__copy h2{
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.leadform__sub{
+  opacity: .92;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.leadform__bullets{
+  margin: 0 0 14px 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  opacity: .95;
+}
+
+.leadform__note{
+  margin: 14px 0 14px;
+  opacity: .9;
+}
+
+/* Card del form */
+.leadform__card{
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: 0 14px 34px rgba(2,8,23,.22);
+}
+
+/* ===== FORM ===== */
+.form{
+  display: grid;
+  gap: 12px;
+}
+
+.form__row{
+  display: grid;
+  gap: 12px;
+}
+
+.form__row--2{
+  grid-template-columns: 1fr 1fr;
+}
+
+.field span{
+  display: block;
+  font-size: .85rem;
+  margin-bottom: 6px;
+  color: rgba(15,23,42,.78);
+}
+
+.field input,
+.field select,
+.field textarea{
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,.14);
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+  outline: none;
+}
+
+.field textarea{ resize: vertical; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color: rgba(30,58,95,.55);
+  box-shadow: 0 0 0 4px rgba(30,58,95,.12);
+}
+
+.form__submit{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #1e3a5f;
+  color: #fff;
+  transition: transform .15s ease, background-color .2s ease;
+}
+
+.form__submit:hover{
+  background: #18304f;
+  transform: translateY(-1px);
+}
+
+.form__micro{
+  text-align: center;
+  font-size: .86rem;
+  color: rgba(15,23,42,.70);
+}
+
+/* Responsive */
+@media (max-width: 950px){
+  .leadform__grid{
+    grid-template-columns: 1fr;
+  }
+  .leadform{
+    padding: 48px 0;
+  }
+  .form__row--2{
+    grid-template-columns: 1fr;
+  }
+}
+/* Textarea compacto (1 renglón visible) */
+.textarea-small{
+  min-height: 44px;     /* misma altura que un input */
+  height: 44px;
+  resize: vertical;     /* el usuario puede agrandarlo si quiere */
+}
+/* ===== FAQ + LO MÁS PEDIDO ===== */
+.faq{
+  padding: 56px 0;
+  background: #ffffff;
+}
+
+.faq__grid{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.faq__sideTitle,
+.faq__title{
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.faq__list{
+  margin: 0 0 14px 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: rgba(15, 23, 42, .82);
+  line-height: 1.5;
+}
+
+/* Acordeón (sin JS) */
+.faq__item{
+  border-top: 1px solid rgba(15, 23, 42, .12);
+  padding: 10px 0;
+}
+
+.faq__item:last-child{
+  border-bottom: 1px solid rgba(15, 23, 42, .12);
+}
+
+.faq__q{
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+/* Oculta el marker default */
+.faq__q::-webkit-details-marker{ display:none; }
+
+/* Flecha */
+.faq__q::after{
+  content: "▾";
+  font-size: 1rem;
+  opacity: .7;
+  transition: transform .2s ease;
+}
+
+.faq__item[open] .faq__q::after{
+  transform: rotate(180deg);
+}
+
+.faq__a{
+  color: rgba(15, 23, 42, .78);
+  line-height: 1.6;
+  padding: 0 0 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .faq{ padding: 42px 0; }
+  .faq__grid{ grid-template-columns: 1fr; }
+}
+/* ===== FOOTER ===== */
+.footer{
+  background: #1e3a5f;
+  color: #ffffff;
+}
+
+/* Franja CTA */
+.footer-cta{
+  background: rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.footer-cta__inner{
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-cta__text{
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  opacity: 0.95;
+}
+
+.footer-cta__buttons{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Banda principal */
+.footer-main__inner{
+  padding: 26px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Logo */
+.footer-logo{
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.footer-logo span{ font-weight: 400; }
+
+/* Info derecha */
+.footer-info{
+  display: grid;
+  gap: 10px;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.footer-item{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.footer-ico{
+  width: 22px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* Legal */
+.footer-bottom{
+  background: rgba(0,0,0,0.12);
+}
+
+.footer-bottom__inner{
+  padding: 10px 16px;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .footer-cta__inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-cta__buttons{
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .footer-main__inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-logo{
+    font-size: 1.8rem;
+  }
+}

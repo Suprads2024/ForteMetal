@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Forte Metal | Siderurgia para industria y construcción</title>
+  <meta name="description"
+    content="Perfiles, chapas y tubos para industria y construcción. Cotizá en minutos por WhatsApp o enviá tu lista." />
+
+  <!-- ✅ CSS CRÍTICO (solo header + navegación primera pantalla) -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0f172a;
+      background: #fff
+    }
+
+    .site-header {
+      width: 100%;
+      background: #1e3a5f;
+      color: #fff
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      white-space: nowrap
+    }
+
+    .logo span {
+      font-weight: 400
+    }
+
+    .nav-desktop {
+      display: flex;
+      gap: 20px;
+      margin-left: auto
+    }
+
+    .nav-desktop a {
+      color: #fff;
+      text-decoration: none;
+      font-size: .95rem;
+      opacity: .9
+    }
+
+    .nav-desktop a:hover {
+      opacity: 1
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .btn {
+      display: inline-flex;
+      flex-direction: column;
+      padding: 10px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: .9rem;
+      line-height: 1.2;
+      text-align: center
+    }
+
+    .btn-primary {
+      background: #22c55e;
+      color: #052e16;
+      font-weight: 600
+    }
+
+    .btn-primary small {
+      font-size: .7rem;
+      opacity: .8
+    }
+
+    .btn-secondary {
+      border: 1px solid #ffffff55;
+      color: #fff
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: #1e3a5f;
+      padding: 16px;
+      gap: 16px
+      
+    }
+
+    .nav-mobile a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem
+    }
+
+    .nav-mobile.open {
+      display: flex
+    }
+
+    @media (max-width:900px) {
+
+      .nav-desktop,
+      .header-actions {
+        display: none
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-left: auto
+      }
+    }
+
+    /* ===== HERO ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+.hero{
+  position: relative;
+  padding: 64px 0 120px;
+  color: #fff;
+  background: linear-gradient(135deg,#0f2742 0%, #244b6b 55%, #2a5a78 100%);
+  overflow: hidden;
+}
+
+/* “corte” diagonal tipo referencia */
+.hero::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  right:-15%;
+  width:55%;
+  height:140%;
+  background: rgba(255,255,255,0.08);
+  transform: rotate(12deg);
+  pointer-events:none;
+}
+
+.hero__inner{ position: relative; z-index: 1; }
+.hero__content{ max-width: 760px; }
+
+.hero h1{
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+.hero__sub{
+  opacity: .92;
+  line-height: 1.45;
+  margin-bottom: 14px;
+  max-width: 720px;
+}
+
+.hero__list{
+  margin: 0 0 18px 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  opacity: .95;
+}
+
+.hero__cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* botón secundario “relleno” para el hero */
+.btn-solid{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+  </style>
+
+  <!-- ✅ CSS NO CRÍTICO (carga diferida / no bloqueante) -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="style.css">
+  </noscript>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+
+      <div class="logo">
+        <span>FORTE</span> <strong>METAL</strong>
+      </div>
+
+      <nav class="nav-desktop">
+        <a href="#productos">Productos</a>
+        <a href="#como-cotizar">Cómo cotizar</a>
+        <a href="#logistica">Logística</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="#formulario">Enviar lista</a>
+        <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar por WhatsApp
+          <small>Respuesta rápida + asesoramiento</small>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+
+    </div>
+
+    <nav class="nav-mobile" id="navMobile">
+      <a href="#productos" onclick="toggleMenu()">Productos</a>
+      <a href="#como-cotizar" onclick="toggleMenu()">Cómo cotizar</a>
+      <a href="#logistica" onclick="toggleMenu()">Logística</a>
+      <a href="#faq" onclick="toggleMenu()">Preguntas</a>
+      <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Cotizar por WhatsApp
+      </a>
+    </nav>
+  </header>
+
+
+
+  <main>
+
+  <!-- HERO -->
+  <section class="hero" id="productos">
+    <div class="hero__inner container">
+      <div class="hero__content">
+        <h1>Perfiles, chapas y tubos<br>para industria y construcción</h1>
+
+        <p class="hero__sub">
+          Cotizá en minutos por WhatsApp o enviá tu lista.<br>
+          Stock disponible en múltiples productos + retiro sin cargo en depósito + entrega coordinada según destino.
+        </p>
+
+        <ul class="hero__list">
+          <li>Amplio catálogo: perfiles estructurales, chapas, tubos, mallas y metal desplegado.</li>
+          <li>Asesoramiento real para elegir medida, espesor y alternativa si hace falta.</li>
+          <li>Presupuesto claro para obra, compras y mantenimiento industrial.</li>
+          <li>Atención a empresas y particulares (obra nueva, ampliaciones y reposición).</li>
+        </ul>
+
+        <div class="hero__cta">
+          <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+            Cotizar por WhatsApp
+            <small>Respuesta rápida + asesoramiento</small>
+          </a>
+
+          <a class="btn btn-secondary btn-solid" href="#formulario">
+            Enviar lista por formulario
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS SUPERPUESTAS -->
+  <section class="cats">
+    <div class="container">
+      <div class="cats__grid">
+
+        <article class="cat-card">
+          <div class="cat-card__img" aria-hidden="true"></div>
+          <h3>Perfiles estructurales</h3>
+          <p>Ángulos, UPN/IPN/W, perfiles C/U, planchuelas y más.</p>
+          <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+            Cotizar perfiles
+          </a>
+        </article>
+
+        <article class="cat-card">
+          <div class="cat-card__img" aria-hidden="true"></div>
+          <h3>Tubos / caños estructurales</h3>
+          <p>Cuadrado, rectangular y redondo. Medidas, espesores y largos a consulta.</p>
+          <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+            Cotizar tubos
+          </a>
+        </article>
+
+        <article class="cat-card">
+          <div class="cat-card__img" aria-hidden="true"></div>
+          <h3>Chapas</h3>
+          <p>Lisa, galvanizada, trapezoidal, sinusoidal y opciones para cerramientos/techos.</p>
+          <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+            Cotizar chapas
+          </a>
+        </article>
+        <article class="cat-card">
+  <div class="cat-card__img" aria-hidden="true"></div>
+  <h3>Mallas y metal desplegado</h3>
+  <p>Soluciones para refuerzo, protección, cerramientos y usos industriales.</p>
+  <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+    Cotizar mallas
+  </a>
+</article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<section class="benefits" id="por-que-forte-metal">
+  <div class="container">
+
+    <h2 class="benefits__title">
+      Un proveedor para resolver la siderurgia de tu proyecto
+    </h2>
+
+    <div class="benefits__grid">
+
+      <!-- Bloque 1 -->
+      <article class="benefit">
+        <div class="benefit__icon" aria-hidden="true">
+          <!-- icono stock -->
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l2 2 4-4"></path>
+            <rect x="3" y="4" width="18" height="6" rx="2"></rect>
+            <rect x="3" y="14" width="18" height="6" rx="2"></rect>
+          </svg>
+        </div>
+        <h3 class="benefit__h">Stock y alternativas</h3>
+        <p class="benefit__p">
+          Si una medida exacta no está disponible, te proponemos una alternativa equivalente
+          para que no frenes la obra.
+        </p>
+      </article>
+
+      <!-- Bloque 2 -->
+      <article class="benefit">
+        <div class="benefit__icon" aria-hidden="true">
+          <!-- icono logística -->
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7h12v10H3z"></path>
+            <path d="M15 10h4l2 2v5h-6z"></path>
+            <circle cx="7" cy="19" r="1.5"></circle>
+            <circle cx="18" cy="19" r="1.5"></circle>
+          </svg>
+        </div>
+        <h3 class="benefit__h">Logística estratégica en la Patagonia</h3>
+        <p class="benefit__p">
+          Coordinamos retiro o entrega según destino, con planificación para obras y
+          abastecimiento industrial en la región.
+        </p>
+      </article>
+
+      <!-- Bloque 3 -->
+      <article class="benefit">
+        <div class="benefit__icon" aria-hidden="true">
+          <!-- icono atención -->
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21a8 8 0 0 0-16 0"></path>
+            <circle cx="12" cy="8" r="4"></circle>
+          </svg>
+        </div>
+        <h3 class="benefit__h">Cotización clara y rápida</h3>
+        <p class="benefit__p">
+          Te pasamos un presupuesto ordenado, con detalle de medidas, espesores y
+          cantidades.
+        </p>
+      </article>
+
+    </div>
+
+    <!-- CTA final -->
+    <div class="benefits__cta">
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Quiero cotizar ahora
+        <small>Por WhatsApp</small>
+      </a>
+    </div>
+
+  </div>
+</section>
+<section class="howto" id="como-cotizar">
+  <div class="container">
+
+    <h2 class="howto__title">
+      Cotizá en 3 pasos (sin vueltas)
+    </h2>
+
+    <div class="howto__grid">
+
+      <!-- Paso 1 -->
+      <article class="howto__step">
+        <div class="howto__icon">1</div>
+        <h3 class="howto__h">Mandanos tu lista</h3>
+        <p class="howto__p">
+          Medida + espesor + largo + cantidad + destino.
+          (O foto/plano si tenés.)
+        </p>
+      </article>
+
+      <!-- Paso 2 -->
+      <article class="howto__step">
+        <div class="howto__icon">2</div>
+        <h3 class="howto__h">Confirmamos stock y opciones</h3>
+        <p class="howto__p">
+          Te respondemos con disponibilidad y alternativas si aplica.
+        </p>
+      </article>
+
+      <!-- Paso 3 -->
+      <article class="howto__step">
+        <div class="howto__icon">3</div>
+        <h3 class="howto__h">Coordinamos retiro o entrega</h3>
+        <p class="howto__p">
+          Retiro sin cargo en depósito o entrega coordinada según zona.
+        </p>
+      </article>
+
+    </div>
+
+    <!-- CTA doble -->
+    <div class="howto__cta">
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Cotizar por WhatsApp
+        <small>Respuesta rápida</small>
+      </a>
+
+      <a class="btn btn-secondary btn-solid" href="#formulario">
+        Enviar lista por formulario
+      </a>
+    </div>
+
+  </div>
+</section>
+<section class="leadform" id="formulario">
+  <div class="container leadform__grid">
+
+    <!-- Texto izquierda -->
+    <div class="leadform__copy">
+      <h2>Enviá tu lista y te cotizamos</h2>
+      <p class="leadform__sub">
+        Completá estos datos y adjuntá la lista (o escribila).
+      </p>
+
+      <ul class="leadform__bullets">
+        <li>Medida + espesor + largo + cantidad + destino.</li>
+        <li>Si tenés plano o foto, mejor.</li>
+        <li>Te respondemos con disponibilidad y alternativas.</li>
+      </ul>
+
+      <p class="leadform__note">
+        ¿Preferís más rápido? Mandanos la lista por WhatsApp.
+      </p>
+
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Cotizar por WhatsApp
+        <small>Respuesta rápida + asesoramiento</small>
+      </a>
+    </div>
+
+    <!-- Form derecha -->
+    <div class="leadform__card">
+      <form class="form" action="#" method="post">
+
+        <div class="form__row form__row--2">
+          <label class="field">
+            <span>Nombre y apellido *</span>
+            <input type="text" name="nombre" autocomplete="name" required>
+          </label>
+
+          <label class="field">
+            <span>Empresa (opcional)</span>
+            <input type="text" name="empresa" autocomplete="organization">
+          </label>
+        </div>
+
+        <label class="field">
+          <span>WhatsApp / Teléfono *</span>
+          <input type="tel" name="telefono" autocomplete="tel" required>
+        </label>
+
+        <div class="form__row form__row--2">
+          <label class="field">
+            <span>Localidad / Zona *</span>
+            <input type="text" name="localidad" autocomplete="address-level2" required>
+          </label>
+
+          <label class="field">
+            <span>¿Qué querés cotizar? *</span>
+            <select name="categoria" required>
+              <option value="" selected disabled>Seleccioná una opción</option>
+              <option>Perfiles</option>
+              <option>Tubos</option>
+              <option>Chapas</option>
+              <option>Mallas</option>
+              <option>No estoy seguro</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Detalle / Lista de materiales *</span>
+         <textarea
+  name="detalle"
+  rows="1"
+  class="textarea-small"
+  required
+  placeholder="Medidas, espesores, largos, cantidades, destino..."
+></textarea>
+
+        </label>
+
+        <label class="field">
+          <span>Adjuntar archivo (opcional)</span>
+          <input type="file" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx">
+        </label>
+
+        <label class="field">
+          <span>Observaciones (opcional)</span>
+          <textarea name="obs" rows="3" placeholder="Entrega/retiro, fecha estimada, etc."></textarea>
+        </label>
+
+        <button class="form__submit" type="submit">Enviar solicitud</button>
+
+        <p class="form__micro">
+          ¿Preferís más rápido? Mandanos la lista por WhatsApp.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+<section class="faq" id="faq">
+  <div class="container faq__grid">
+
+    <!-- Columna izquierda -->
+    <div class="faq__side">
+      <h2 class="faq__sideTitle">Lo más pedido</h2>
+      <ul class="faq__list">
+        <li>Perfiles ángulo (varias medidas)</li>
+        <li>Perfiles C / U para estructura y soporte</li>
+        <li>Tubos estructurales cuadrados/rectangulares/redondos</li>
+        <li>Chapas galvanizadas y trapezoidales para techos y cerramientos</li>
+        <li>Metal desplegado para cerramientos y protección</li>
+      </ul>
+
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Decime medidas y te paso precio
+        <small>WhatsApp</small>
+      </a>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="faq__main">
+      <h2 class="faq__title">Preguntas frecuentes</h2>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Cómo tengo que pedir para que me coticen rápido?</summary>
+        <div class="faq__a">
+          Medida + espesor + largo + cantidad + destino. Si tenés plano o foto, mandalo.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Venden por barra / hoja / unidad?</summary>
+        <div class="faq__a">
+          Depende del producto. Contanos qué necesitás y lo armamos en el formato correcto.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Hay stock de todo?</summary>
+        <div class="faq__a">
+          Hay productos con stock disponible y otros a pedido. Te confirmamos al cotizar.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Hacen entregas?</summary>
+        <div class="faq__a">
+          Sí, coordinamos entrega según zona y destino. También podés retirar sin cargo en depósito.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">No sé qué medida o espesor necesito, ¿me ayudan?</summary>
+        <div class="faq__a">
+          Sí. Contanos el uso (obra/estructura/techo/cerramiento) y te recomendamos la opción adecuada.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Puedo mandar una lista completa para presupuesto?</summary>
+        <div class="faq__a">
+          Sí. Mandala por formulario o WhatsApp y te respondemos con el detalle.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+<footer class="footer" id="contacto">
+
+  <!-- Franja superior CTA -->
+  <div class="footer-cta">
+    <div class="container footer-cta__inner">
+      <p class="footer-cta__text">Cotizá perfiles, chapas y tubos para industria y construcción</p>
+
+      <div class="footer-cta__buttons">
+        <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar por WhatsApp
+          <small>Respuesta rápida</small>
+        </a>
+
+        <a class="btn btn-secondary btn-solid" href="#formulario">
+          Enviar lista formulario
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banda principal -->
+  <div class="footer-main">
+    <div class="container footer-main__inner">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span>FORTE</span> <strong>METAL</strong>
+        </div>
+      </div>
+
+      <div class="footer-info">
+        <div class="footer-item">
+          <span class="footer-ico" aria-hidden="true">🟢</span>
+          <span>WhatsApp: +54 297 535-5555</span>
+        </div>
+        <div class="footer-item">
+          <span class="footer-ico" aria-hidden="true">📍</span>
+          <span>Ubicación: Parque Industrial – Comodoro Rivadavia, Chubut</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Legal mínimo -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom__inner">
+      <small>© <span id="year"></span> Forte Metal. Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMobile').classList.toggle('open');
+    }
+  </script>
+
+</body>
+
+</html>
