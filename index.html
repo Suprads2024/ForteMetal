@@ -84,7 +84,7 @@
 
     .btn-primary {
       background: #22c55e;
-      color: #052e16;
+      color: #ffffff;
       font-weight: 600
     }
 
@@ -172,7 +172,16 @@
   letter-spacing: -0.03em;
   margin-bottom: 14px;
 }
+ @media (max-width:900px) {
 
+   
+.hero h1{
+  font-size: clamp(1.5rem, 3.4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+    }
 .hero__sub{
   opacity: .92;
   line-height: 1.45;
@@ -198,7 +207,8 @@
 /* botón secundario “relleno” para el hero */
 .btn-solid{
   background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(8, 8, 8, 0.22);
+  color: bl;
 }
   </style>
 
@@ -211,13 +221,18 @@
 </head>
 
 <body>
+<header class="site-header">
+  <div class="header-container">
 
-  <header class="site-header">
-    <div class="header-container">
+    <div class="logo">
+      <img 
+        src="./imagenes/logo blanco.png" 
+        alt="Forte Metal – Perfiles, chapas y tubos"
+        width="180"
+        height="auto"
+      >
+    </div>
 
-      <div class="logo">
-        <span>FORTE</span> <strong>METAL</strong>
-      </div>
 
       <nav class="nav-desktop">
         <a href="#productos">Productos</a>
@@ -254,82 +269,94 @@
 
 
   <main>
+<!-- HERO -->
+<section class="hero" id="productos">
+  <div class="hero__inner container">
+    <div class="hero__content">
 
-  <!-- HERO -->
-  <section class="hero" id="productos">
-    <div class="hero__inner container">
-      <div class="hero__content">
-        <h1>Perfiles, chapas y tubos<br>para industria y construcción</h1>
+      <h1>Cotizá perfiles, chapas y tubos<br>con entrega confiable en la Patagonia</h1>
 
-        <p class="hero__sub">
-          Cotizá en minutos por WhatsApp o enviá tu lista.<br>
-          Stock disponible en múltiples productos + retiro sin cargo en depósito + entrega coordinada según destino.
-        </p>
+      <p class="hero__sub">
+        Logística propia, cumplimiento de entregas y precios competitivos.<br>
+        Pedí tu cotización por WhatsApp o enviá tu lista.
+      </p>
 
-        <ul class="hero__list">
-          <li>Amplio catálogo: perfiles estructurales, chapas, tubos, mallas y metal desplegado.</li>
-          <li>Asesoramiento real para elegir medida, espesor y alternativa si hace falta.</li>
-          <li>Presupuesto claro para obra, compras y mantenimiento industrial.</li>
-          <li>Atención a empresas y particulares (obra nueva, ampliaciones y reposición).</li>
-        </ul>
+      <ul class="hero__list">
+        <li>Catálogo completo: perfiles, chapas, tubos, mallas y metal desplegado.</li>
+        <li>Si una medida no está, te proponemos una alternativa equivalente para no frenar la obra.</li>
+        <li>Presupuesto ordenado con medidas, espesores y cantidades.</li>
+      </ul>
 
-        <div class="hero__cta">
-          <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-            Cotizar por WhatsApp
-            <small>Respuesta rápida + asesoramiento</small>
-          </a>
+      <div class="hero__cta">
+        <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar por WhatsApp
+          <small></small>
+        </a>
 
-          <a class="btn btn-secondary btn-solid" href="#formulario">
-            Enviar lista por formulario
-          </a>
-        </div>
+        <a class="btn btn-secondary btn-solid" href="#formulario">
+          Enviar lista
+          <small></small>
+        </a>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- CARDS SUPERPUESTAS -->
-  <section class="cats">
-    <div class="container">
-      <div class="cats__grid">
+<section class="cats">
+  <div class="container">
+    <div class="cats__grid">
 
-        <article class="cat-card">
-          <div class="cat-card__img" aria-hidden="true"></div>
-          <h3>Perfiles estructurales</h3>
-          <p>Ángulos, UPN/IPN/W, perfiles C/U, planchuelas y más.</p>
-          <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-            Cotizar perfiles
-          </a>
-        </article>
+      <article class="cat-card">
+        <img class="cat-card__img"
+             src="./imagenes/perfiles.jpg"
+             alt="Perfiles estructurales de acero">
+        <h3>Perfiles estructurales</h3>
+        <p>Ángulos, UPN/IPN/W, perfiles C/U, planchuelas y más.</p>
+        <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar perfiles
+        </a>
+      </article>
 
-        <article class="cat-card">
-          <div class="cat-card__img" aria-hidden="true"></div>
-          <h3>Tubos / caños estructurales</h3>
-          <p>Cuadrado, rectangular y redondo. Medidas, espesores y largos a consulta.</p>
-          <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-            Cotizar tubos
-          </a>
-        </article>
+      <article class="cat-card">
+        <img class="cat-card__img"
+             src="./imagenes/4333.jpg"
+             alt="Tubos y caños estructurales">
+        <h3>Tubos / caños estructurales</h3>
+        <p>Cuadrado, rectangular y redondo. Medidas, espesores y largos a consulta.</p>
+        <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar tubos
+        </a>
+      </article>
 
-        <article class="cat-card">
-          <div class="cat-card__img" aria-hidden="true"></div>
-          <h3>Chapas</h3>
-          <p>Lisa, galvanizada, trapezoidal, sinusoidal y opciones para cerramientos/techos.</p>
-          <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-            Cotizar chapas
-          </a>
-        </article>
-        <article class="cat-card">
-  <div class="cat-card__img" aria-hidden="true"></div>
-  <h3>Mallas y metal desplegado</h3>
-  <p>Soluciones para refuerzo, protección, cerramientos y usos industriales.</p>
-  <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-    Cotizar mallas
-  </a>
-</article>
+      <article class="cat-card">
+        <img class="cat-card__img"
+             src="./imagenes/chapas.jpg"
+             alt="Chapas de acero para techos y cerramientos">
+        <h3>Chapas</h3>
+        <p>Lisa, galvanizada, trapezoidal, sinusoidal y opciones para cerramientos/techos.</p>
+        <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar chapas
+        </a>
+      </article>
 
-      </div>
+      <article class="cat-card">
+        <img class="cat-card__img"
+             src="./imagenes/mallas.jpg"
+             alt="Mallas y metal desplegado">
+        <h3>Mallas y metal desplegado</h3>
+        <p>Soluciones para refuerzo, protección, cerramientos y usos industriales.</p>
+        <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+          Cotizar mallas
+        </a>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
 </main>
 
@@ -338,7 +365,7 @@
   <div class="container">
 
     <h2 class="benefits__title">
-      Un proveedor para resolver la siderurgia de tu proyecto
+     Tu proveedor clave para obras e industria en la Patagonia
     </h2>
 
     <div class="benefits__grid">
@@ -353,10 +380,9 @@
             <rect x="3" y="14" width="18" height="6" rx="2"></rect>
           </svg>
         </div>
-        <h3 class="benefit__h">Stock y alternativas</h3>
+        <h3 class="benefit__h">Logística propia</h3>
         <p class="benefit__p">
-          Si una medida exacta no está disponible, te proponemos una alternativa equivalente
-          para que no frenes la obra.
+       Coordinamos entregas con logística propia para asegurar planificación y seguimiento.
         </p>
       </article>
 
@@ -371,10 +397,9 @@
             <circle cx="18" cy="19" r="1.5"></circle>
           </svg>
         </div>
-        <h3 class="benefit__h">Logística estratégica en la Patagonia</h3>
+        <h3 class="benefit__h">Cumplimiento en tiempos de entrega</h3>
         <p class="benefit__p">
-          Coordinamos retiro o entrega según destino, con planificación para obras y
-          abastecimiento industrial en la región.
+          Acordamos fecha y cumplimos. Comunicación directa hasta la entrega.
         </p>
       </article>
 
@@ -387,10 +412,9 @@
             <circle cx="12" cy="8" r="4"></circle>
           </svg>
         </div>
-        <h3 class="benefit__h">Cotización clara y rápida</h3>
+        <h3 class="benefit__h"> Precio competitivo</h3>
         <p class="benefit__p">
-          Te pasamos un presupuesto ordenado, con detalle de medidas, espesores y
-          cantidades.
+          Cotización rápida y clara, con alternativas equivalentes para optimizar costos.
         </p>
       </article>
 
@@ -406,59 +430,154 @@
 
   </div>
 </section>
-<section class="howto" id="como-cotizar">
-  <div class="container">
 
-    <h2 class="howto__title">
-      Cotizá en 3 pasos (sin vueltas)
-    </h2>
 
-    <div class="howto__grid">
 
-      <!-- Paso 1 -->
-      <article class="howto__step">
-        <div class="howto__icon">1</div>
-        <h3 class="howto__h">Mandanos tu lista</h3>
-        <p class="howto__p">
-          Medida + espesor + largo + cantidad + destino.
-          (O foto/plano si tenés.)
-        </p>
+
+<section class="fm-route" id="como-cotizar" style="--bg-image:url('/assets/img/como-cotizar-bg.jpg');">
+  <div class="fm-route__overlay"></div>
+
+  <div class="container fm-route__wrap">
+    <header class="fm-route__head">
+      <p class="fm-route__kicker">COTIZACIÓN</p>
+      <h2 class="fm-route__title">Cotizá en 3 pasos</h2>
+      <p class="fm-route__lead">Rápido, ordenado y con alternativas si falta alguna medida.</p>
+    </header>
+
+    <div class="fm-route__timeline">
+
+      <article class="fm-node fm-node--1">
+        <div class="fm-node__content">
+          <h3 class="fm-node__h">Mandanos tu lista</h3>
+          <p class="fm-node__p">Medida + espesor + largo + cantidad + destino. (O foto/plano si tenés.)</p>
+        </div>
+        <div class="fm-node__num" aria-hidden="true">1</div>
       </article>
 
-      <!-- Paso 2 -->
-      <article class="howto__step">
-        <div class="howto__icon">2</div>
-        <h3 class="howto__h">Confirmamos stock y opciones</h3>
-        <p class="howto__p">
-          Te respondemos con disponibilidad y alternativas si aplica.
-        </p>
+      <article class="fm-node fm-node--2">
+        <div class="fm-node__content">
+          <h3 class="fm-node__h">Confirmamos disponibilidad</h3>
+          <p class="fm-node__p">Te respondemos con stock y alternativas equivalentes si aplica.</p>
+        </div>
+        <div class="fm-node__num" aria-hidden="true">2</div>
       </article>
 
-      <!-- Paso 3 -->
-      <article class="howto__step">
-        <div class="howto__icon">3</div>
-        <h3 class="howto__h">Coordinamos retiro o entrega</h3>
-        <p class="howto__p">
-          Retiro sin cargo en depósito o entrega coordinada según zona.
-        </p>
+      <article class="fm-node fm-node--3">
+        <div class="fm-node__content">
+          <h3 class="fm-node__h">Coordinamos retiro o entrega</h3>
+          <p class="fm-node__p">Retiro sin cargo en depósito o entrega coordinada según zona.</p>
+        </div>
+        <div class="fm-node__num" aria-hidden="true">3</div>
       </article>
+
+      <!-- SVG SOLO PARA MOBILE -->
+      <svg class="fm-route__svg" viewBox="0 0 360 520" preserveAspectRatio="none" aria-hidden="true">
+        <path class="fm-route__path" d="M34,130 C150,70 220,70 330,110" />
+        <circle class="fm-route__dot" cx="175" cy="92" r="4.2" />
+        <path class="fm-route__path" d="M34,270 C150,220 220,220 330,260" />
+        <circle class="fm-route__dot" cx="210" cy="238" r="4.2" />
+        <path class="fm-route__path" d="M34,410 C150,360 220,360 330,400" />
+        <circle class="fm-route__dot" cx="150" cy="382" r="4.2" />
+      </svg>
 
     </div>
 
-    <!-- CTA doble -->
-    <div class="howto__cta">
-      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+    <div class="fm-route__cta">
+      <a class="fm-route__btn fm-route__btn--primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
         Cotizar por WhatsApp
         <small>Respuesta rápida</small>
       </a>
+      <a class="fm-route__btn fm-route__btn--ghost" href="#formulario">Enviar lista por formulario</a>
+    </div>
+  </div>
+</section>
 
-      <a class="btn btn-secondary btn-solid" href="#formulario">
-        Enviar lista por formulario
+
+
+
+
+
+
+
+
+<section class="faq" id="faq">
+  <div class="container faq__grid">
+
+    <!-- Columna izquierda -->
+    <div class="faq__side">
+      <h2 class="faq__sideTitle">Lo más pedido</h2>
+      <ul class="faq__list">
+        <li>Perfiles ángulo (varias medidas)</li>
+        <li>Perfiles C / U para estructura y soporte</li>
+        <li>Tubos estructurales cuadrados/rectangulares/redondos</li>
+        <li>Chapas galvanizadas y trapezoidales para techos y cerramientos</li>
+        <li>Metal desplegado para cerramientos y protección</li>
+      </ul>
+
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Decime medidas y te paso precio
+        <small>WhatsApp</small>
       </a>
     </div>
 
+    <!-- Columna derecha -->
+    <div class="faq__main">
+      <h2 class="faq__title">Preguntas frecuentes</h2>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Cómo tengo que pedir para que me coticen rápido?</summary>
+        <div class="faq__a">
+          Medida + espesor + largo + cantidad + destino. Si tenés plano o foto, mandalo.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Venden por barra / hoja / unidad?</summary>
+        <div class="faq__a">
+          Depende del producto. Contanos qué necesitás y lo armamos en el formato correcto.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Hay stock de todo?</summary>
+        <div class="faq__a">
+          Hay productos con stock disponible y otros a pedido. Te confirmamos al cotizar.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Hacen entregas?</summary>
+        <div class="faq__a">
+          Sí, coordinamos entrega según zona y destino. También podés retirar sin cargo en depósito.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">No sé qué medida o espesor necesito, ¿me ayudan?</summary>
+        <div class="faq__a">
+          Sí. Contanos el uso (obra/estructura/techo/cerramiento) y te recomendamos la opción adecuada.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Puedo mandar una lista completa para presupuesto?</summary>
+        <div class="faq__a">
+          Sí. Mandala por formulario o WhatsApp y te respondemos con el detalle.
+        </div>
+      </details>
+
+    </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
 <section class="leadform" id="formulario">
   <div class="container leadform__grid">
 
@@ -557,78 +676,7 @@
 
   </div>
 </section>
-<section class="faq" id="faq">
-  <div class="container faq__grid">
-
-    <!-- Columna izquierda -->
-    <div class="faq__side">
-      <h2 class="faq__sideTitle">Lo más pedido</h2>
-      <ul class="faq__list">
-        <li>Perfiles ángulo (varias medidas)</li>
-        <li>Perfiles C / U para estructura y soporte</li>
-        <li>Tubos estructurales cuadrados/rectangulares/redondos</li>
-        <li>Chapas galvanizadas y trapezoidales para techos y cerramientos</li>
-        <li>Metal desplegado para cerramientos y protección</li>
-      </ul>
-
-      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-        Decime medidas y te paso precio
-        <small>WhatsApp</small>
-      </a>
-    </div>
-
-    <!-- Columna derecha -->
-    <div class="faq__main">
-      <h2 class="faq__title">Preguntas frecuentes</h2>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Cómo tengo que pedir para que me coticen rápido?</summary>
-        <div class="faq__a">
-          Medida + espesor + largo + cantidad + destino. Si tenés plano o foto, mandalo.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Venden por barra / hoja / unidad?</summary>
-        <div class="faq__a">
-          Depende del producto. Contanos qué necesitás y lo armamos en el formato correcto.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Hay stock de todo?</summary>
-        <div class="faq__a">
-          Hay productos con stock disponible y otros a pedido. Te confirmamos al cotizar.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Hacen entregas?</summary>
-        <div class="faq__a">
-          Sí, coordinamos entrega según zona y destino. También podés retirar sin cargo en depósito.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">No sé qué medida o espesor necesito, ¿me ayudan?</summary>
-        <div class="faq__a">
-          Sí. Contanos el uso (obra/estructura/techo/cerramiento) y te recomendamos la opción adecuada.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Puedo mandar una lista completa para presupuesto?</summary>
-        <div class="faq__a">
-          Sí. Mandala por formulario o WhatsApp y te respondemos con el detalle.
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-<footer class="footer" id="contacto">
-
-  <!-- Franja superior CTA -->
+<!-- Franja superior CTA -->
   <div class="footer-cta">
     <div class="container footer-cta__inner">
       <p class="footer-cta__text">Cotizá perfiles, chapas y tubos para industria y construcción</p>
@@ -639,12 +687,15 @@
           <small>Respuesta rápida</small>
         </a>
 
-        <a class="btn btn-secondary btn-solid" href="#formulario">
+        <a class="btn btn-secondary btn-solid" href="#formulario" style="color: #0f2742;">
           Enviar lista formulario
         </a>
       </div>
     </div>
   </div>
+<footer class="footer" id="contacto">
+
+  
 
   <!-- Banda principal -->
   <div class="footer-main">

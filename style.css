@@ -117,14 +117,29 @@ grid-template-columns: repeat(4, 1fr);
   border: 1px solid rgba(15, 23, 42, .08);
 }
 
-/* imagen placeholder */
 .cat-card__img{
-  height: 86px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 10px;
-  background: linear-gradient(135deg,#e6edf6,#cfdbea);
   margin-bottom: 10px;
-  flex-shrink: 0;
+  display: block;
 }
+.cat-card{
+  position: relative;
+}
+
+.cat-card__img{
+  position: relative;
+}
+
+.cat-card__img::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.05));
+}
+
 
 .cat-card h3{
   font-size: 1.05rem;
@@ -236,79 +251,274 @@ grid-template-columns: repeat(4, 1fr);
   .benefits__grid{ grid-template-columns: 1fr; }
   .benefit{ padding: 16px; }
 }
-/* ===== CÓMO COTIZAR (3 PASOS) ===== */
-.howto{
-  padding: 56px 0;
-  background: #f8fafc;
+/* =========================================
+   FORTE METAL — Route Steps
+   Mobile: columna (tipo referencia)
+   Desktop: fila (3 en línea)
+   Paleta FORTE: azul oscuro + azul acero
+   ========================================= */
+
+.fm-route{
+  /* Paleta FORTE (la que veníamos usando) */
+  --fm-ink: #0b1220;      /* azul muy oscuro */
+  --fm-blue: #0b3a75;     /* azul acero */
+  --fm-steel: rgba(255,255,255,.92);
+  --fm-steel2: rgba(255,255,255,.74);
+  --fm-line: rgba(255,255,255,.55);
+  --fm-lineSoft: rgba(255,255,255,.35);
+
+  --radius: 18px;
+
+  position: relative;
+  padding: 70px 0 64px;
+  color: var(--fm-steel);
+
+  background:
+    linear-gradient(180deg, rgba(11,18,32,.82), rgba(11,18,32,.82)),
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
-.howto__title{
+.fm-route__overlay{
+  position:absolute;
+  inset:0;
+ background: linear-gradient(135deg,#0f2742 0%, #244b6b 55%, #2a5a78 100%);
+  pointer-events:none;
+}
+
+.fm-route__wrap{
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+}
+
+/* Head */
+.fm-route__head{
   text-align: center;
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+
+.fm-route__kicker{
+  margin: 0 0 8px;
+  letter-spacing: .22em;
+  font-weight: 800;
+  font-size: .78rem;
+  color: rgba(255,255,255,.72);
+}
+
+.fm-route__title{
+  margin: 0 0 8px;
+  font-weight: 900;
   letter-spacing: -0.02em;
-  color: #0f172a;
-  margin-bottom: 22px;
+  font-size: clamp(28px, 3.2vw, 44px);
 }
 
-.howto__grid{
+.fm-route__lead{
+  margin: 0;
+  color: var(--fm-steel2);
+  line-height: 1.6;
+}
+
+/* Timeline wrapper */
+.fm-route__timeline{
+  position: relative;
+  margin: 26px auto 0;
+  max-width: 980px;
+  padding: 18px 10px;
+}
+
+/* SVG (RUTA) SOLO PARA MOBILE */
+.fm-route__svg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: .95;
+}
+
+.fm-route__path{
+  fill: none;
+  stroke: var(--fm-line);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: .9;
+}
+
+.fm-route__dot{
+  fill: rgba(255,255,255,.95);
+  opacity: .9;
+}
+
+/* ===== NODOS ===== */
+.fm-node{
+  position: relative;
+  z-index: 1;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.howto__step{
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px 16px;
-  border: 1px solid rgba(15, 23, 42, .08);
-  text-align: center;
-}
-
-.howto__icon{
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-  background: #1e3a5f;
-  color: #ffffff;
-  display: flex;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1rem;
+  gap: 18px;
+
+  padding: 18px 18px;
+  margin: 18px 0;
+
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: var(--radius);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.howto__h{
+/* título y texto */
+.fm-node__h{
+  margin: 0 0 6px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   font-size: 1.05rem;
-  margin-bottom: 6px;
-  color: #0f172a;
 }
 
-.howto__p{
-  font-size: .95rem;
+.fm-node__p{
+  margin: 0;
+  color: var(--fm-steel2);
   line-height: 1.55;
-  color: rgba(15, 23, 42, .78);
+  font-size: .98rem;
+  max-width: 52ch;
 }
 
-/* CTA doble */
-.howto__cta{
-  margin-top: 20px;
+/* Número grande (se nota tipo referencia) */
+.fm-node__num{
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(56px, 7vw, 92px);
+  line-height: 1;
+  color: rgba(255,255,255,.88);
+}
+
+/* Detalle FORTE: acento azul en borde izquierdo */
+.fm-node::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(11,58,117,.0), rgba(11,58,117,.95), rgba(11,58,117,.0));
+  border-radius: 99px;
+  opacity: .9;
+}
+
+/* CTA */
+.fm-route__cta{
+  margin-top: 26px;
   display: flex;
-  justify-content: center;
   gap: 12px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-/* Responsive */
-@media (max-width: 900px){
-  .howto{
-    padding: 42px 0;
+.fm-route__btn{
+  min-width: 240px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900;
+  border: 1px solid transparent;
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+  color: #fff;
+}
+
+.fm-route__btn small{
+  display:block;
+  font-weight: 700;
+  font-size: .86rem;
+  opacity: .88;
+  margin-top: 2px;
+}
+
+.fm-route__btn--primary{
+   background: #22c55e;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+
+.fm-route__btn--ghost{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.26);
+}
+
+.fm-route__btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.45);
+}
+
+/* ===== MOBILE (columna) ===== */
+@media (max-width: 899px){
+  .fm-route{ padding: 56px 0 54px; }
+
+  .fm-route__timeline{
+    padding: 10px 4px;
   }
 
-  .howto__grid{
-    grid-template-columns: 1fr;
+  .fm-node{
+    padding: 16px 14px;
+    gap: 14px;
+  }
+
+  .fm-node__p{
+    font-size: .95rem;
+  }
+
+  .fm-route__btn{
+    width: 100%;
+    max-width: 520px;
+    min-width: 0;
   }
 }
+
+/* ===== DESKTOP (fila 3 en línea) =====
+   - Oculta la “ruta” curva
+   - Muestra los 3 cards en fila
+*/
+@media (min-width: 900px){
+  .fm-route__svg{ display:none; } /* porque para pc van en fila */
+
+  .fm-route__timeline{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .fm-node{
+    margin: 0;            /* saca el margin vertical */
+    height: 100%;
+    align-content: start;
+    padding: 20px 18px;
+  }
+
+  .fm-node__num{
+    font-size: 84px;
+  }
+
+  .fm-node__p{
+    max-width: 38ch;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 /* ===== SECCIÓN FORM (texto izq + form der) ===== */
 .leadform{
   padding: 64px 0;
@@ -540,12 +750,14 @@ grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+    background: rgb(255, 255, 255);
 }
 
 .footer-cta__text{
   font-weight: 700;
   letter-spacing: -0.01em;
   opacity: 0.95;
+  color: black;
 }
 
 .footer-cta__buttons{
