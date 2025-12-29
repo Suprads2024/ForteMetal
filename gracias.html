@@ -2,356 +2,363 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Forte Metal | Siderurgia para industria y construcción</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="imagenes/FORTE-LOGO2-MAGENTO.png">
+    <title>Forte Metal | Siderurgia para industria y construcción</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/FORTE-LOGO2-MAGENTO.png">
 
-  <meta name="description"
-    content="Perfiles, chapas y tubos para industria y construcción. Cotizá en minutos por WhatsApp o enviá tu lista." />
+    <meta name="description"
+        content="Perfiles, chapas y tubos para industria y construcción. Cotizá en minutos por WhatsApp o enviá tu lista." />
 
-  <!-- ✅ CSS CRÍTICO (solo header + navegación primera pantalla) -->
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
+    <!-- ✅ CSS CRÍTICO (solo header + navegación primera pantalla) -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #0f172a;
-      background: #fff
-    }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #0f172a;
+            background: #fff
+        }
 
-    .site-header {
-      width: 100%;
-      background: #073763;
-      color: #fff
-    }
+        .site-header {
+            width: 100%;
+            background: #073763;
+            color: #fff
+        }
 
-    .header-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      gap: 20px
-    }
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px
+        }
 
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 600;
-      white-space: nowrap
-    }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            white-space: nowrap
+        }
 
-    .logo span {
-      font-weight: 400
-    }
+        .logo span {
+            font-weight: 400
+        }
 
-    .nav-desktop {
-      display: flex;
-      gap: 20px;
-      margin-left: auto
-    }
+        .nav-desktop {
+            display: flex;
+            gap: 20px;
+            margin-left: auto
+        }
 
-    .nav-desktop a {
-      color: #fff;
-      text-decoration: none;
-      font-size: .95rem;
-      opacity: .9
-    }
+        .nav-desktop a {
+            color: #fff;
+            text-decoration: none;
+            font-size: .95rem;
+            opacity: .9
+        }
 
-    .nav-desktop a:hover {
-      opacity: 1
-    }
+        .nav-desktop a:hover {
+            opacity: 1
+        }
 
-    .header-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center
-    }
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
 
-    .btn {
-      display: inline-flex;
-      flex-direction: column;
-      padding: 10px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: .9rem;
-      line-height: 1.2;
-      text-align: center
-    }
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: .9rem;
+            line-height: 1.2;
+            text-align: center
+        }
 
-    .btn-primary {
-      background: #22c55e;
-      color: #ffffff;
-      font-weight: 600
-    }
+        .btn-primary {
+            background: #22c55e;
+            color: #ffffff;
+            font-weight: 600
+        }
 
-    .btn-primary small {
-      font-size: .7rem;
-      opacity: .8
-    }
+        .btn-primary small {
+            font-size: .7rem;
+            opacity: .8
+        }
 
-    .btn-secondary {
-      border: 1px solid #ffffff55;
-      color: #fff
-    }
+        .btn-secondary {
+            border: 1px solid #ffffff55;
+            color: #fff
+        }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #fff;
-      cursor: pointer
-    }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer
+        }
 
-    .nav-mobile {
-      display: none;
-      flex-direction: column;
-      background: #1e3a5f;
-      padding: 16px;
-      gap: 16px
-      
-    }
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            background: #1e3a5f;
+            padding: 16px;
+            gap: 16px
+        }
 
-    .nav-mobile a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem
-    }
+        .nav-mobile a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem
+        }
 
-    .nav-mobile.open {
-      display: flex
-    }
+        .nav-mobile.open {
+            display: flex
+        }
 
-    @media (max-width:900px) {
+        @media (max-width:900px) {
 
-      .nav-desktop,
-      .header-actions {
-        display: none
-      }
+            .nav-desktop,
+            .header-actions {
+                display: none
+            }
 
-      .menu-toggle {
-        display: block;
-        margin-left: auto
-      }
-    }
+            .menu-toggle {
+                display: block;
+                margin-left: auto
+            }
+        }
 
-    /* ===== HERO ===== */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+        /* ===== HERO ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
 
-.hero{
-  position: relative;
-  padding: 64px 0 120px;
-  color: #fff;
-  background: linear-gradient(135deg,#0f2742 0%, #244b6b 55%, #2a5a78 100%);
-  overflow: hidden;
-}
+        .hero {
+            position: relative;
+            padding: 64px 0 120px;
+            color: #fff;
+            background: linear-gradient(135deg, #0f2742 0%, #244b6b 55%, #2a5a78 100%);
+            overflow: hidden;
+        }
 
-/* “corte” diagonal tipo referencia */
-.hero::after{
-  content:"";
-  position:absolute;
-  top:-20%;
-  right:-15%;
-  width:55%;
-  height:140%;
-  background: rgba(255,255,255,0.08);
-  transform: rotate(12deg);
-  pointer-events:none;
-}
+        /* “corte” diagonal tipo referencia */
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 55%;
+            height: 140%;
+            background: rgba(255, 255, 255, 0.08);
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
 
-.hero__inner{ position: relative; z-index: 1; }
-.hero__content{ max-width: 760px; }
+        .hero__inner {
+            position: relative;
+            z-index: 1;
+        }
 
-.hero h1{
-  font-size: clamp(2rem, 3.4vw, 3.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
-}
- @media (max-width:900px) {
+        .hero__content {
+            max-width: 760px;
+        }
 
-   
-.hero h1{
-  font-size: clamp(1.5rem, 3.4vw, 3.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
-}
-    }
-.hero__sub{
-  opacity: .92;
-  line-height: 1.45;
-  margin-bottom: 14px;
-  max-width: 720px;
-}
+        .hero h1 {
+            font-size: clamp(2rem, 3.4vw, 3.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 14px;
+        }
 
-.hero__list{
-  margin: 0 0 18px 0;
-  padding-left: 18px;
-  display: grid;
-  gap: 8px;
-  opacity: .95;
-}
+        @media (max-width:900px) {
 
-.hero__cta{
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
 
-/* botón secundario “relleno” para el hero */
-.btn-solid{
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(8, 8, 8, 0.22);
-  color: bl;
-}
-  </style>
+            .hero h1 {
+                font-size: clamp(1.5rem, 3.4vw, 3.2rem);
+                line-height: 1.05;
+                letter-spacing: -0.03em;
+                margin-bottom: 14px;
+            }
+        }
 
-  <!-- ✅ CSS NO CRÍTICO (carga diferida / no bloqueante) -->
-  <link rel="preload" href="style.css" as="style" />
-  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
-  <noscript>
-    <link rel="stylesheet" href="style.css">
-  </noscript>
+        .hero__sub {
+            opacity: .92;
+            line-height: 1.45;
+            margin-bottom: 14px;
+            max-width: 720px;
+        }
+
+        .hero__list {
+            margin: 0 0 18px 0;
+            padding-left: 18px;
+            display: grid;
+            gap: 8px;
+            opacity: .95;
+        }
+
+        .hero__cta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        /* botón secundario “relleno” para el hero */
+        .btn-solid {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(8, 8, 8, 0.22);
+            color: bl;
+        }
+    </style>
+
+    <!-- ✅ CSS NO CRÍTICO (carga diferida / no bloqueante) -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
 </head>
 
 <body>
-<header class="site-header">
-  <div class="header-container">
+    <header class="site-header">
+        <div class="header-container">
 
-    <div class="logo">
-      <img 
-        src="./imagenes/logo blanco.png" 
-        alt="Forte Metal – Perfiles, chapas y tubos"
-        width="180"
-        height="auto"
-      >
-    </div>
+            <div class="logo">
+                <img src="./imagenes/logo blanco.png" alt="Forte Metal – Perfiles, chapas y tubos" width="180"
+                    height="auto">
+            </div>
 
 
-      <nav class="nav-desktop">
-        <a href="#productos">Productos</a>
-        <a href="#como-cotizar">Cómo cotizar</a>
-        <a href="#logistica">Logística</a>
-        <a href="#faq">Preguntas</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+            <nav class="nav-desktop">
+                <a href="#productos">Productos</a>
+                <a href="#como-cotizar">Cómo cotizar</a>
+                <a href="#logistica">Logística</a>
+                <a href="#faq">Preguntas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
 
-      <div class="header-actions">
-        <a class="btn btn-secondary" href="#formulario">Enviar lista</a>
-        <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-          Cotizar por WhatsApp
-          <small>Respuesta rápida + asesoramiento</small>
-        </a>
-      </div>
+            <div class="header-actions">
+                <a class="btn btn-secondary" href="#formulario">Enviar lista</a>
+                <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                    Cotizar por WhatsApp
+                    <small>Respuesta rápida + asesoramiento</small>
+                </a>
+            </div>
 
-      <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+            <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
 
-    </div>
-
-    <nav class="nav-mobile" id="navMobile">
-      <a href="#productos" onclick="toggleMenu()">Productos</a>
-      <a href="#como-cotizar" onclick="toggleMenu()">Cómo cotizar</a>
-      <a href="#logistica" onclick="toggleMenu()">Logística</a>
-      <a href="#faq" onclick="toggleMenu()">Preguntas</a>
-      <a href="#contacto" onclick="toggleMenu()">Contacto</a>
-      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-        Cotizar por WhatsApp
-      </a>
-    </nav>
-  </header>
-
-
-
-  <main>
-<!-- HERO -->
-<section class="hero hero--thanks">
-  <div class="hero__inner container">
-    <div class="hero__content">
-
-      <h1>¡Gracias por tu solicitud!</h1>
-
-      <p class="hero__sub">
-        Recibimos tu pedido de cotización correctamente.<br>
-        Nuestro equipo lo va a revisar y te contactaremos a la brevedad.
-      </p>
-
-      <ul class="hero__list">
-        <li>Revisamos stock y opciones disponibles.</li>
-        <li>Te proponemos alternativas si alguna medida no está.</li>
-        <li>Coordinamos entrega o retiro según tu zona.</li>
-      </ul>
-
-      <div class="hero__cta">
-        <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-          Hablar por WhatsApp
-          <small></small>
-        </a>
-
-        <a class="btn btn-secondary btn-solid" href="/">
-          Volver al inicio
-          <small></small>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<footer class="footer" id="contacto">
-
-  
-
-  <!-- Banda principal -->
-  <div class="footer-main">
-    <div class="container footer-main__inner">
-<div class="footer-brand">
-  <div class="footer-logo">
-    <img src="imagenes/FORTE-LOGO2-MAGENTO.png" alt="Forte Metal" class="footer-logo-img">
-  </div>
-</div>
-
-
-      <div class="footer-info">
-        <div class="footer-item">
-          <span class="footer-ico" aria-hidden="true">🟢</span>
-          <span>WhatsApp: +54 297 535-5555</span>
         </div>
-        <div class="footer-item">
-          <span class="footer-ico" aria-hidden="true">📍</span>
-          <span>Ubicación: Parque Industrial – Comodoro Rivadavia, Chubut</span>
-        </div>
-      </div>
 
-    </div>
-  </div>
-
-  <!-- Legal mínimo -->
-  <div class="footer-bottom">
-    <div class="container footer-bottom__inner">
-      <small>© <span id="year"></span> Forte Metal. Todos los derechos reservados.</small>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="#productos" onclick="toggleMenu()">Productos</a>
+            <a href="#como-cotizar" onclick="toggleMenu()">Cómo cotizar</a>
+            <a href="#logistica" onclick="toggleMenu()">Logística</a>
+            <a href="#faq" onclick="toggleMenu()">Preguntas</a>
+            <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+            <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                Cotizar por WhatsApp
+            </a>
+        </nav>
+    </header>
 
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('navMobile').classList.toggle('open');
-    }
-  </script>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--thanks">
+            <div class="hero__inner container">
+                <div class="hero__content">
+
+                    <h1>¡Gracias por tu solicitud!</h1>
+
+                    <p class="hero__sub">
+                        Recibimos tu pedido de cotización correctamente.<br>
+                        Nuestro equipo lo va a revisar y te contactaremos a la brevedad.
+                    </p>
+
+                    <ul class="hero__list">
+                        <li>Revisamos stock y opciones disponibles.</li>
+                        <li>Te proponemos alternativas si alguna medida no está.</li>
+                        <li>Coordinamos entrega o retiro según tu zona.</li>
+                    </ul>
+
+                    <div class="hero__cta">
+                        <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                            Hablar por WhatsApp
+                            <small></small>
+                        </a>
+
+                        <a class="btn btn-secondary btn-solid" href="/">
+                            Volver al inicio
+                            <small></small>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer" id="contacto">
+
+
+
+            <!-- Banda principal -->
+            <div class="footer-main">
+                <div class="container footer-main__inner">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="imagenes/FORTE-LOGO2-MAGENTO.png" alt="Forte Metal" class="footer-logo-img">
+                        </div>
+                    </div>
+
+
+                    <div class="footer-info">
+                        <div class="footer-item">
+                            <span class="footer-ico" aria-hidden="true">🟢</span>
+                            <span>WhatsApp: +54 297 535-5555</span>
+                        </div>
+                        <div class="footer-item">
+                            <span class="footer-ico" aria-hidden="true">📍</span>
+                            <span>Ubicación: Parque Industrial – Comodoro Rivadavia, Chubut</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Legal mínimo -->
+            <div class="footer-bottom">
+                <div class="container footer-bottom__inner">
+                    <small>© <span id="year"></span> Forte Metal. Todos los derechos reservados.</small>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+
+
+        <script>
+            function toggleMenu() {
+                document.getElementById('navMobile').classList.toggle('open');
+            }
+        </script>
 
 </body>
 
