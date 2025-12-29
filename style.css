@@ -7,6 +7,13 @@
 .section {
   padding: 56px 16px;
 }
+#productos,
+#como-cotizar,
+#logistica,
+#faq,
+#contacto {
+  scroll-margin-top: 80px;
+}
 
 .container {
   max-width: 1200px;
