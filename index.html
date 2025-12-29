@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Forte Metal | Siderurgia para industria y construcción</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="imagenes/FORTE-LOGO2-MAGENTO.png">
+
   <meta name="description"
     content="Perfiles, chapas y tubos para industria y construcción. Cotizá en minutos por WhatsApp o enviá tu lista." />
 
@@ -25,7 +27,7 @@
 
     .site-header {
       width: 100%;
-      background: #1e3a5f;
+      background: #073763;
       color: #fff
     }
 
@@ -487,7 +489,10 @@
         Cotizar por WhatsApp
         <small>Respuesta rápida</small>
       </a>
-      <a class="fm-route__btn fm-route__btn--ghost" href="#formulario">Enviar lista por formulario</a>
+      <a class="fm-route__btn fm-route__btn--ghost" href="#formulario">Enviar lista por formulario
+           <small>Respuesta rápida</small>
+      </a>
+      
     </div>
   </div>
 </section>
@@ -572,12 +577,6 @@
 
 
 
-
-
-
-
-
-
 <section class="leadform" id="formulario">
   <div class="container leadform__grid">
 
@@ -606,7 +605,8 @@
 
     <!-- Form derecha -->
     <div class="leadform__card">
-      <form class="form" action="#" method="post">
+      <form class="form" action="form.php" method="post" enctype="multipart/form-data">
+
 
         <div class="form__row form__row--2">
           <label class="field">
@@ -688,7 +688,7 @@
         </a>
 
         <a class="btn btn-secondary btn-solid" href="#formulario" style="color: #0f2742;">
-          Enviar lista formulario
+          Enviar lista formulario    <small>Respuesta rápida</small>
         </a>
       </div>
     </div>
@@ -701,11 +701,11 @@
   <div class="footer-main">
     <div class="container footer-main__inner">
 
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <span>FORTE</span> <strong>METAL</strong>
-        </div>
-      </div>
+             <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="imagenes/FORTE-LOGO2-MAGENTO.png" alt="Forte Metal" class="footer-logo-img">
+                        </div>
+                    </div>
 
       <div class="footer-info">
         <div class="footer-item">
