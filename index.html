@@ -25,6 +25,64 @@
       background: #fff
     }
 
+.floating-buttons {
+  position: fixed;
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la derecha */
+  display: flex;
+  gap: 10px; /* Espaciado entre los botones */
+  z-index: 1000; /* Asegúrate de que estén sobre todo el contenido */
+}
+
+/* Estilo general para los botones flotantes */
+.floating-button {
+  width: 70px;
+  height:70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Botones redondos */
+  background-color: #25d366; /* Color de fondo por defecto (WhatsApp) */
+  color: white; /* Ícono en blanco */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+/* WhatsApp (Color personalizado) */
+.floating-button.whatsapp {
+  background-color: #25d366;
+}
+
+/* Efecto al pasar el mouse */
+.floating-button:hover {
+  transform: scale(1.1); /* Efecto de zoom */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Más sombra */
+}
+
+/* Íconos */
+.floating-button i {
+  font-size: 44px; /* Tamaño del ícono */
+}
+
+/* Estilo Responsivo para Móviles */
+@media (max-width: 768px) {
+  .floating-buttons {
+    flex-direction: column; /* Coloca los botones en columna */
+    gap: 15px; /* Espaciado entre botones en columna */
+    bottom: 15px; /* Ajusta la posición en móviles */
+    right: 15px; /* Ajusta la posición en móviles */
+  }
+
+  .floating-button {
+    width: 65px;
+    height: 65px;
+  }
+
+  .floating-button i {
+    font-size: 35px;
+  }
+}
     .site-header {
       width: 100%;
       background: #073763;
@@ -171,8 +229,17 @@
 .hero h1{
   font-size: clamp(2rem, 3.4vw, 3.2rem);
   line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-weight: 300;           /* light base */
+  letter-spacing: -0.02em;
   margin-bottom: 14px;
+}
+.hero h1 strong {
+  font-weight: 700;           /* peso fuerte solo en keywords */
+}
+
+.hero h1 .h1-light {
+  font-weight: 300;
+  opacity: 0.9;
 }
  @media (max-width:900px) {
 
@@ -220,9 +287,20 @@
   <noscript>
     <link rel="stylesheet" href="style.css">
   </noscript>
+  <script src="https://kit.fontawesome.com/996b34cf47.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/+5493454490373?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web.%20Me%20gustar%C3%ADa%20que%20me%20cotices%20un%20proyecto."
+            class="floating-button whatsapp" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+    </div>
+
+
 <header class="site-header">
   <div class="header-container">
 
@@ -276,11 +354,16 @@
   <div class="hero__inner container">
     <div class="hero__content">
 
-      <h1>Cotizá perfiles, chapas y tubos<br>con entrega confiable en la Patagonia</h1>
+    <h1>
+  Cotizá <strong>perfiles</strong>, <strong>chapas</strong> y <strong>tubos</strong><br>
+  con <strong>entrega confiable</strong>.</strong>
+</h1>
+
+
 
       <p class="hero__sub">
         Logística propia, cumplimiento de entregas y precios competitivos.<br>
-        Pedí tu cotización por WhatsApp o enviá tu lista.
+      
       </p>
 
       <ul class="hero__list">
@@ -295,10 +378,7 @@
           <small></small>
         </a>
 
-        <a class="btn btn-secondary btn-solid" href="#formulario">
-          Enviar lista
-          <small></small>
-        </a>
+       
       </div>
 
     </div>
