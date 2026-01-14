@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Forte Metal | Siderurgia para industria y construcción</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/FORTE-LOGO2-MAGENTO.png">
+
+    <meta name="description"
+        content="Perfiles, chapas y tubos para industria y construcción. Cotizá en minutos por WhatsApp o enviá tu lista." />
+
+    <!-- ✅ CSS CRÍTICO (solo header + navegación primera pantalla) -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #0f172a;
+            background: #fff
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            /* Distancia desde la parte inferior */
+            right: 20px;
+            /* Distancia desde la derecha */
+            display: flex;
+            gap: 10px;
+            /* Espaciado entre los botones */
+            z-index: 1000;
+            /* Asegúrate de que estén sobre todo el contenido */
+        }
+
+        /* Estilo general para los botones flotantes */
+        .floating-button {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            /* Botones redondos */
+            background-color: #25d366;
+            /* Color de fondo por defecto (WhatsApp) */
+            color: white;
+            /* Ícono en blanco */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            /* Sombra */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            /* Sin subrayado en los enlaces */
+        }
+
+        /* WhatsApp (Color personalizado) */
+        .floating-button.whatsapp {
+            background-color: #25d366;
+        }
+
+        /* Efecto al pasar el mouse */
+        .floating-button:hover {
+            transform: scale(1.1);
+            /* Efecto de zoom */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            /* Más sombra */
+        }
+
+        /* Íconos */
+        .floating-button i {
+            font-size: 44px;
+            /* Tamaño del ícono */
+        }
+
+        /* Estilo Responsivo para Móviles */
+        @media (max-width: 768px) {
+            .floating-buttons {
+                flex-direction: column;
+                /* Coloca los botones en columna */
+                gap: 15px;
+                /* Espaciado entre botones en columna */
+                bottom: 15px;
+                /* Ajusta la posición en móviles */
+                right: 15px;
+                /* Ajusta la posición en móviles */
+            }
+
+            .floating-button {
+                width: 65px;
+                height: 65px;
+            }
+
+            .floating-button i {
+                font-size: 35px;
+            }
+        }
+
+        .site-header {
+            width: 100%;
+            background: #073763;
+            color: #fff
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            white-space: nowrap
+        }
+
+        .logo span {
+            font-weight: 400
+        }
+
+        .nav-desktop {
+            display: flex;
+            gap: 20px;
+            margin-left: auto
+        }
+
+        .nav-desktop a {
+            color: #fff;
+            text-decoration: none;
+            font-size: .95rem;
+            opacity: .9
+        }
+
+        .nav-desktop a:hover {
+            opacity: 1
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: .9rem;
+            line-height: 1.2;
+            text-align: center
+        }
+
+        .btn-primary {
+            background: #22c55e;
+            color: #ffffff;
+            font-weight: 600
+        }
+
+        .btn-primary small {
+            font-size: .7rem;
+            opacity: .8
+        }
+
+        .btn-secondary {
+            border: 1px solid #ffffff55;
+            color: #fff
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            background: #1e3a5f;
+            padding: 16px;
+            gap: 16px
+        }
+
+        .nav-mobile a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem
+        }
+
+        .nav-mobile.open {
+            display: flex
+        }
+
+        @media (max-width:900px) {
+
+            .nav-desktop,
+            .header-actions {
+                display: none
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto
+            }
+        }
+
+        /* ===== HERO ===== */
+        :root {
+            --hero-text: #ffffff;
+            --hero-muted: rgba(255, 255, 255, .88);
+            --hero-overlay-1: rgba(0, 0, 0, .55);
+            --hero-overlay-2: rgba(0, 0, 0, .15);
+
+            --cta-bg: #1fbf5b;
+            /* verde */
+            --cta-bg-hover: #16a34a;
+            --cta-text: #0b0b0b;
+            /* si preferís blanco, lo cambiamos */
+            --separator: #073763;
+            /* “línea amarilla” */
+        }
+
+        .hero-neumaticos__bg {
+            position: relative;
+            min-height: 60vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-neumaticos__overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("./imagenes/neumaticos/Sin\ título-1.webp");
+            /* tu imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .hero-neumaticos__container {
+            position: relative;
+            z-index: 2;
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            padding: clamp(18px, 3vw, 42px) 0;
+        }
+
+        .hero-neumaticos__content {
+            max-width: 680px;
+        }
+
+        .hero-neumaticos__title {
+            margin: 0 0 12px 0;
+            color: var(--hero-text);
+            font-weight: 800;
+            line-height: 1.05;
+            font-size: clamp(28px, 3.2vw, 44px);
+            text-wrap: balance;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-neumaticos__subtitle {
+            margin: 0 0 18px 0;
+            color: var(--hero-muted);
+            line-height: 1.45;
+            font-size: clamp(14px, 1.25vw, 16.5px);
+            max-width: 62ch;
+        }
+
+        .hero-neumaticos__cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 12px;
+            padding: 14px 18px;
+            background: var(--cta-bg);
+            color: var(--cta-text);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+            white-space: nowrap;
+        }
+
+        .hero-neumaticos__separator {
+
+            max-width: 100%;
+            height: 10px;
+            margin: 0 auto;
+            background: var(--separator);
+        }
+
+        .hero-neumaticos__benefits {
+            min-height: 20vh;
+            background: #ededed;
+            display: flex;
+            align-items: center;
+            border-top: 8px solid var(--separator);
+        }
+
+        .hero-neumaticos__benefits-container {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 2fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .hero-neumaticos__benefits-intro {
+            margin: 0;
+            font-size: 15px;
+            color: #222;
+            font-weight: 500;
+        }
+
+        .hero-neumaticos__benefits-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 22px;
+            font-size: 14px;
+            color: #222;
+        }
+
+        .hero-neumaticos__benefits-list li {
+            position: relative;
+            padding-left: 22px;
+            line-height: 1.4;
+        }
+
+        .hero-neumaticos__benefits-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #073763;
+            font-weight: 900;
+        }
+
+        /* ===== SEGUNDA SECCION  ===== */
+        /* =========================
+   CSS CRÍTICO (inline)
+   ========================= */
+
+        .trust-strip {
+            position: relative;
+            width: 100%;
+            padding: 46px 0 28px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+.trust-strip__overlay{
+  position: absolute;
+  inset: 0;
+  background:white;
+  z-index: 0;
+}
+
+
+
+        .trust-strip__container {
+            position: relative;
+            z-index: 1;
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        /* H2 + subtítulo */
+        .trust-strip__header {
+            text-align: center;
+            color: #073763;
+            max-width: 980px;
+            margin: 0 auto 16px;
+        }
+
+        .trust-strip__h2 {
+            margin: 0 0 10px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            font-size: clamp(22px, 2.6vw, 34px);
+            line-height: 1.15;
+        }
+
+        .trust-strip__sub {
+            margin: 0 0 18px;
+            color: rgba(7, 7, 7, 0.86);
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        /* Panel único */
+        .trust-strip__panel {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, .45);
+        }
+
+        /* Top amarillo alineado a 3 columnas */
+        .trust-strip__top {
+            background:#073763;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
+            padding: 12px 18px;
+            column-gap: 14px;
+        }
+
+        .trust-strip__top-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .trust-strip__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-strip__top-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            line-height: 1;
+            /* clave: alinear el inicio del texto con el inicio del checklist */
+            padding-left: 2px;
+        }
+
+        .trust-strip__divider {
+            font-size: 22px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.55);
+            transform: translateY(-1px);
+        }
+
+        /* Checks en 3 columnas: MISMA grilla que el top (sin divisores) */
+        .trust-strip__checks {
+            background: #f3f1ee;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            padding: 12px 18px 14px;
+            gap: 12px;
+        }
+
+        .trust-strip__col {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            font-size: 13.5px;
+            line-height: 1.35;
+        }
+
+        .trust-strip__col li {
+            position: relative;
+            padding-left: 20px;
+            margin: 6px 0;
+        }
+
+        .trust-strip__col li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #073763;
+            font-weight: 900;
+        }
+    </style>
+
+    <!-- ✅ CSS NO CRÍTICO (carga diferida / no bloqueante) -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="css/neumaticos.css" as="style" />
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="css/neumaticos.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/neumaticos.css">
+    </noscript>
+    <script src="https://kit.fontawesome.com/996b34cf47.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/5492975355555?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20con%20stock%20inmediato%20me%20recomiendan%3F"
+   class="floating-button whatsapp"
+   target="_blank"
+   title="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+    </div>
+
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <div class="logo">
+                <img src="./imagenes/logo blanco.png" alt="Forte Metal – Perfiles, chapas y tubos" width="180"
+                    height="auto">
+            </div>
+
+
+            <nav class="nav-desktop">
+                <a href="#productos">Líneas</a>
+                <a href="#como-cotizar">Flotas</a>
+                <a href="#logistica">Marcas</a>
+                <a href="#faq">Cómo comprár</a>
+                <a href="#contacto">FAQ</a>
+                <a href="#contacto">Cotizar</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                    Cotizar por WhatsApp
+                    <small>Respuesta rápida + asesoramiento</small>
+                </a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+
+        </div>
+
+        <nav class="nav-mobile" id="navMobile">
+            <a href="#productos" onclick="toggleMenu()">Productos</a>
+            <a href="#como-cotizar" onclick="toggleMenu()">Cómo cotizar</a>
+            <a href="#logistica" onclick="toggleMenu()">Logística</a>
+            <a href="#faq" onclick="toggleMenu()">Preguntas</a>
+            <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+            <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                Cotizar por WhatsApp
+            </a>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <section class="hero-neumaticos" aria-label="Sección principal neumáticos">
+            <!-- Reemplazá la URL por tu imagen real -->
+            <div class="hero-neumaticos__bg">
+                <div class="hero-neumaticos__overlay"></div>
+
+                <div class="hero-neumaticos__container">
+                    <div class="hero-neumaticos__content">
+                        <h1 class="hero-neumaticos__title">
+                            Encontrá el neumático exacto con stock inmediato y el mejor costo por kilómetro.
+                        </h1>
+
+                        <p class="hero-neumaticos__subtitle">
+                            Te asesoramos para elegir según vehículo, superficie, carga y tipo de uso. Comprá con envío
+                            a todo el país o
+                            retiro en local, con todos los medios de pago y la mejor financiación.
+                        </p>
+
+                        <a class="hero-neumaticos__cta"
+                            href="https://wa.me/549XXXXXXXXXX?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
+                            target="_blank" rel="noopener">
+                            ✅ Cotizar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-neumaticos__separator" aria-hidden="true"></div>
+        </section>
+
+
+       
+
+
+
+
+    </main>
+    <section class="trust-strip" aria-label="Beneficios principales">
+
+        <div class="trust-strip__overlay" aria-hidden="true"></div>
+
+        <div class="trust-strip__container">
+
+            <!-- H2 + subtítulo -->
+            <header class="trust-strip__header">
+                <h2 class="trust-strip__h2">No es “un neumático”, es el neumático correcto para tu uso</h2>
+                <p class="trust-strip__sub">
+                    La diferencia no está solo en el precio: se trata de lograr mejor costo por kilómetro, evitar
+                    desgaste prematuro y elegir
+                    lo que realmente necesitas. En FORTE Neumáticos, te asesoramos de verdad.
+                </p>
+            </header>
+
+            <!-- BLOQUE (desktop: una sola pieza / mobile: se parte en 3 cards apiladas) -->
+            <div class="trust-strip__panel">
+
+                <!-- Header amarillo (alineado a columnas) -->
+                <div class="trust-strip__top" role="list">
+                    <div class="trust-strip__top-item" role="listitem">
+                        <span class="trust-strip__icon" aria-hidden="true">
+                            <!-- Truck (negro) -->
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+                                <path d="M3 6h11v9H3V6Z" stroke="#111" stroke-width="2" />
+                                <path d="M14 9h4l3 3v3h-7V9Z" stroke="#111" stroke-width="2" />
+                                <path d="M6.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="#111" />
+                                <path d="M17.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="#111" />
+                            </svg>
+                        </span>
+                        <span class="trust-strip__top-title">Stock inmediato</span>
+                    </div>
+
+                    <div class="trust-strip__divider" aria-hidden="true">›</div>
+
+                    <div class="trust-strip__top-item" role="listitem">
+                        <span class="trust-strip__icon" aria-hidden="true">
+                            <!-- Star (negro) -->
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+                                <path d="M12 3l2.6 5.6 6.1.7-4.6 4 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4 6.1-.7L12 3Z"
+                                    fill="#111" />
+                            </svg>
+                        </span>
+                        <span class="trust-strip__top-title">Mejor costo por kilómetro</span>
+                    </div>
+
+                    <div class="trust-strip__divider" aria-hidden="true">›</div>
+
+                    <div class="trust-strip__top-item" role="listitem">
+                        <span class="trust-strip__icon" aria-hidden="true">
+                            <!-- Card (negro) -->
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+                                <path d="M3 7h18v10H3V7Z" stroke="#111" stroke-width="2" />
+                                <path d="M3 10h18" stroke="#111" stroke-width="2" />
+                                <path d="M6 14h6" stroke="#111" stroke-width="2" />
+                            </svg>
+                        </span>
+                        <span class="trust-strip__top-title">Financiación disponible</span>
+                    </div>
+                </div>
+
+                <!-- Checklist (alineado a columnas) -->
+                <div class="trust-strip__checks">
+                    <ul class="trust-strip__col">
+                        <li>Envíos a todo el país</li>
+                        <li>Retiro en local</li>
+                    </ul>
+
+                    <ul class="trust-strip__col">
+                        <li>Opciones pensadas para durar</li>
+                        <li>Mejor rendimiento por km</li>
+                    </ul>
+
+                    <ul class="trust-strip__col">
+                        <li>Todos los medios de pago</li>
+                        <li>Atención personalizada</li>
+                    </ul>
+                </div>
+                <div class="trust-strip__mobile">
+
+                    <div class="trust-strip__msection">
+                        <div class="trust-strip__mhead">
+                            🚚 Stock inmediato
+                        </div>
+                        <ul class="trust-strip__mlist">
+                            <li>Envíos a todo el país</li>
+                            <li>Retiro en local</li>
+                        </ul>
+                    </div>
+
+                    <div class="trust-strip__msection">
+                        <div class="trust-strip__mhead">
+                            ★ Mejor costo por kilómetro
+                        </div>
+                        <ul class="trust-strip__mlist">
+                            <li>Opciones pensadas para durar</li>
+                            <li>Mejor rendimiento por km</li>
+                        </ul>
+                    </div>
+
+                    <div class="trust-strip__msection">
+                        <div class="trust-strip__mhead">
+                            💳 Financiación disponible
+                        </div>
+                        <ul class="trust-strip__mlist">
+                            <li>Todos los medios de pago</li>
+                            <li>Atención personalizada</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="lineas" aria-label="Elegí tu línea" style="background-image:url('/imagenes/neumaticos/Escena\ urbana\ de\ transporte\ nocturna.png');">
+
+        <div class="lineas__overlay" aria-hidden="true"></div>
+
+        <div class="lineas__container">
+            <header class="lineas__header">
+                <h2 class="lineas__h2">Elegí tu línea y cotizá en 1 minuto</h2>
+                <p class="lineas__sub">
+                    Decinos medida + tipo de uso y te pasamos 2–3 opciones según tu prioridad:
+                    precio / duración / tracción / eficiencia.
+                </p>
+            </header>
+
+            <div class="lineas__grid">
+
+                <!-- Card 1 -->
+                <article class="lineas__card">
+                    <div class="lineas__cap lineas__cap--red">Línea Liviana</div>
+
+                    <div class="lineas__img-wrap">
+                        <img class="lineas__img" src="/imagenes/neumaticos/liviana.png" alt="Línea Liviana">
+                    </div>
+
+                    <div class="lineas__body">
+                        <p class="lineas__text">
+                            Para asfalto, ripio o barro. Opciones para mejorar agarre, estabilidad y durabilidad según
+                            tu manejo y camino.
+                        </p>
+
+                        <ul class="lineas__list">
+                            <li>Opciones mixtas (ruta + ripio) con tracción confiable.</li>
+                            <li>Estructuras preparadas para terrenos exigentes.</li>
+                            <li>Mayor duración para bajar el costo por kilómetro.</li>
+                        </ul>
+                    </div>
+
+                    <a class="lineas__btn lineas__btn--red" href="#cotizar-liviana">Cotizar esta línea</a>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="lineas__card">
+                    <div class="lineas__cap lineas__cap--red">Línea Transporte</div>
+
+                    <div class="lineas__img-wrap">
+                        <img class="lineas__img" src="/imagenes/neumaticos/transporte.png" alt="Línea Transporte">
+                    </div>
+
+                    <div class="lineas__body">
+                        <p class="lineas__text">
+                            Pensada para carga pesada y alta exigencia: buscá rendimiento real, seguridad y eficiencia
+                            para optimizar el costo por kilómetro.
+                        </p>
+
+                        <ul class="lineas__list">
+                            <li>Eficiencia y menor desgaste para rutas largas.</li>
+                            <li>Ciclo de vida extendido en condiciones duras.</li>
+                            <li>Estabilidad y frenado confiable.</li>
+                        </ul>
+                    </div>
+
+                    <a class="lineas__btn lineas__btn--green" href="#cotizar-transporte">Cotizar esta línea</a>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="lineas__card">
+                    <div class="lineas__cap lineas__cap--red">Minería &amp; Construcción</div>
+
+                    <div class="lineas__img-wrap">
+                        <img class="lineas__img" src="/imagenes/neumaticos/mineria.png" alt="Minería y Construcción">
+                    </div>
+
+                    <div class="lineas__body">
+                        <p class="lineas__text">
+                            Cuando el terreno es hostil, necesitás neumáticos preparados para impactos, cortes y carga
+                            máxima sin perder tracción.
+                        </p>
+
+                        <ul class="lineas__list">
+                            <li>Mayor resistencia a cortes, impactos y perforaciones.</li>
+                            <li>Refuerzos para máxima carga y exigencia.</li>
+                            <li>Tracción superior con diseño profundo y robusto.</li>
+                        </ul>
+                    </div>
+
+                    <a class="lineas__btn lineas__btn--red" href="#cotizar-mineria">Cotizar esta línea</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+<section class="pasos" aria-label="Cómo comprás"
+  style="background-image:url('assets/images/pasos-bg.jpg');">
+
+  <div class="pasos__overlay" aria-hidden="true"></div>
+
+  <div class="pasos__container">
+    <header class="pasos__header">
+      <h2 class="pasos__h2">Cotizar es simple: <span class="pasos__accent">4 pasos</span> y listo</h2>
+      <p class="pasos__sub">
+        Nos pasás tu medida (ej: <strong>265/70 R16</strong>) y el uso (ruta / ripio / obra / carga).
+      </p>
+    </header>
+
+    <div class="pasos__panel" role="list" aria-label="Pasos para cotizar">
+      <div class="pasos__step" role="listitem">
+        <div class="pasos__num">1</div>
+        <div class="pasos__txt">
+          <h3 class="pasos__h3">Medida y uso</h3>
+          <p>Nos pasás tu medida y el tipo de uso.</p>
+        </div>
+      </div>
+
+      <div class="pasos__arrow" aria-hidden="true">›</div>
+
+      <div class="pasos__step" role="listitem">
+        <div class="pasos__num">2</div>
+        <div class="pasos__txt">
+          <h3 class="pasos__h3">Te recomendamos</h3>
+          <p>2–3 opciones según tu objetivo.</p>
+        </div>
+      </div>
+
+      <div class="pasos__arrow" aria-hidden="true">›</div>
+
+      <div class="pasos__step" role="listitem">
+        <div class="pasos__num">3</div>
+        <div class="pasos__txt">
+          <h3 class="pasos__h3">Pago + entrega</h3>
+          <p>Elegís y coordinamos envío o retiro.</p>
+        </div>
+      </div>
+
+      <div class="pasos__arrow" aria-hidden="true">›</div>
+
+      <div class="pasos__step" role="listitem">
+        <div class="pasos__num">4</div>
+        <div class="pasos__txt">
+          <h3 class="pasos__h3">Contacto futuro</h3>
+          <p>Quedás agendado para reposiciones o flota.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pasos__cta-wrap">
+      <a class="pasos__cta" href="https://wa.me/549XXXXXXXXXX?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos" target="_blank" rel="noopener">
+        ✅ Cotizar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="brands">
+  <div class="brands__container">
+
+    <header class="brands__header">
+      <h2 class="brands__h2">Marcas líderes + alternativas de alto rendimiento</h2>
+      <p class="brands__sub">
+        Trabajamos con un portfolio multimarca para cubrir liviana, transporte y minería/construcción,
+        con opciones para distintas necesidades y presupuestos.
+      </p>
+    </header>
+
+    <div class="brands__box">
+      <div class="brands__grid">
+
+        <img src="./imagenes/neumaticos/marcas/4.png" alt="Bridgestone">
+        <img src="./imagenes/neumaticos/marcas/5.png" alt="Michelin">
+        <img src="./imagenes/neumaticos/marcas/6.png" alt="Pirelli">
+        <img src="./imagenes/neumaticos/marcas/7.png" alt="Goodyear">
+        <img src="./imagenes/neumaticos/marcas/8.png" alt="Firestone">
+      
+        <img src="./imagenes/neumaticos/marcas/9.png" alt="Yokohama">
+        <img src="./imagenes/neumaticos/marcas/10.png" alt="Cooper">
+        <img src="./imagenes/neumaticos/marcas/11.png" alt="Roadstone">
+        <img src="./imagenes/neumaticos/marcas/12.png" alt="Hankook">
+        <img src="./imagenes/neumaticos/marcas/13.png" alt="Apollo">
+        
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="faq" id="faq">
+  <div class="container faq__grid">
+
+    <!-- Columna izquierda -->
+    <div class="faq__side">
+      <h2 class="faq__sideTitle">Información útil</h2>
+      <ul class="faq__list">
+        <li>Cotizaciones para línea liviana, transporte y minería</li>
+        <li>Asesoramiento según uso real</li>
+        <li>Stock inmediato en múltiples medidas</li>
+        <li>Envíos a todo el país o retiro en local</li>
+        <li>Opciones de financiación</li>
+      </ul>
+
+      <a class="btn btn-primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">
+        Cotizar por WhatsApp
+        <small>Respuesta rápida</small>
+      </a>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="faq__main">
+      <h2 class="faq__title">Preguntas frecuentes</h2>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Qué información necesito para cotizar?</summary>
+        <div class="faq__a">
+          Medida del neumático + tipo de vehículo + uso principal (ruta, ripio, obra o carga).
+          Si no sabés la medida, te guiamos paso a paso.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Envían a todo el país?</summary>
+        <div class="faq__a">
+          Sí. Hacemos envíos a todo el país y también podés retirar en nuestro local.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Tienen stock inmediato?</summary>
+        <div class="faq__a">
+          Sí, trabajamos con stock inmediato en múltiples medidas y líneas.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Qué medios de pago aceptan?</summary>
+        <div class="faq__a">
+          Aceptamos todos los medios de pago y contamos con la mejor financiación disponible.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Cómo eligen la mejor opción para mí?</summary>
+        <div class="faq__a">
+          Analizamos tu uso, superficie y carga. Buscamos siempre el mejor costo por kilómetro,
+          combinando duración y rendimiento real.
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">¿Cotizan para flotas o empresas?</summary>
+        <div class="faq__a">
+          Sí. Armamos propuestas especiales para flotas, transporte y empresas con múltiples unidades.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="leadform" id="contacto">
+  <div class="container leadform__grid">
+
+    <!-- Columna izquierda (WhatsApp) -->
+    <div class="leadform__copy">
+      <h2>Pedí tu cotización ahora</h2>
+
+      <p class="leadform__sub">
+        ¿Querés una respuesta rápida?
+      </p>
+
+      <ul class="leadform__bullets">
+        <li>✅ Cotizá por WhatsApp y te enviamos opciones según tu medida, uso y presupuesto.</li>
+      </ul>
+
+      <p class="leadform__note">
+        Sin compromiso. Te respondemos con 2–3 alternativas claras.
+      </p>
+
+      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+        Cotizar por WhatsApp
+        <small>Respuesta rápida + asesoramiento</small>
+      </a>
+    </div>
+
+    <!-- Columna derecha (Formulario) -->
+    <div class="leadform__card">
+      <form class="form" action="form.php" method="post" enctype="multipart/form-data">
+
+        <h3 class="form__title">Dejá tus datos y te contactamos</h3>
+
+        <label class="field">
+          <span>Nombre y apellido *</span>
+          <input type="text" name="nombre" autocomplete="name" required>
+        </label>
+
+        <label class="field">
+          <span>WhatsApp / Teléfono *</span>
+          <input type="tel" name="telefono" autocomplete="tel" required>
+        </label>
+
+        <div class="form__row form__row--2">
+          <label class="field">
+            <span>Ciudad / Provincia *</span>
+            <input type="text" name="ciudad_provincia" autocomplete="address-level2" required>
+          </label>
+
+          <label class="field">
+            <span>Tipo de vehículo *</span>
+            <select name="tipo_vehiculo" required>
+              <option value="" selected disabled>Seleccioná una opción</option>
+              <option>Auto</option>
+              <option>Camioneta</option>
+              <option>Utilitario</option>
+              <option>Camión</option>
+              <option>Maquinaria</option>
+              <option>Otro</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Medida del neumático</span>
+          <input type="text" name="medida" placeholder="Ej: 265/70 R16">
+        </label>
+
+        <label class="field">
+          <span>Uso principal *</span>
+          <select name="uso_principal" required>
+            <option value="" selected disabled>Seleccioná una opción</option>
+            <option>Ruta</option>
+            <option>Ripio</option>
+            <option>Barro</option>
+            <option>Obra</option>
+            <option>Carga</option>
+            <option>Mixto</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Mensaje (opcional)</span>
+          <textarea name="mensaje" rows="3" placeholder="Contanos un poco más (marca/modelo, prioridad, urgencia, etc.)"></textarea>
+        </label>
+
+        <button class="form__submit" type="submit">Enviar y recibir cotización</button>
+
+        <p class="form__micro">
+          Al enviar, aceptás ser contactado para recibir tu cotización.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Franja superior CTA -->
+    <div class="footer-cta">
+        <div class="container footer-cta__inner">
+            <p class="footer-cta__text">Cotizá perfiles, chapas y tubos para industria y construcción</p>
+
+            <div class="footer-cta__buttons">
+                <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                    Cotizar por WhatsApp
+                    <small>Respuesta rápida</small>
+                </a>
+
+                <a class="btn btn-secondary btn-solid" href="#contacto" style="color: #0f2742;">
+                    Enviar lista formulario <small>Respuesta rápida</small>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+
+
+
+        <!-- Banda principal -->
+        <div class="footer-main">
+            <div class="container footer-main__inner">
+
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="imagenes/FORTE-LOGO2-MAGENTO.png" alt="Forte Metal" class="footer-logo-img">
+                    </div>
+                </div>
+
+                <div class="footer-info">
+                    <div class="footer-item">
+
+
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-ico" aria-hidden="true">📍</span>
+                        <span>Ubicación: Parque Industrial – Comodoro Rivadavia, Chubut</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Legal mínimo -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom__inner">
+                <small>© <span id="year"></span> Forte Metal. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMobile').classList.toggle('open');
+        }
+    </script>
+
+</body>
+
+</html>

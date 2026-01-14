@@ -663,7 +663,7 @@ grid-template-columns: repeat(4, 1fr);
 /* ===== FAQ + LO MÁS PEDIDO ===== */
 .faq{
   padding: 56px 0;
-  background: #ffffff;
+  background: linear-gradient(135deg,#0f2742 0%, #244b6b 55%, #2a5a78 100%);
 }
 
 .faq__grid{
@@ -677,7 +677,7 @@ grid-template-columns: repeat(4, 1fr);
 .faq__title{
   font-size: 1.4rem;
   letter-spacing: -0.02em;
-  color: #0f172a;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
@@ -686,25 +686,25 @@ grid-template-columns: repeat(4, 1fr);
   padding-left: 18px;
   display: grid;
   gap: 8px;
-  color: rgba(15, 23, 42, .82);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.5;
 }
 
 /* Acordeón (sin JS) */
 .faq__item{
-  border-top: 1px solid rgba(15, 23, 42, .12);
+  border-top: 1px solid rgba(243, 243, 243, 0.12);
   padding: 10px 0;
 }
 
 .faq__item:last-child{
-  border-bottom: 1px solid rgba(15, 23, 42, .12);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.12);
 }
 
 .faq__q{
   list-style: none;
   cursor: pointer;
   font-weight: 700;
-  color: #0f172a;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -728,7 +728,7 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 .faq__a{
-  color: rgba(15, 23, 42, .78);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.6;
   padding: 0 0 10px 0;
 }
