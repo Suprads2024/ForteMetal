@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Forte | Neumaticos</title>
+    <title>Forte | Gases y Soldadura</title>
     <link rel="icon" type="image/png" sizes="32x32" href="imagenes/FORTE-LOGO2-MAGENTO.png">
 
     <meta name="description"
@@ -231,7 +231,7 @@
             /* “línea amarilla” */
         }
 
-        .hero-neumaticos__bg {
+        .hero-gases__bg {
             position: relative;
             min-height: 60vh;
             width: 100%;
@@ -243,10 +243,10 @@
             overflow: hidden;
         }
 
-        .hero-neumaticos__overlay {
+        .hero-gases__overlay {
             position: absolute;
             inset: 0;
-            background-image: url("./imagenes/neumaticos/Sin\ título-1.webp");
+            background-image: url("./imagenes/gases/gases\ header.jpg");
             /* tu imagen */
             background-size: cover;
             background-position: center;
@@ -254,7 +254,7 @@
             z-index: 1;
         }
 
-        .hero-neumaticos__container {
+        .hero-gases__container {
             position: relative;
             z-index: 2;
             width: min(1200px, 92%);
@@ -262,11 +262,11 @@
             padding: clamp(18px, 3vw, 42px) 0;
         }
 
-        .hero-neumaticos__content {
+        .hero-gases__content {
             max-width: 680px;
         }
 
-        .hero-neumaticos__title {
+        .hero-gases__title {
             font-family: 'Rajdhani-Medium';
             margin: 0 0 12px 0;
             color: var(--hero-text);
@@ -278,12 +278,12 @@
         }
 
 
-        .hero-neumaticos__title .soft {
+        .hero-gases__title .soft {
             font-family: 'Rajdhani-Bold';
 
         }
 
-        .hero-neumaticos__subtitle {
+        .hero-gases__subtitle {
             font-family: 'Rajdhani-Light';
             margin: 0 0 18px 0;
             color: var(--hero-muted);
@@ -292,7 +292,7 @@
             max-width: 62ch;
         }
 
-        .hero-neumaticos__cta {
+        .hero-gases__cta {
             font-family: 'Rajdhani-Bold';
             display: inline-flex;
             align-items: center;
@@ -308,7 +308,7 @@
             white-space: nowrap;
         }
 
-        .hero-neumaticos__separator {
+        .hero-gases__separator {
 
             max-width: 100%;
             height: 10px;
@@ -316,7 +316,7 @@
             background: var(--separator);
         }
 
-        .hero-neumaticos__benefits {
+        .hero-gases__benefits {
             min-height: 20vh;
             background: #ededed;
             display: flex;
@@ -324,7 +324,7 @@
             border-top: 8px solid var(--separator);
         }
 
-        .hero-neumaticos__benefits-container {
+        .hero-gases__benefits-container {
             width: min(1200px, 92%);
             margin: 0 auto;
             display: grid;
@@ -333,14 +333,14 @@
             align-items: center;
         }
 
-        .hero-neumaticos__benefits-intro {
+        .hero-gases__benefits-intro {
             margin: 0;
             font-size: 15px;
             color: #222;
             font-weight: 500;
         }
 
-        .hero-neumaticos__benefits-list {
+        .hero-gases__benefits-list {
             margin: 0;
             padding: 0;
             list-style: none;
@@ -351,13 +351,13 @@
             color: #222;
         }
 
-        .hero-neumaticos__benefits-list li {
+        .hero-gases__benefits-list li {
             position: relative;
             padding-left: 22px;
             line-height: 1.4;
         }
 
-        .hero-neumaticos__benefits-list li::before {
+        .hero-gases__benefits-list li::before {
             content: "✔";
             position: absolute;
             left: 0;
@@ -506,8 +506,10 @@
     <!-- ✅ CSS NO CRÍTICO (carga diferida / no bloqueante) -->
     <link rel="preload" href="style.css" as="style" />
     <link rel="preload" href="css/neumaticos.css" as="style" />
+    <link rel="preload" href="css/gases.css" as="style" />
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="css/neumaticos.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="css/gases.css" media="print" onload="this.media='all'" />
     <noscript>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/neumaticos.css">
@@ -573,27 +575,27 @@
 
 
     <main>
-        <section class="hero-neumaticos" aria-label="Sección principal neumáticos">
+        <section class="hero-gases" aria-label="Sección principal neumáticos">
             <!-- Reemplazá la URL por tu imagen real -->
-            <div class="hero-neumaticos__bg">
-                <div class="hero-neumaticos__overlay"></div>
+            <div class="hero-gases__bg">
+                <div class="hero-gases__overlay"></div>
 
-                <div class="hero-neumaticos__container">
-                    <div class="hero-neumaticos__content">
-                        <h1 class="hero-neumaticos__title">
-                            Encontrá el neumático exacto con
-                            <span class="soft">stock inmediato</span> y el
-                            <span class="soft">mejor costo</span> por kilómetro</strong>.
+                <div class="hero-gases__container">
+                    <div class="hero-gases__content">
+                        <h1 class="hero-gases__title">Cotizá <span class="soft">gases, electrodos y alambres</span> para
+                            soldadura <span class="soft">MIG/MAG y TIG</span>
+                            Equipos de Soldar y Motosoldadoras
+
                         </h1>
 
 
-                        <p class="hero-neumaticos__subtitle">
-                            Te asesoramos para elegir según vehículo, superficie, carga y tipo de uso. Comprá con envío
-                            a todo el país o
-                            retiro en local, con todos los medios de pago y la mejor financiación.
+                        <p class="hero-gases__subtitle">
+                            En FORTE te damos la solución completa para soldar mejor: gas correcto + consumible correcto
+                            + equipo adecuado para tu trabajo (taller u obra). Menos fallas, mejor terminación y más
+                            productividad.
                         </p>
 
-                        <a class="hero-neumaticos__cta"
+                        <a class="hero-gases__cta"
                             href="https://wa.me/5492974704742?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
                             target="_blank" rel="noopener">
                             <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
@@ -603,7 +605,7 @@
                 </div>
             </div>
 
-            <div class="hero-neumaticos__separator" aria-hidden="true"></div>
+            <div class="hero-gases__separator" aria-hidden="true"></div>
         </section>
 
 
@@ -613,221 +615,282 @@
 
 
     </main>
-    <section class="trust-strip" aria-label="Beneficios principales">
+ 
 
-        <div class="trust-strip__overlay" aria-hidden="true"></div>
 
-        <div class="trust-strip__container">
 
-            <!-- H2 + subtítulo -->
-            <header class="trust-strip__header">
-                <h2 class="trust-strip__h2">No es “un neumático”, es el neumático correcto para tu uso</h2>
-                <p class="trust-strip__sub">
-                    La diferencia no está solo en el precio: se trata de lograr mejor costo por kilómetro, evitar
-                    desgaste prematuro y elegir
-                    lo que realmente necesitas. En FORTE Neumáticos, te asesoramos de verdad.
-                </p>
-            </header>
+<section class="forte-quote-sol" id="cotizacion">
+  <div class="forte-quote-sol__container">
 
-            <!-- BLOQUE (desktop: una sola pieza / mobile: se parte en 3 cards apiladas) -->
-            <div class="trust-strip__panel">
+    <!-- FORM (izquierda) -->
+    <aside class="forte-form-card" aria-label="Formulario de cotización">
+      <div class="forte-form-card__head">
+        <h3 class="forte-form-card__title">Recibí cotización hoy</h3>
+      </div>
 
-                <!-- Header amarillo (alineado a columnas) -->
-                <div class="trust-strip__top" role="list">
-                    <div class="trust-strip__top-item" role="listitem">
-                        <span class="trust-strip__icon" aria-hidden="true">
-                            <!-- Truck (negro) -->
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
-                                <path d="M3 6h11v9H3V6Z" stroke="#111" stroke-width="2" />
-                                <path d="M14 9h4l3 3v3h-7V9Z" stroke="#111" stroke-width="2" />
-                                <path d="M6.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="#111" />
-                                <path d="M17.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="#111" />
-                            </svg>
-                        </span>
-                        <span class="trust-strip__top-title">Stock inmediato</span>
-                    </div>
+      <form class="forte-form" action="#" method="post">
+        <label class="forte-field">
+          <span class="forte-field__label">¿Qué necesitás?</span>
+          <select name="necesitas" required>
+            <option value="" selected disabled>Seleccioná una opción</option>
+            <option>Gases</option>
+            <option>Electrodos</option>
+            <option>Alambres</option>
+            <option>Equipo</option>
+          </select>
+        </label>
 
-                    <div class="trust-strip__divider" aria-hidden="true">›</div>
+        <label class="forte-field">
+          <span class="forte-field__label">Proceso</span>
+          <select name="proceso" required>
+            <option value="" selected disabled>Seleccioná un proceso</option>
+            <option>MIG/MAG</option>
+            <option>TIG</option>
+            <option>Electrodo (MMA)</option>
+            <option>Corte</option>
+            <option>No sé</option>
+          </select>
+        </label>
 
-                    <div class="trust-strip__top-item" role="listitem">
-                        <span class="trust-strip__icon" aria-hidden="true">
-                            <!-- Star (negro) -->
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
-                                <path d="M12 3l2.6 5.6 6.1.7-4.6 4 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4 6.1-.7L12 3Z"
-                                    fill="#111" />
-                            </svg>
-                        </span>
-                        <span class="trust-strip__top-title">Mejor costo por kilómetro</span>
-                    </div>
+        <label class="forte-field">
+          <span class="forte-field__label">¿Qué vas a soldar?</span>
+          <select name="material" required>
+            <option value="" selected disabled>Seleccioná material</option>
+            <option>Acero</option>
+            <option>Inoxidable</option>
+            <option>Aluminio</option>
+            <option>Otro</option>
+          </select>
+        </label>
 
-                    <div class="trust-strip__divider" aria-hidden="true">›</div>
+        <label class="forte-field">
+          <span class="forte-field__label">Zona / Ciudad</span>
+          <input type="text" name="zona" placeholder="Ej: Santa Fe, Rosario, Córdoba…" required>
+        </label>
 
-                    <div class="trust-strip__top-item" role="listitem">
-                        <span class="trust-strip__icon" aria-hidden="true">
-                            <!-- Card (negro) -->
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
-                                <path d="M3 7h18v10H3V7Z" stroke="#111" stroke-width="2" />
-                                <path d="M3 10h18" stroke="#111" stroke-width="2" />
-                                <path d="M6 14h6" stroke="#111" stroke-width="2" />
-                            </svg>
-                        </span>
-                        <span class="trust-strip__top-title">Financiación disponible</span>
-                    </div>
-                </div>
+        <label class="forte-field">
+          <span class="forte-field__label">WhatsApp</span>
+          <input type="tel" name="whatsapp" placeholder="Ej: +54 9 11 1234-5678" required>
+        </label>
 
-                <!-- Checklist (alineado a columnas) -->
-                <div class="trust-strip__checks">
-                    <ul class="trust-strip__col">
-                        <li>Envíos a todo el país</li>
-                        <li>Retiro en local</li>
-                    </ul>
+        <button class="forte-btn forte-btn--primary" type="submit">
+          Pedir cotización <span aria-hidden="true">›</span>
+        </button>
 
-                    <ul class="trust-strip__col">
-                        <li>Opciones pensadas para durar</li>
-                        <li>Mejor rendimiento por km</li>
-                    </ul>
+        <p class="forte-form__micro">
+          Si no sabés qué comprar, te recomendamos la opción correcta según material y uso.
+        </p>
+      </form>
+    </aside>
 
-                    <ul class="trust-strip__col">
-                        <li>Todos los medios de pago</li>
-                        <li>Atención personalizada</li>
-                    </ul>
-                </div>
-                <div class="trust-strip__mobile">
+    <!-- SOLUCIÓN (derecha) -->
+    <article class="forte-solution" aria-label="La solución FORTE">
+      <header class="forte-solution__head">
+        <h3 class="forte-solution__title">
+          La solución <strong>FORTE</strong> para soldaduras: gas + consumible + equipo
+        </h3>
+      </header>
 
-                    <div class="trust-strip__msection">
-                        <div class="trust-strip__mhead">
-                            🚚 Stock inmediato
-                        </div>
-                        <ul class="trust-strip__mlist">
-                            <li>Envíos a todo el país</li>
-                            <li>Retiro en local</li>
-                        </ul>
-                    </div>
-
-                    <div class="trust-strip__msection">
-                        <div class="trust-strip__mhead">
-                            ★ Mejor costo por kilómetro
-                        </div>
-                        <ul class="trust-strip__mlist">
-                            <li>Opciones pensadas para durar</li>
-                            <li>Mejor rendimiento por km</li>
-                        </ul>
-                    </div>
-
-                    <div class="trust-strip__msection">
-                        <div class="trust-strip__mhead">
-                            💳 Financiación disponible
-                        </div>
-                        <ul class="trust-strip__mlist">
-                            <li>Todos los medios de pago</li>
-                            <li>Atención personalizada</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-
+      <div class="forte-steps">
+        <!-- Paso 1 -->
+        <div class="forte-step">
+          <div class="forte-step__check" aria-hidden="true">✓</div>
+          <div class="forte-step__body">
+            <p class="forte-step__text">
+              <strong>Paso 1</strong> Elegimos el <strong>gas correcto</strong>
+            </p>
+          </div>
+          <div class="forte-step__media" aria-hidden="true"></div>
         </div>
-    </section>
 
-    <section class="lineas" aria-label="Elegí tu línea"
-        style="background-image:url('/imagenes/neumaticos/Escena\ urbana\ de\ transporte\ nocturna.png');">
-
-        <div class="lineas__overlay" aria-hidden="true"></div>
-
-        <div class="lineas__container">
-            <header class="lineas__header">
-                <h2 class="lineas__h2">Elegí tu línea y cotizá en 1 minuto</h2>
-                <p class="lineas__sub">
-                    Decinos medida + tipo de uso y te pasamos 2–3 opciones según tu prioridad:
-                    precio / duración / tracción / eficiencia.
-                </p>
-            </header>
-
-            <div class="lineas__grid">
-
-                <!-- Card 1 -->
-                <article class="lineas__card">
-                    <div class="lineas__cap lineas__cap--red">Línea Liviana</div>
-
-                    <div class="lineas__img-wrap">
-                        <img class="lineas__img" src="/imagenes/neumaticos/liviana.png" alt="Línea Liviana">
-                    </div>
-
-                    <div class="lineas__body">
-                        <p class="lineas__text">
-                            Para asfalto, ripio o barro. Opciones para mejorar agarre, estabilidad y durabilidad según
-                            tu manejo y camino.
-                        </p>
-
-                        <ul class="lineas__list">
-                            <li>Opciones mixtas (ruta + ripio) con tracción confiable.</li>
-                            <li>Estructuras preparadas para terrenos exigentes.</li>
-                            <li>Mayor duración para bajar el costo por kilómetro.</li>
-                        </ul>
-                    </div>
-
-                    <a class="lineas__btn lineas__btn--red"
-                        href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20me%20recomiendan%3F">Cotizar
-                        esta línea</a>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="lineas__card">
-                    <div class="lineas__cap lineas__cap--red">Línea Transporte</div>
-
-                    <div class="lineas__img-wrap">
-                        <img class="lineas__img" src="/imagenes/neumaticos/transporte.png" alt="Línea Transporte">
-                    </div>
-
-                    <div class="lineas__body">
-                        <p class="lineas__text">
-                            Pensada para carga pesada y alta exigencia: buscá rendimiento real, seguridad y eficiencia
-                            para optimizar el costo por kilómetro.
-                        </p>
-
-                        <ul class="lineas__list">
-                            <li>Eficiencia y menor desgaste para rutas largas.</li>
-                            <li>Ciclo de vida extendido en condiciones duras.</li>
-                            <li>Estabilidad y frenado confiable.</li>
-                        </ul>
-                    </div>
-
-                    <a class="lineas__btn lineas__btn--green"
-                        href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20me%20recomiendan%3F">Cotizar
-                        esta línea</a>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="lineas__card">
-                    <div class="lineas__cap lineas__cap--red">Minería &amp; Construcción</div>
-
-                    <div class="lineas__img-wrap">
-                        <img class="lineas__img" src="/imagenes/neumaticos/mineria.png" alt="Minería y Construcción">
-                    </div>
-
-                    <div class="lineas__body">
-                        <p class="lineas__text">
-                            Cuando el terreno es hostil, necesitás neumáticos preparados para impactos, cortes y carga
-                            máxima sin perder tracción.
-                        </p>
-
-                        <ul class="lineas__list">
-                            <li>Mayor resistencia a cortes, impactos y perforaciones.</li>
-                            <li>Refuerzos para máxima carga y exigencia.</li>
-                            <li>Tracción superior con diseño profundo y robusto.</li>
-                        </ul>
-                    </div>
-
-                    <a class="lineas__btn lineas__btn--red"
-                        href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20me%20recomiendan%3F">Cotizar
-                        esta línea</a>
-                </article>
-
-            </div>
+        <!-- Paso 2 -->
+        <div class="forte-step">
+          <div class="forte-step__check" aria-hidden="true">✓</div>
+          <div class="forte-step__body">
+            <p class="forte-step__text">
+              <strong>Paso 2</strong> Te armamos el <strong>consumible</strong>
+            </p>
+          </div>
+          <div class="forte-step__media" aria-hidden="true"></div>
         </div>
-    </section>
+
+        <!-- Paso 3 -->
+        <div class="forte-step">
+          <div class="forte-step__check" aria-hidden="true">✓</div>
+          <div class="forte-step__body">
+            <p class="forte-step__text">
+              <strong>Paso 3</strong> Te recomendamos el <strong>equipo</strong>
+            </p>
+          </div>
+          <div class="forte-step__media" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="forte-solution__cta">
+        <a class="forte-btn forte-btn--accent" href="#formulario-cotizacion">
+          Quiero que me asesoren <span aria-hidden="true">›</span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+
+<section class="forte-gases" id="gases">
+  <div class="forte-gases__overlay"></div>
+
+  <div class="forte-gases__container">
+    <header class="forte-gases__head">
+      <p class="forte-gases__kicker">GASES PARA SOLDADURA Y CORTE</p>
+
+      <h2 class="forte-gases__title">
+        Gases para soldadura: <strong>MIG/MAG</strong>, <strong>TIG</strong>, inoxidable y <strong>corte</strong>
+      </h2>
+
+      <p class="forte-gases__lead">
+        El gas correcto mejora la estabilidad del arco y la terminación. Te ayudamos a elegir según tu aplicación:
+      </p>
+    </header>
+
+    <div class="forte-gases__cards">
+      <article class="forte-gas-card">
+        <div class="forte-gas-card__icon" aria-hidden="true">✓</div>
+        <div class="forte-gas-card__text">
+          <div class="forte-gas-card__title">MIG/MAG</div>
+          <div class="forte-gas-card__desc">producción, estructura, herrería, taller</div>
+        </div>
+      </article>
+
+      <article class="forte-gas-card">
+        <div class="forte-gas-card__icon" aria-hidden="true">✓</div>
+        <div class="forte-gas-card__text">
+          <div class="forte-gas-card__title">TIG / inoxidable</div>
+          <div class="forte-gas-card__desc">trabajos exigentes y prolijos</div>
+        </div>
+      </article>
+
+      <article class="forte-gas-card">
+        <div class="forte-gas-card__icon" aria-hidden="true">✓</div>
+        <div class="forte-gas-card__text">
+          <div class="forte-gas-card__title">Corte</div>
+          <div class="forte-gas-card__desc">según necesidad y disponibilidad</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="forte-gases__cta">
+      <a class="forte-gases__btn" href="#formulario-cotizacion">
+        Cotizar gas para soldadura <span aria-hidden="true">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="forte-consumibles" id="consumibles">
+  <div class="forte-consumibles__container">
+
+    <header class="forte-consumibles__head">
+      <h2 class="forte-consumibles__title">
+        Consumibles para soldadura <span>(alambres y electrodos)</span>
+      </h2>
+      <p class="forte-consumibles__lead">
+        Te armamos la opción correcta según material, proceso y uso (taller u obra).
+      </p>
+    </header>
+
+    <div class="forte-consumibles__grid">
+      <!-- Card 1 -->
+      <article class="forte-cons-card">
+        <div class="forte-cons-card__media"
+             style="background-image:url('assets/images/consumibles-alambres.jpg');"></div>
+
+        <div class="forte-cons-card__body">
+          <div class="forte-cons-card__tag">Alambres</div>
+          <h3 class="forte-cons-card__title">Alambres para MIG/MAG</h3>
+          <p class="forte-cons-card__desc">
+            Sólidos, tubulares y arco sumergido para producción, estructura y herrería.
+          </p>
+
+          <ul class="forte-cons-card__list">
+            <li>Sólidos</li>
+            <li>Tubulares</li>
+            <li>Arco sumergido</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="forte-cons-card">
+        <div class="forte-cons-card__media"
+             style="background-image:url('assets/images/consumibles-electrodos.jpg');"></div>
+
+        <div class="forte-cons-card__body">
+          <div class="forte-cons-card__tag">Electrodos</div>
+          <h3 class="forte-cons-card__title">Electrodos revestidos (MMA)</h3>
+          <p class="forte-cons-card__desc">
+            Para trabajos en obra y taller, con buena penetración y terminación.
+          </p>
+
+          <ul class="forte-cons-card__list">
+            <li>Revestidos</li>
+            <li>Uso general y específico</li>
+            <li>Distintos diámetros</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="forte-cons-card">
+        <div class="forte-cons-card__media"
+             style="background-image:url('assets/images/consumibles-otros.jpg');"></div>
+
+        <div class="forte-cons-card__body">
+          <div class="forte-cons-card__tag">Otros</div>
+          <h3 class="forte-cons-card__title">Otros consumibles</h3>
+          <p class="forte-cons-card__desc">
+            Complementos para mantener estabilidad del proceso y mejorar resultados.
+          </p>
+
+          <ul class="forte-cons-card__list">
+            <li>Boquillas / puntas</li>
+            <li>Repuestos</li>
+            <li>Accesorios</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <!-- Materiales habituales -->
+    <div class="forte-materiales">
+      <div class="forte-materiales__label">Materiales habituales</div>
+      <div class="forte-materiales__chips">
+        <span class="forte-chip">Acero inoxidable</span>
+        <span class="forte-chip">Acero al carbono</span>
+        <span class="forte-chip">Aluminio</span>
+        <span class="forte-chip">Cobre</span>
+        <span class="forte-chip">Níquel</span>
+        <span class="forte-chip">Baja aleación</span>
+        <span class="forte-chip">Revestimientos duros</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="forte-consumibles__cta">
+      <a class="forte-consumibles__btn" href="#formulario-cotizacion">
+        Cotizar consumibles <span aria-hidden="true">›</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 
     <section class="pasos" aria-label="Cómo comprás" style="background-image:url('assets/images/pasos-bg.jpg');">
 
