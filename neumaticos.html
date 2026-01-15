@@ -171,7 +171,7 @@
         }
 
         .btn-secondary {
-            border: 1px solid #ffffff55;
+            border: 1px solid #30303055;
             color: #fff
         }
 
@@ -267,6 +267,7 @@
         }
 
         .hero-neumaticos__title {
+            font-family: 'Rajdhani-Medium';
             margin: 0 0 12px 0;
             color: var(--hero-text);
             font-weight: 800;
@@ -276,7 +277,14 @@
             letter-spacing: -0.02em;
         }
 
+
+        .hero-neumaticos__title .soft {
+            font-family: 'Rajdhani-Bold';
+
+        }
+
         .hero-neumaticos__subtitle {
+            font-family: 'Rajdhani-Light';
             margin: 0 0 18px 0;
             color: var(--hero-muted);
             line-height: 1.45;
@@ -285,6 +293,7 @@
         }
 
         .hero-neumaticos__cta {
+            font-family: 'Rajdhani-Bold';
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -294,7 +303,7 @@
             border-radius: 12px;
             padding: 14px 18px;
             background: var(--cta-bg);
-            color: var(--cta-text);
+            color: white;
             box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
             white-space: nowrap;
         }
@@ -370,12 +379,13 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-.trust-strip__overlay{
-  position: absolute;
-  inset: 0;
-  background:white;
-  z-index: 0;
-}
+
+        .trust-strip__overlay {
+            position: absolute;
+            inset: 0;
+            background: white;
+            z-index: 0;
+        }
 
 
 
@@ -400,6 +410,7 @@
             letter-spacing: -0.02em;
             font-size: clamp(22px, 2.6vw, 34px);
             line-height: 1.15;
+            font-family: 'Rajdhani-Bold';
         }
 
         .trust-strip__sub {
@@ -407,6 +418,7 @@
             color: rgba(7, 7, 7, 0.86);
             font-size: 14px;
             line-height: 1.45;
+            font-family: 'Rajdhani-SemiBold';
         }
 
         /* Panel único */
@@ -418,7 +430,7 @@
 
         /* Top amarillo alineado a 3 columnas */
         .trust-strip__top {
-            background:#073763;
+            background: #073763;
             display: grid;
             grid-template-columns: 1fr auto 1fr auto 1fr;
             align-items: center;
@@ -441,7 +453,7 @@
 
         .trust-strip__top-title {
             font-size: 16px;
-            font-weight: 900;
+            font-family: 'Rajdhani-Bold';
             color: #ffffff;
             letter-spacing: -0.01em;
             line-height: 1;
@@ -451,7 +463,7 @@
 
         .trust-strip__divider {
             font-size: 22px;
-            font-weight: 900;
+            font-family: 'Rajdhani-Bold';
             color: rgba(255, 255, 255, 0.55);
             transform: translateY(-1px);
         }
@@ -475,6 +487,7 @@
         }
 
         .trust-strip__col li {
+            font-family: 'Rajdhani-Medium';
             position: relative;
             padding-left: 20px;
             margin: 6px 0;
@@ -505,12 +518,11 @@
 <body>
 
     <div class="floating-buttons">
-        <a href="https://wa.me/5492975355555?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20con%20stock%20inmediato%20me%20recomiendan%3F"
-   class="floating-button whatsapp"
-   target="_blank"
-   title="WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+        <a href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20con%20stock%20inmediato%20me%20recomiendan%3F"
+            class="floating-button whatsapp" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
 
 
     </div>
@@ -536,7 +548,7 @@
 
             <div class="header-actions">
 
-                <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
                     Cotizar por WhatsApp
                     <small>Respuesta rápida + asesoramiento</small>
                 </a>
@@ -569,8 +581,11 @@
                 <div class="hero-neumaticos__container">
                     <div class="hero-neumaticos__content">
                         <h1 class="hero-neumaticos__title">
-                            Encontrá el neumático exacto con stock inmediato y el mejor costo por kilómetro.
+                            Encontrá el neumático exacto con
+                            <span class="soft">stock inmediato</span> y el
+                            <span class="soft">mejor costo</span> por kilómetro</strong>.
                         </h1>
+
 
                         <p class="hero-neumaticos__subtitle">
                             Te asesoramos para elegir según vehículo, superficie, carga y tipo de uso. Comprá con envío
@@ -579,10 +594,11 @@
                         </p>
 
                         <a class="hero-neumaticos__cta"
-                            href="https://wa.me/549XXXXXXXXXX?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
+                            href="https://wa.me/5492974704742?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
                             target="_blank" rel="noopener">
-                            ✅ Cotizar por WhatsApp
+                            <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -591,7 +607,7 @@
         </section>
 
 
-       
+
 
 
 
@@ -715,7 +731,8 @@
         </div>
     </section>
 
-    <section class="lineas" aria-label="Elegí tu línea" style="background-image:url('/imagenes/neumaticos/Escena\ urbana\ de\ transporte\ nocturna.png');">
+    <section class="lineas" aria-label="Elegí tu línea"
+        style="background-image:url('/imagenes/neumaticos/Escena\ urbana\ de\ transporte\ nocturna.png');">
 
         <div class="lineas__overlay" aria-hidden="true"></div>
 
@@ -751,7 +768,9 @@
                         </ul>
                     </div>
 
-                    <a class="lineas__btn lineas__btn--red" href="#cotizar-liviana">Cotizar esta línea</a>
+                    <a class="lineas__btn lineas__btn--red"
+                        href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20me%20recomiendan%3F">Cotizar
+                        esta línea</a>
                 </article>
 
                 <!-- Card 2 -->
@@ -775,7 +794,9 @@
                         </ul>
                     </div>
 
-                    <a class="lineas__btn lineas__btn--green" href="#cotizar-transporte">Cotizar esta línea</a>
+                    <a class="lineas__btn lineas__btn--green"
+                        href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20me%20recomiendan%3F">Cotizar
+                        esta línea</a>
                 </article>
 
                 <!-- Card 3 -->
@@ -799,284 +820,288 @@
                         </ul>
                     </div>
 
-                    <a class="lineas__btn lineas__btn--red" href="#cotizar-mineria">Cotizar esta línea</a>
+                    <a class="lineas__btn lineas__btn--red"
+                        href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20me%20recomiendan%3F">Cotizar
+                        esta línea</a>
                 </article>
 
             </div>
         </div>
     </section>
 
-<section class="pasos" aria-label="Cómo comprás"
-  style="background-image:url('assets/images/pasos-bg.jpg');">
+    <section class="pasos" aria-label="Cómo comprás" style="background-image:url('assets/images/pasos-bg.jpg');">
 
-  <div class="pasos__overlay" aria-hidden="true"></div>
+        <div class="pasos__overlay" aria-hidden="true"></div>
 
-  <div class="pasos__container">
-    <header class="pasos__header">
-      <h2 class="pasos__h2">Cotizar es simple: <span class="pasos__accent">4 pasos</span> y listo</h2>
-      <p class="pasos__sub">
-        Nos pasás tu medida (ej: <strong>265/70 R16</strong>) y el uso (ruta / ripio / obra / carga).
-      </p>
-    </header>
+        <div class="pasos__container">
+            <header class="pasos__header">
+                <h2 class="pasos__h2">Cotizar es simple: <span class="pasos__accent">4 pasos</span> y listo</h2>
+                <p class="pasos__sub">
+                    Nos pasás tu medida (ej: <strong>265/70 R16</strong>) y el uso (ruta / ripio / obra / carga).
+                </p>
+            </header>
 
-    <div class="pasos__panel" role="list" aria-label="Pasos para cotizar">
-      <div class="pasos__step" role="listitem">
-        <div class="pasos__num">1</div>
-        <div class="pasos__txt">
-          <h3 class="pasos__h3">Medida y uso</h3>
-          <p>Nos pasás tu medida y el tipo de uso.</p>
+            <div class="pasos__panel" role="list" aria-label="Pasos para cotizar">
+                <div class="pasos__step" role="listitem">
+                    <div class="pasos__num">1</div>
+                    <div class="pasos__txt">
+                        <h3 class="pasos__h3">Medida y uso</h3>
+                        <p>Nos pasás tu medida y el tipo de uso.</p>
+                    </div>
+                </div>
+
+                <div class="pasos__arrow" aria-hidden="true">›</div>
+
+                <div class="pasos__step" role="listitem">
+                    <div class="pasos__num">2</div>
+                    <div class="pasos__txt">
+                        <h3 class="pasos__h3">Te recomendamos</h3>
+                        <p>2–3 opciones según tu objetivo.</p>
+                    </div>
+                </div>
+
+                <div class="pasos__arrow" aria-hidden="true">›</div>
+
+                <div class="pasos__step" role="listitem">
+                    <div class="pasos__num">3</div>
+                    <div class="pasos__txt">
+                        <h3 class="pasos__h3">Pago + entrega</h3>
+                        <p>Elegís y coordinamos envío o retiro.</p>
+                    </div>
+                </div>
+
+                <div class="pasos__arrow" aria-hidden="true">›</div>
+
+                <div class="pasos__step" role="listitem">
+                    <div class="pasos__num">4</div>
+                    <div class="pasos__txt">
+                        <h3 class="pasos__h3">Contacto futuro</h3>
+                        <p>Quedás agendado para reposiciones o flota.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pasos__cta-wrap">
+                <a class="pasos__cta" href="https://wa.me/5492974704742?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
+                    target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+                </a>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="pasos__arrow" aria-hidden="true">›</div>
 
-      <div class="pasos__step" role="listitem">
-        <div class="pasos__num">2</div>
-        <div class="pasos__txt">
-          <h3 class="pasos__h3">Te recomendamos</h3>
-          <p>2–3 opciones según tu objetivo.</p>
+
+
+    <section class="brands">
+        <div class="brands__container">
+
+            <header class="brands__header">
+                <h2 class="brands__h2">Marcas líderes + alternativas de alto rendimiento</h2>
+                <p class="brands__sub">
+                    Trabajamos con un portfolio multimarca para cubrir liviana, transporte y minería/construcción,
+                    con opciones para distintas necesidades y presupuestos.
+                </p>
+            </header>
+
+            <div class="brands__box">
+                <div class="brands__grid">
+
+                    <img src="./imagenes/neumaticos/marcas/4.png" alt="Bridgestone">
+                    <img src="./imagenes/neumaticos/marcas/5.png" alt="Michelin">
+                    <img src="./imagenes/neumaticos/marcas/6.png" alt="Pirelli">
+                    <img src="./imagenes/neumaticos/marcas/7.png" alt="Goodyear">
+                    <img src="./imagenes/neumaticos/marcas/8.png" alt="Firestone">
+
+                    <img src="./imagenes/neumaticos/marcas/9.png" alt="Yokohama">
+                    <img src="./imagenes/neumaticos/marcas/10.png" alt="Cooper">
+                    <img src="./imagenes/neumaticos/marcas/11.png" alt="Roadstone">
+                    <img src="./imagenes/neumaticos/marcas/12.png" alt="Hankook">
+                    <img src="./imagenes/neumaticos/marcas/13.png" alt="Apollo">
+
+
+                </div>
+            </div>
+
         </div>
-      </div>
+    </section>
 
-      <div class="pasos__arrow" aria-hidden="true">›</div>
 
-      <div class="pasos__step" role="listitem">
-        <div class="pasos__num">3</div>
-        <div class="pasos__txt">
-          <h3 class="pasos__h3">Pago + entrega</h3>
-          <p>Elegís y coordinamos envío o retiro.</p>
+
+
+
+
+
+
+
+    <section class="faq" id="faq">
+        <div class="container faq__grid">
+
+            <!-- Columna izquierda -->
+            <div class="faq__side">
+                <h2 class="faq__sideTitle">Información útil</h2>
+                <ul class="faq__list">
+                    <li>Cotizaciones para línea liviana, transporte y minería</li>
+                    <li>Asesoramiento según uso real</li>
+                    <li>Stock inmediato en múltiples medidas</li>
+                    <li>Envíos a todo el país o retiro en local</li>
+                    <li>Opciones de financiación</li>
+                </ul>
+
+                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
+                    Cotizar por WhatsApp
+                    <small>Respuesta rápida</small>
+                </a>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="faq__main">
+                <h2 class="faq__title">Preguntas frecuentes</h2>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Qué información necesito para cotizar?</summary>
+                    <div class="faq__a">
+                        Medida del neumático + tipo de vehículo + uso principal (ruta, ripio, obra o carga).
+                        Si no sabés la medida, te guiamos paso a paso.
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Envían a todo el país?</summary>
+                    <div class="faq__a">
+                        Sí. Hacemos envíos a todo el país y también podés retirar en nuestro local.
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Tienen stock inmediato?</summary>
+                    <div class="faq__a">
+                        Sí, trabajamos con stock inmediato en múltiples medidas y líneas.
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Qué medios de pago aceptan?</summary>
+                    <div class="faq__a">
+                        Aceptamos todos los medios de pago y contamos con la mejor financiación disponible.
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Cómo eligen la mejor opción para mí?</summary>
+                    <div class="faq__a">
+                        Analizamos tu uso, superficie y carga. Buscamos siempre el mejor costo por kilómetro,
+                        combinando duración y rendimiento real.
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Cotizan para flotas o empresas?</summary>
+                    <div class="faq__a">
+                        Sí. Armamos propuestas especiales para flotas, transporte y empresas con múltiples unidades.
+                    </div>
+                </details>
+
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="pasos__arrow" aria-hidden="true">›</div>
+    <section class="leadform" id="contacto">
+        <div class="container leadform__grid">
 
-      <div class="pasos__step" role="listitem">
-        <div class="pasos__num">4</div>
-        <div class="pasos__txt">
-          <h3 class="pasos__h3">Contacto futuro</h3>
-          <p>Quedás agendado para reposiciones o flota.</p>
+            <!-- Columna izquierda (WhatsApp) -->
+            <div class="leadform__copy">
+                <h2>Pedí tu cotización ahora</h2>
+
+                <p class="leadform__sub">
+                    ¿Querés una respuesta rápida?
+                </p>
+
+                <ul class="leadform__bullets">
+                    <li>✅ Cotizá por WhatsApp y te enviamos opciones según tu medida, uso y presupuesto.</li>
+                </ul>
+
+                <p class="leadform__note">
+                    Sin compromiso. Te respondemos con 2–3 alternativas claras.
+                </p>
+
+                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
+                    Cotizar por WhatsApp
+                    <small>Respuesta rápida + asesoramiento</small>
+                </a>
+            </div>
+
+            <!-- Columna derecha (Formulario) -->
+            <div class="leadform__card">
+                <form class="form" action="neumaticos.php" method="post" enctype="multipart/form-data">
+
+                    <h3 class="form__title">Dejá tus datos y te contactamos</h3>
+
+                    <label class="field">
+                        <span>Nombre y apellido *</span>
+                        <input type="text" name="nombre" autocomplete="name" required>
+                    </label>
+
+                    <label class="field">
+                        <span>WhatsApp / Teléfono *</span>
+                        <input type="tel" name="telefono" autocomplete="tel" required>
+                    </label>
+
+                    <div class="form__row form__row--2">
+                        <label class="field">
+                            <span>Ciudad / Provincia *</span>
+                            <input type="text" name="ciudad_provincia" autocomplete="address-level2" required>
+                        </label>
+
+                        <label class="field">
+                            <span>Tipo de vehículo *</span>
+                            <select name="tipo_vehiculo" required>
+                                <option value="" selected disabled>Seleccioná una opción</option>
+                                <option>Auto</option>
+                                <option>Camioneta</option>
+                                <option>Utilitario</option>
+                                <option>Camión</option>
+                                <option>Maquinaria</option>
+                                <option>Otro</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label class="field">
+                        <span>Medida del neumático</span>
+                        <input type="text" name="medida" placeholder="Ej: 265/70 R16">
+                    </label>
+
+                    <label class="field">
+                        <span>Uso principal *</span>
+                        <select name="uso_principal" required>
+                            <option value="" selected disabled>Seleccioná una opción</option>
+                            <option>Ruta</option>
+                            <option>Ripio</option>
+                            <option>Barro</option>
+                            <option>Obra</option>
+                            <option>Carga</option>
+                            <option>Mixto</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span>Mensaje (opcional)</span>
+                        <textarea name="mensaje" rows="3"
+                            placeholder="Contanos un poco más (marca/modelo, prioridad, urgencia, etc.)"></textarea>
+                    </label>
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <button class="form__submit" type="submit">Enviar y recibir cotización</button>
+
+                    <p class="form__micro">
+                        Al enviar, aceptás ser contactado para recibir tu cotización.
+                    </p>
+                </form>
+            </div>
+
         </div>
-      </div>
-    </div>
-
-    <div class="pasos__cta-wrap">
-      <a class="pasos__cta" href="https://wa.me/549XXXXXXXXXX?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos" target="_blank" rel="noopener">
-        ✅ Cotizar por WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="brands">
-  <div class="brands__container">
-
-    <header class="brands__header">
-      <h2 class="brands__h2">Marcas líderes + alternativas de alto rendimiento</h2>
-      <p class="brands__sub">
-        Trabajamos con un portfolio multimarca para cubrir liviana, transporte y minería/construcción,
-        con opciones para distintas necesidades y presupuestos.
-      </p>
-    </header>
-
-    <div class="brands__box">
-      <div class="brands__grid">
-
-        <img src="./imagenes/neumaticos/marcas/4.png" alt="Bridgestone">
-        <img src="./imagenes/neumaticos/marcas/5.png" alt="Michelin">
-        <img src="./imagenes/neumaticos/marcas/6.png" alt="Pirelli">
-        <img src="./imagenes/neumaticos/marcas/7.png" alt="Goodyear">
-        <img src="./imagenes/neumaticos/marcas/8.png" alt="Firestone">
-      
-        <img src="./imagenes/neumaticos/marcas/9.png" alt="Yokohama">
-        <img src="./imagenes/neumaticos/marcas/10.png" alt="Cooper">
-        <img src="./imagenes/neumaticos/marcas/11.png" alt="Roadstone">
-        <img src="./imagenes/neumaticos/marcas/12.png" alt="Hankook">
-        <img src="./imagenes/neumaticos/marcas/13.png" alt="Apollo">
-        
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-<section class="faq" id="faq">
-  <div class="container faq__grid">
-
-    <!-- Columna izquierda -->
-    <div class="faq__side">
-      <h2 class="faq__sideTitle">Información útil</h2>
-      <ul class="faq__list">
-        <li>Cotizaciones para línea liviana, transporte y minería</li>
-        <li>Asesoramiento según uso real</li>
-        <li>Stock inmediato en múltiples medidas</li>
-        <li>Envíos a todo el país o retiro en local</li>
-        <li>Opciones de financiación</li>
-      </ul>
-
-      <a class="btn btn-primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">
-        Cotizar por WhatsApp
-        <small>Respuesta rápida</small>
-      </a>
-    </div>
-
-    <!-- Columna derecha -->
-    <div class="faq__main">
-      <h2 class="faq__title">Preguntas frecuentes</h2>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Qué información necesito para cotizar?</summary>
-        <div class="faq__a">
-          Medida del neumático + tipo de vehículo + uso principal (ruta, ripio, obra o carga).
-          Si no sabés la medida, te guiamos paso a paso.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Envían a todo el país?</summary>
-        <div class="faq__a">
-          Sí. Hacemos envíos a todo el país y también podés retirar en nuestro local.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Tienen stock inmediato?</summary>
-        <div class="faq__a">
-          Sí, trabajamos con stock inmediato en múltiples medidas y líneas.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Qué medios de pago aceptan?</summary>
-        <div class="faq__a">
-          Aceptamos todos los medios de pago y contamos con la mejor financiación disponible.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Cómo eligen la mejor opción para mí?</summary>
-        <div class="faq__a">
-          Analizamos tu uso, superficie y carga. Buscamos siempre el mejor costo por kilómetro,
-          combinando duración y rendimiento real.
-        </div>
-      </details>
-
-      <details class="faq__item">
-        <summary class="faq__q">¿Cotizan para flotas o empresas?</summary>
-        <div class="faq__a">
-          Sí. Armamos propuestas especiales para flotas, transporte y empresas con múltiples unidades.
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<section class="leadform" id="contacto">
-  <div class="container leadform__grid">
-
-    <!-- Columna izquierda (WhatsApp) -->
-    <div class="leadform__copy">
-      <h2>Pedí tu cotización ahora</h2>
-
-      <p class="leadform__sub">
-        ¿Querés una respuesta rápida?
-      </p>
-
-      <ul class="leadform__bullets">
-        <li>✅ Cotizá por WhatsApp y te enviamos opciones según tu medida, uso y presupuesto.</li>
-      </ul>
-
-      <p class="leadform__note">
-        Sin compromiso. Te respondemos con 2–3 alternativas claras.
-      </p>
-
-      <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
-        Cotizar por WhatsApp
-        <small>Respuesta rápida + asesoramiento</small>
-      </a>
-    </div>
-
-    <!-- Columna derecha (Formulario) -->
-    <div class="leadform__card">
-      <form class="form" action="form.php" method="post" enctype="multipart/form-data">
-
-        <h3 class="form__title">Dejá tus datos y te contactamos</h3>
-
-        <label class="field">
-          <span>Nombre y apellido *</span>
-          <input type="text" name="nombre" autocomplete="name" required>
-        </label>
-
-        <label class="field">
-          <span>WhatsApp / Teléfono *</span>
-          <input type="tel" name="telefono" autocomplete="tel" required>
-        </label>
-
-        <div class="form__row form__row--2">
-          <label class="field">
-            <span>Ciudad / Provincia *</span>
-            <input type="text" name="ciudad_provincia" autocomplete="address-level2" required>
-          </label>
-
-          <label class="field">
-            <span>Tipo de vehículo *</span>
-            <select name="tipo_vehiculo" required>
-              <option value="" selected disabled>Seleccioná una opción</option>
-              <option>Auto</option>
-              <option>Camioneta</option>
-              <option>Utilitario</option>
-              <option>Camión</option>
-              <option>Maquinaria</option>
-              <option>Otro</option>
-            </select>
-          </label>
-        </div>
-
-        <label class="field">
-          <span>Medida del neumático</span>
-          <input type="text" name="medida" placeholder="Ej: 265/70 R16">
-        </label>
-
-        <label class="field">
-          <span>Uso principal *</span>
-          <select name="uso_principal" required>
-            <option value="" selected disabled>Seleccioná una opción</option>
-            <option>Ruta</option>
-            <option>Ripio</option>
-            <option>Barro</option>
-            <option>Obra</option>
-            <option>Carga</option>
-            <option>Mixto</option>
-          </select>
-        </label>
-
-        <label class="field">
-          <span>Mensaje (opcional)</span>
-          <textarea name="mensaje" rows="3" placeholder="Contanos un poco más (marca/modelo, prioridad, urgencia, etc.)"></textarea>
-        </label>
-
-        <button class="form__submit" type="submit">Enviar y recibir cotización</button>
-
-        <p class="form__micro">
-          Al enviar, aceptás ser contactado para recibir tu cotización.
-        </p>
-      </form>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- Franja superior CTA -->
     <div class="footer-cta">
@@ -1084,7 +1109,7 @@
             <p class="footer-cta__text">Cotizá perfiles, chapas y tubos para industria y construcción</p>
 
             <div class="footer-cta__buttons">
-                <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
                     Cotizar por WhatsApp
                     <small>Respuesta rápida</small>
                 </a>

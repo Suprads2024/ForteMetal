@@ -355,21 +355,21 @@
     <div class="hero__content">
 
     <h1>
-  Cotizá <strong>perfiles</strong>, <strong>chapas</strong> y <strong>tubos</strong><br>
+  Cotizá <strong>hierros, perfiles</strong>, <strong>chapas</strong> y <strong>tubos</strong>
   con <strong>entrega confiable</strong>.</strong>
 </h1>
 
 
 
       <p class="hero__sub">
-        Logística propia, cumplimiento de entregas y precios competitivos.<br>
+       Logística propia, cumplimiento de entregas y precios competitivos.<br>
       
       </p>
 
       <ul class="hero__list">
-        <li>Catálogo completo: perfiles, chapas, tubos, mallas y metal desplegado.</li>
+        <li>Catálogo completo: hierros, perfiles, chapas, tubos, mallas y metal desplegado.</li>
         <li>Si una medida no está, te proponemos una alternativa equivalente para no frenar la obra.</li>
-        <li>Presupuesto ordenado con medidas, espesores y cantidades.</li>
+        <li>Presupuesto ordenado con medidas, espesores y cantidades. Cortes a medida</li>
       </ul>
 
       <div class="hero__cta">
@@ -395,7 +395,7 @@
         <img class="cat-card__img"
              src="./imagenes/perfiles.jpg"
              alt="Perfiles estructurales de acero">
-        <h3>Perfiles estructurales</h3>
+        <h3>Perfileria</h3>
         <p>Ángulos, UPN/IPN/W, perfiles C/U, planchuelas y más.</p>
         <a class="cat-card__cta" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
           Cotizar perfiles
@@ -685,73 +685,86 @@
 
     <!-- Form derecha -->
     <div class="leadform__card">
-      <form class="form" action="form.php" method="post" enctype="multipart/form-data">
+ <form class="form" action="form.php" method="post" enctype="multipart/form-data">
 
+  <div class="form__row form__row--2">
+    <label class="field">
+      <span>Nombre y apellido *</span>
+      <input type="text" name="nombre" autocomplete="name" required>
+    </label>
 
-        <div class="form__row form__row--2">
-          <label class="field">
-            <span>Nombre y apellido *</span>
-            <input type="text" name="nombre" autocomplete="name" required>
-          </label>
+    <label class="field">
+      <span>Empresa (opcional)</span>
+      <input type="text" name="empresa" autocomplete="organization">
+    </label>
+  </div>
 
-          <label class="field">
-            <span>Empresa (opcional)</span>
-            <input type="text" name="empresa" autocomplete="organization">
-          </label>
-        </div>
+  <label class="field">
+    <span>WhatsApp / Teléfono *</span>
+    <input type="tel" name="telefono" autocomplete="tel" required>
+  </label>
 
-        <label class="field">
-          <span>WhatsApp / Teléfono *</span>
-          <input type="tel" name="telefono" autocomplete="tel" required>
-        </label>
+  <div class="form__row form__row--2">
+    <label class="field">
+      <span>Localidad / Zona *</span>
+      <input type="text" name="localidad" autocomplete="address-level2" required>
+    </label>
 
-        <div class="form__row form__row--2">
-          <label class="field">
-            <span>Localidad / Zona *</span>
-            <input type="text" name="localidad" autocomplete="address-level2" required>
-          </label>
+    <label class="field">
+      <span>¿Qué querés cotizar? *</span>
+      <select name="categoria" required>
+        <option value="" selected disabled>Seleccioná una opción</option>
+        <option value="Perfiles">Perfiles</option>
+        <option value="Tubos">Tubos</option>
+        <option value="Chapas">Chapas</option>
+        <option value="Mallas">Mallas</option>
+        <option value="No estoy seguro">No estoy seguro</option>
+      </select>
+    </label>
+  </div>
 
-          <label class="field">
-            <span>¿Qué querés cotizar? *</span>
-            <select name="categoria" required>
-              <option value="" selected disabled>Seleccioná una opción</option>
-              <option>Perfiles</option>
-              <option>Tubos</option>
-              <option>Chapas</option>
-              <option>Mallas</option>
-              <option>No estoy seguro</option>
-            </select>
-          </label>
-        </div>
+  <label class="field">
+    <span>Detalle / Lista de materiales *</span>
+    <textarea
+      name="detalle"
+      rows="1"
+      class="textarea-small"
+      required
+      placeholder="Medidas, espesores, largos, cantidades, destino..."
+    ></textarea>
+  </label>
 
-        <label class="field">
-          <span>Detalle / Lista de materiales *</span>
-         <textarea
-  name="detalle"
-  rows="1"
-  class="textarea-small"
-  required
-  placeholder="Medidas, espesores, largos, cantidades, destino..."
-></textarea>
+  <label class="field">
+    <span>Adjuntar archivo (opcional)</span>
+    <input
+      type="file"
+      name="archivo"
+      accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+    >
+  </label>
 
-        </label>
+  <label class="field">
+    <span>Observaciones (opcional)</span>
+    <textarea
+      name="obs"
+      rows="3"
+      placeholder="Entrega / retiro, fecha estimada, etc."
+    ></textarea>
+  </label>
 
-        <label class="field">
-          <span>Adjuntar archivo (opcional)</span>
-          <input type="file" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx">
-        </label>
+  <!-- Honeypot anti-spam -->
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-        <label class="field">
-          <span>Observaciones (opcional)</span>
-          <textarea name="obs" rows="3" placeholder="Entrega/retiro, fecha estimada, etc."></textarea>
-        </label>
+  <button class="form__submit" type="submit">
+    Enviar solicitud
+  </button>
 
-        <button class="form__submit" type="submit">Enviar solicitud</button>
+  <p class="form__micro">
+    ¿Preferís más rápido? Mandanos la lista por WhatsApp.
+  </p>
 
-        <p class="form__micro">
-          ¿Preferís más rápido? Mandanos la lista por WhatsApp.
-        </p>
-      </form>
+</form>
+
     </div>
 
   </div>

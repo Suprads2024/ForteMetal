@@ -1,45 +1,51 @@
-.hero-neumaticos__cta:hover{
+.hero-neumaticos__cta:hover {
   background: var(--cta-bg-hover);
   transform: translateY(-1px);
 }
 
-.hero-neumaticos__cta:active{
+.hero-neumaticos__cta:active {
   transform: translateY(0);
 }
 
-.hero-neumaticos__cta:focus-visible{
-  outline: 3px solid #073763
-;
+.hero-neumaticos__cta:focus-visible {
+  outline: 3px solid #073763;
   outline-offset: 3px;
 }
 
-@media (max-width: 720px){
-  .hero-neumaticos__overlay{
-    background: linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.15) 100%);
+@media (max-width: 720px) {
+  .hero-neumaticos__overlay {
+    background-image: url("../imagenes/neumaticos/fondocelular.jpg");
+    /* tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
-  .hero-neumaticos__content{
+
+
+  .hero-neumaticos__content {
     max-width: 100%;
   }
 
-  .hero-neumaticos__cta{
+  .hero-neumaticos__cta {
     width: 100%;
     justify-content: center;
   }
 }
-@media (max-width: 900px){
-  .hero-neumaticos__benefits-container{
+
+@media (max-width: 900px) {
+  .hero-neumaticos__benefits-container {
     grid-template-columns: 1fr;
     text-align: left;
   }
 
-  .hero-neumaticos__benefits-list{
+  .hero-neumaticos__benefits-list {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 600px){
-  .hero-neumaticos__benefits{
+@media (max-width: 600px) {
+  .hero-neumaticos__benefits {
     padding: 20px 0;
   }
 }
@@ -50,18 +56,18 @@
    ========================= */
 
 /* Ajuste fino para que los títulos “caigan” exactamente sobre sus columnas */
-.trust-strip__top-item{
+.trust-strip__top-item {
   justify-self: start;
 }
 
 /* MOBILE: cada bloque queda como “columna” (título + checklist), uno debajo del otro */
-@media (max-width: 820px){
-  .trust-strip{
+@media (max-width: 820px) {
+  .trust-strip {
     padding: 34px 0 22px;
   }
 
   /* Convertimos el panel en 3 cards apiladas */
-  .trust-strip__panel{
+  .trust-strip__panel {
     border-radius: 10px;
     overflow: visible;
     box-shadow: none;
@@ -69,17 +75,17 @@
 
   /* ocultamos el top único */
   .trust-strip__top,
-  .trust-strip__checks{
+  .trust-strip__checks {
     display: none;
   }
 
   /* generamos 3 cards mobile con el mismo contenido */
-  .trust-strip__panel::before{
+  .trust-strip__panel::before {
     content: none;
   }
 
   /* Usamos un layout mobile alternativo vía clases (sin JS) */
-  .trust-strip__panel{
+  .trust-strip__panel {
     display: grid;
 
   }
@@ -87,91 +93,94 @@
   /* Card 1/2/3 armadas con :has no es confiable.
      En mobile, lo correcto es duplicar markup con un bloque mobile. */
 }
-@media (max-width: 820px){
+
+@media (max-width: 820px) {
+
   /* NO ocultar */
-  .trust-strip__panel > .trust-strip__top,
-  .trust-strip__panel > .trust-strip__checks{
-   display: none;
+  .trust-strip__panel>.trust-strip__top,
+  .trust-strip__panel>.trust-strip__checks {
+    display: none;
   }
 
   /* Top: 1 columna, sin separadores */
-  .trust-strip__top{
+  .trust-strip__top {
     grid-template-columns: 1fr;
     row-gap: 10px;
     justify-items: start;
   }
 
-  .trust-strip__divider{
+  .trust-strip__divider {
     display: none;
   }
 
   /* Checklist: 1 columna */
-  .trust-strip__checks{
+  .trust-strip__checks {
     grid-template-columns: 1fr;
   }
 }
+
 /* MOBILE stacked sections */
 
-.trust-strip__mobile{
-  display:none;
+.trust-strip__mobile {
+  display: none;
 }
 
-@media (max-width: 820px){
+@media (max-width: 820px) {
 
   /* ocultar versión desktop */
   .trust-strip__top,
-  .trust-strip__checks{
-    display:none;
+  .trust-strip__checks {
+    display: none;
   }
 
-  .trust-strip__mobile{
-    display:block;
-    background:#f3f1ee;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 12px 28px rgba(0,0,0,.45);
+  .trust-strip__mobile {
+    display: block;
+    background: #f3f1ee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .45);
   }
 
-  .trust-strip__msection{
-    border-bottom:1px solid #ddd;
+  .trust-strip__msection {
+    border-bottom: 1px solid #ddd;
   }
 
-  .trust-strip__msection:last-child{
-    border-bottom:none;
+  .trust-strip__msection:last-child {
+    border-bottom: none;
   }
 
-  .trust-strip__mhead{
-    background:#073763;
-    color:#111;
-    font-weight:900;
-    padding:12px 14px;
-    font-size:15px;
-    display:flex;
-    align-items:center;
-    gap:8px;
+  .trust-strip__mhead {
+    background: #073763;
+    color: #ffffff;
+    font-weight: 900;
+    padding: 12px 14px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .trust-strip__mlist{
-    list-style:none;
-    margin:0;
-    padding:10px 16px 12px;
-    background:#f3f1ee;
+  .trust-strip__mlist {
+    list-style: none;
+    margin: 0;
+    padding: 10px 16px 12px;
+    background: #f3f1ee;
   }
 
-  .trust-strip__mlist li{
-    position:relative;
-    padding-left:20px;
-    margin:6px 0;
-    font-size:14px;
-    color:#222;
+  .trust-strip__mlist li {
+    position: relative;
+    padding-left: 20px;
+    margin: 6px 0;
+    font-size: 14px;
+    color: #222;
   }
 
-  .trust-strip__mlist li::before{
-    content:"✔";
-    position:absolute;
-    left:0;
-    color:#d09c00;
-    font-weight:900;
+  .trust-strip__mlist li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #d09c00;
+    font-weight: 900;
   }
 }
 
@@ -180,20 +189,21 @@
 tercera seccion 
    ========================================================= */
 
-:root{
+:root {
   /* Reusá los mismos colores del sitio */
-  --lineas-yellow: #073763;    /* si ya lo tenés como --separator, podés reemplazar */
+  --lineas-yellow: #073763;
+  /* si ya lo tenés como --separator, podés reemplazar */
   --lineas-red: #073763;
   --lineas-red-dark: #073763;
   --lineas-green: #073763;
-  --lineas-green-dark:#073763;
+  --lineas-green-dark: #073763;
 
   --lineas-paper: #f3f1ee;
   --lineas-text: #111;
   --lineas-muted: #2a2a2a;
 }
 
-.lineas{
+.lineas {
   position: relative;
   padding: clamp(44px, 7vh, 78px) 0 clamp(40px, 7vh, 68px);
   background-size: cover;
@@ -201,28 +211,29 @@ tercera seccion
   background-repeat: no-repeat;
 }
 
-.lineas__overlay{
+.lineas__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.50) 55%, rgba(0,0,0,.70) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, .68) 0%, rgba(0, 0, 0, .50) 55%, rgba(0, 0, 0, .70) 100%);
   z-index: 0;
 }
 
-.lineas__container{
+.lineas__container {
   position: relative;
   z-index: 1;
   width: min(1180px, 92%);
   margin: 0 auto;
 }
 
-.lineas__header{
+.lineas__header {
   text-align: center;
   color: #fff;
   max-width: 980px;
   margin: 0 auto 22px;
 }
 
-.lineas__h2{
+.lineas__h2 {
+  font-family: 'Rajdhani-SemiBold';
   margin: 0 0 10px;
   font-weight: 900;
   letter-spacing: -0.02em;
@@ -230,31 +241,34 @@ tercera seccion
   line-height: 1.15;
 }
 
-.lineas__sub{
+.lineas__sub {
   margin: 0;
-  color: rgba(255,255,255,.86);
-  font-size: 14px;
+  color: rgba(255, 255, 255, .86);
+  font-size: 16px;
+  font-family: 'Rajdhani-Medium';
   line-height: 1.45;
 }
 
 /* “linea” decorativa como en el mock */
 .lineas__header::before,
-.lineas__header::after{
-  content:"";
-  display:block;
-  height:2px;
-  background: rgba(255,255,255,.35);
+.lineas__header::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: rgba(255, 255, 255, .35);
   width: min(360px, 70%);
   margin: 0 auto 14px;
 }
-.lineas__header::after{
+
+.lineas__header::after {
   width: min(360px, 70%);
   margin: 14px auto 0;
-  display:none; /* si querés doble línea, ponelo en block */
+  display: none;
+  /* si querés doble línea, ponelo en block */
 }
 
 /* GRID */
-.lineas__grid{
+.lineas__grid {
   margin-top: 22px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -263,60 +277,66 @@ tercera seccion
 }
 
 /* CARD */
-.lineas__card{
+.lineas__card {
   position: relative;
   border-radius: 10px;
-  overflow: visible; /* clave para que el botón “salga” */
+  overflow: visible;
+  /* clave para que el botón “salga” */
   background: transparent;
 }
 
 /* “cap” rojo superior */
-.lineas__cap{
+.lineas__cap {
   height: 44px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 900;
   color: #fff;
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .35);
 }
 
-.lineas__cap--red{ background: linear-gradient(180deg, var(--lineas-red) 0%, var(--lineas-red-dark) 100%); }
+.lineas__cap--red {
+  background: linear-gradient(180deg, var(--lineas-red) 0%, var(--lineas-red-dark) 100%);
+}
 
 /* bloque visual con imagen + papel */
-.lineas__img-wrap{
-  border-left: 1px solid rgba(255,255,255,.12);
-  border-right: 1px solid rgba(255,255,255,.12);
-  border-bottom: 1px solid rgba(0,0,0,.12);
-  background: #000; /* fallback */
+.lineas__img-wrap {
+  border-left: 1px solid rgba(255, 255, 255, .12);
+  border-right: 1px solid rgba(255, 255, 255, .12);
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  background: #000;
+  /* fallback */
   border-radius: 0 0 10px 10px;
   overflow: hidden;
-  box-shadow: 0 14px 34px rgba(0,0,0,.45);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .45);
 }
 
-.lineas__img{
+.lineas__img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  display:block;
+  display: block;
 }
 
 /* cuerpo tipo “papel” */
-.lineas__body{
+.lineas__body {
   background: var(--lineas-paper);
-  padding: 14px 16px 42px; /* deja espacio para el botón que invade */
-  border-top: 1px solid rgba(0,0,0,.10);
+  padding: 14px 16px 42px;
+  /* deja espacio para el botón que invade */
+  border-top: 1px solid rgba(0, 0, 0, .10);
 }
 
-.lineas__text{
+.lineas__text {
+  font-family: 'Rajdhani-Medium';
   margin: 0 0 10px;
   color: var(--lineas-muted);
-  font-size: 13.5px;
+  font-size: 15px;
   line-height: 1.42;
 }
 
-.lineas__list{
+.lineas__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -325,18 +345,21 @@ tercera seccion
   line-height: 1.35;
 }
 
-.lineas__list li{
+.lineas__list li {
+  font-family: 'Rajdhani-Medium';
   position: relative;
   padding-left: 20px;
   margin: 7px 0;
 }
-.trust-strip__icon svg *{
+
+.trust-strip__icon svg * {
   stroke: #fff !important;
   fill: #fff !important;
 }
-.lineas__list li::before{
-  content:"•";
-  position:absolute;
+
+.lineas__list li::before {
+  content: "•";
+  position: absolute;
   left: 0;
   top: -1px;
   color: #111;
@@ -344,49 +367,59 @@ tercera seccion
 }
 
 /* BOTÓN “50% adentro / 50% afuera” */
-.lineas__btn{
+.lineas__btn {
+  font-family: 'Rajdhani-Bold';
   position: absolute;
   left: 50%;
-  bottom: -18px;               /* mitad afuera */
+  bottom: -18px;
+  /* mitad afuera */
   transform: translateX(-50%);
   width: calc(100% - 56px);
   max-width: 240px;
   height: 40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 900;
   color: #fff;
-  box-shadow: 0 12px 26px rgba(0,0,0,.45);
-  border: 2px solid rgba(0,0,0,.12);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .45);
+  border: 2px solid rgba(0, 0, 0, .12);
 }
 
-.lineas__btn--red{
+.lineas__btn--red {
   background: linear-gradient(180deg, var(--lineas-red) 0%, var(--lineas-red-dark) 100%);
 }
 
-.lineas__btn--green{
+.lineas__btn--green {
   background: linear-gradient(180deg, var(--lineas-green) 0%, var(--lineas-green-dark) 100%);
 }
 
 
 
 /* HOVERS */
-.lineas__btn:hover{ filter: brightness(1.05); }
-.lineas__card:hover .lineas__img{ transform: scale(1.02); transition: .25s ease; }
+.lineas__btn:hover {
+  filter: brightness(1.05);
+}
+
+.lineas__card:hover .lineas__img {
+  transform: scale(1.02);
+  transition: .25s ease;
+}
 
 /* RESPONSIVE */
-@media (max-width: 980px){
-  .lineas__grid{
+@media (max-width: 980px) {
+  .lineas__grid {
     grid-template-columns: 1fr;
     gap: 22px;
   }
 
-  .lineas__img{ height: 190px; }
+  .lineas__img {
+    height: 190px;
+  }
 
-  .lineas__btn{
+  .lineas__btn {
     width: calc(100% - 64px);
     max-width: 280px;
   }
@@ -397,18 +430,18 @@ tercera seccion
    SECCIÓN: CÓMO COMPRÁS (pasos) - TODO a style.css
    ========================================================= */
 
-:root{
+:root {
   --pasos-yellow: #073763;
   --pasos-paper: #f3f1ee;
-  --pasos-shadow: rgba(0,0,0,.45);
+  --pasos-shadow: rgba(0, 0, 0, .45);
   --pasos-text: #111;
   --pasos-muted: #2a2a2a;
 
   --pasos-green: #1fbf5b;
-  --pasos-green-dark:#16a34a;
+  --pasos-green-dark: #16a34a;
 }
 
-.pasos{
+.pasos {
   position: relative;
   padding: clamp(44px, 7vh, 78px) 0 clamp(36px, 6vh, 62px);
   background-size: cover;
@@ -416,7 +449,7 @@ tercera seccion
   background-repeat: no-repeat;
 }
 
-.pasos__overlay{
+.pasos__overlay {
   position: absolute;
   inset: 0;
   background:
@@ -425,21 +458,22 @@ tercera seccion
   z-index: 0;
 }
 
-.pasos__container{
+.pasos__container {
   position: relative;
   z-index: 1;
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
-.pasos__header{
+.pasos__header {
   text-align: center;
   color: #fff;
   max-width: 980px;
   margin: 0 auto 18px;
 }
 
-.pasos__h2{
+.pasos__h2 {
+  font-family: 'Rajdhani-Medium';
   margin: 0 0 10px;
   font-weight: 900;
   letter-spacing: -0.02em;
@@ -448,11 +482,13 @@ tercera seccion
   color: #000;
 }
 
-.pasos__accent{
+.pasos__accent {
+  font-family: 'Rajdhani-Bold';
   color: var(--pasos-yellow);
 }
 
-.pasos__sub{
+.pasos__sub {
+  font-family: 'Rajdhani-SemiBold';
   margin: 0;
   color: rgba(0, 0, 0, 0.86);
   font-size: 14px;
@@ -460,7 +496,7 @@ tercera seccion
 }
 
 /* Panel “papel” con pasos */
-.pasos__panel{
+.pasos__panel {
   background: var(--pasos-paper);
   border-radius: 12px;
   box-shadow: 0 16px 36px var(--pasos-shadow);
@@ -471,7 +507,7 @@ tercera seccion
   gap: 12px;
 }
 
-.pasos__step{
+.pasos__step {
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 10px;
@@ -479,7 +515,7 @@ tercera seccion
   min-width: 0;
 }
 
-.pasos__num{
+.pasos__num {
   width: 36px;
   height: 36px;
   border-radius: 999px;
@@ -488,40 +524,43 @@ tercera seccion
   display: grid;
   place-items: center;
   font-weight: 900;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.08);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .08);
 }
 
-.pasos__txt{ min-width: 0; }
+.pasos__txt {
+  min-width: 0;
+}
 
-.pasos__h3{
+.pasos__h3 {
   margin: 0 0 4px;
   font-size: 13.5px;
   font-weight: 900;
   color: var(--pasos-text);
 }
 
-.pasos__txt p{
+.pasos__txt p {
   margin: 0;
   font-size: 12.8px;
   color: var(--pasos-muted);
   line-height: 1.25;
 }
 
-.pasos__arrow{
-  color: rgba(0,0,0,.45);
+.pasos__arrow {
+  color: rgba(0, 0, 0, .45);
   font-size: 24px;
   font-weight: 900;
   transform: translateY(-2px);
 }
 
 /* CTA */
-.pasos__cta-wrap{
+.pasos__cta-wrap {
   display: flex;
   justify-content: center;
   margin-top: 14px;
 }
 
-.pasos__cta{
+.pasos__cta {
+  font-family: 'Rajdhani-Bold';
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -530,30 +569,30 @@ tercera seccion
   border-radius: 12px;
   text-decoration: none;
   font-weight: 900;
-  color: #0b0b0b;
+  color: #ffffff;
   background: linear-gradient(180deg, var(--pasos-green) 0%, var(--pasos-green-dark) 100%);
-  box-shadow: 0 12px 26px rgba(0,0,0,.45);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .45);
 }
 
 /* Responsive */
-@media (max-width: 980px){
-  .pasos__panel{
+@media (max-width: 980px) {
+  .pasos__panel {
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 14px 14px;
   }
 
-  .pasos__arrow{
+  .pasos__arrow {
     display: none;
   }
 
-  .pasos__step{
+  .pasos__step {
     grid-template-columns: 40px 1fr;
     padding: 8px 4px;
-    border-bottom: 1px solid rgba(0,0,0,.10);
+    border-bottom: 1px solid rgba(0, 0, 0, .10);
   }
 
-  .pasos__step:last-child{
+  .pasos__step:last-child {
     border-bottom: none;
   }
 }
@@ -562,10 +601,11 @@ tercera seccion
 /* =========================
    SECCIÓN MARCAS (estilo placa)
    ========================= */
-.brands{
+.brands {
   position: relative;
   padding: 60px 0;
-  background-image: url("../imagenes/neumaticos/cubiertas.jpg"); /* tu imagen */
+  background-image: url("../imagenes/neumaticos/cubiertas.jpg");
+  /* tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -573,26 +613,26 @@ tercera seccion
 
 
 
-.brands__container{
+.brands__container {
   width: min(1180px, 92%);
   margin: 0 auto;
 }
 
-.brands__header{
+.brands__header {
   text-align: center;
   max-width: 900px;
   margin: 0 auto 28px;
 }
 
-.brands__h2{
+.brands__h2 {
   margin: 0 0 10px;
   font-size: clamp(22px, 2.5vw, 32px);
-  font-weight: 900;
+  font-family: 'Rajdhani-Bold';
   color: #ffffff;
   z-index: 3;
 }
 
-.brands__sub{
+.brands__sub {
   margin: 0;
   font-size: 14.5px;
   color: #ffffff;
@@ -600,20 +640,21 @@ tercera seccion
 
 /* CAJA GRANDE */
 
-.brands__box{
+.brands__box {
   background: #f4f4f4;
   border-radius: 14px;
   padding: 26px 30px;
   box-shadow:
-    0 12px 30px rgba(0,0,0,.18),
-    inset 0 0 0 1px rgba(0,0,0,.05);
+    0 12px 30px rgba(0, 0, 0, .18),
+    inset 0 0 0 1px rgba(0, 0, 0, .05);
 }
 
 /* GRID DE LOGOS */
 
-.brands__grid{
+.brands__grid {
   display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columnas fijas */
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 columnas fijas */
   gap: 22px 26px;
   align-items: center;
   justify-items: center;
@@ -621,7 +662,7 @@ tercera seccion
 
 /* LOGOS SUELTOS */
 
-.brands__grid img{
+.brands__grid img {
   max-width: 130px;
   max-height: 60px;
   width: auto;
@@ -631,19 +672,25 @@ tercera seccion
   transition: transform .2s ease, filter .2s ease;
 }
 
-.brands__grid img:hover{
+.brands__grid img:hover {
   transform: scale(1.06);
   filter: grayscale(0%);
 }
 
 /* MOBILE */
 
-@media (max-width: 600px){
-  .brands__box{
+@media (max-width: 600px) {
+  .brands__box {
     padding: 20px 16px;
   }
 
-  .brands__grid img{
+  .brands__grid {
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands__grid img {
     max-width: 110px;
+
   }
 }

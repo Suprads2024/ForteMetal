@@ -3,6 +3,50 @@
    Importante: NO repetir aquí lo del header/nav/botones porque ya va inline crítico.
 */
 
+@font-face {
+  font-family: 'Rajdhani-Regular';
+  src: url(../font/Rajdhani-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Rajdhani-Bold';
+  src: url('./font/Rajdhani-Bold.ttf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Rajdhani-SemiBold';
+  src: url('./font/Rajdhani-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani-Medium';
+  src: url('./font/Rajdhani-Medium.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Rajdhani-Regular';
+  src: url('./font/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Rajdhani-Light';
+  src: url('./font/Rajdhani-Light.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+
+}
 /* Helpers generales para secciones */
 .section {
   padding: 56px 16px;
@@ -78,6 +122,7 @@ p {
 }
 /* Hover botones */
 .btn {
+  font-family: 'Rajdhani-Bold';
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
@@ -541,6 +586,7 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 .leadform__copy h2{
+ font-family: 'Rajdhani-Bold';
   font-size: clamp(1.7rem, 2.6vw, 2.3rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -592,6 +638,7 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 .field span{
+  font-family: 'Rajdhani-Medium';
   display: block;
   font-size: .85rem;
   margin-bottom: 6px;
@@ -648,7 +695,7 @@ grid-template-columns: repeat(4, 1fr);
     grid-template-columns: 1fr;
   }
   .leadform{
-    padding: 48px 0;
+    padding: 48px 20px;
   }
   .form__row--2{
     grid-template-columns: 1fr;
@@ -675,6 +722,7 @@ grid-template-columns: repeat(4, 1fr);
 
 .faq__sideTitle,
 .faq__title{
+    font-family: 'Rajdhani-Bold';
   font-size: 1.4rem;
   letter-spacing: -0.02em;
   color: #ffffff;
@@ -735,7 +783,7 @@ grid-template-columns: repeat(4, 1fr);
 
 /* Responsive */
 @media (max-width: 900px){
-  .faq{ padding: 42px 0; }
+  .faq{ padding: 42px 20px; }
   .faq__grid{ grid-template-columns: 1fr; }
 }
 /* ===== FOOTER ===== */
@@ -761,6 +809,7 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 .footer-cta__text{
+font-family: 'Rajdhani-Bold';
   font-weight: 700;
   letter-spacing: -0.01em;
   opacity: 0.95;
