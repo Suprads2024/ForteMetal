@@ -91,6 +91,7 @@
   border-radius: 10px;
   box-shadow: var(--shadow);
   overflow: hidden;
+  font-family: 'Rajdhani-Bold';
 }
 
 .forte-form-card__head{
@@ -121,6 +122,7 @@
   font-size: 12px;
   font-weight: 700;
   color: var(--text);
+  font-family: 'Rajdhani-Medium';
 }
 
 .forte-form input,
@@ -148,6 +150,7 @@
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
   padding-right: 34px;
+    font-family: 'Rajdhani-Medium';
 }
 
 .forte-form input:focus,
@@ -180,6 +183,7 @@
 }
 
 .forte-solution__title{
+  font-family: 'Rajdhani-Bold';
   margin: 0;
   font-size: 16px;
   color: var(--text);
@@ -217,8 +221,8 @@
   display: grid;
   place-items: center;
   font-weight: 900;
-  color: #fff;
-  background: rgba(245, 158, 11, .95);
+  color: #2a2a2a;
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 16px rgba(0,0,0,.18);
 }
 
@@ -229,12 +233,14 @@
 .forte-step__text{
   margin: 0;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
+   font-family: 'Rajdhani-Bold';
 }
 
 .forte-step__text strong{
-  font-weight: 900;
+
+  font-family: 'Rajdhani-Medium';
 }
 
 .forte-step__media{
@@ -263,7 +269,7 @@
   font-weight: 800;
   text-decoration: none;
   user-select: none;
-  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease; font-family: 'Rajdhani-Bold';
 }
 
 .forte-btn span{ font-size: 18px; line-height: 1; }
@@ -272,6 +278,8 @@
   background: var(--primary);
   color: #fff;
   box-shadow: 0 10px 18px rgba(249, 115, 22, .22);
+   font-family: 'Rajdhani-Bold';
+   font-size: 16px;
 }
 
 .forte-btn--accent{
@@ -350,6 +358,7 @@
   letter-spacing: .22em;
   text-transform: uppercase;
   font-size: 12px;
+    font-family: 'Rajdhani-Bold';
 }
 
 .forte-gases__kicker::before{
@@ -361,6 +370,7 @@
 }
 
 .forte-gases__title{
+    font-family: 'Rajdhani-Bold';
   margin: 0 0 10px;
   color: var(--text);
   font-weight: 950;
@@ -370,6 +380,7 @@
 }
 
 .forte-gases__lead{
+  font-family: 'Rajdhani-Medium';
   margin: 0 0 18px;
   color: var(--muted);
   font-size: 14px;
@@ -378,6 +389,7 @@
 
 /* Cards en fila */
 .forte-gases__cards{
+  font-family: 'Rajdhani-Bold';
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
@@ -448,7 +460,7 @@
   color: #fff;
   text-decoration: none;
   font-weight: 900;
-
+font-family: 'Rajdhani-Bold';
   box-shadow: 0 18px 30px rgba(59,130,246,.28);
   transition: transform .12s ease, filter .12s ease;
 }
@@ -471,13 +483,15 @@
     width: 100%;
   }
 }
-/* ====== CONSUMIBLES ====== */
-.forte-consumibles{
+
+
+/* ====== CONSUMIBLES v2 (panel oscuro + side chips) ====== */
+.forte-cons2{
   --bg:#f3f5f8;
   --text:#0f172a;
   --muted:#5b667a;
   --line:#e6edf5;
-  --shadow: 0 16px 36px rgba(16,24,40,.10);
+  --shadow: 0 18px 42px rgba(16,24,40,.10);
 
   --blue-900:#0b2a4a;
   --blue-800:#10385f;
@@ -485,42 +499,339 @@
   --btn:#3b82f6;
 
   background: var(--bg);
-  padding: clamp(30px, 4vw, 64px) 0;
+  padding: clamp(34px, 4vw, 70px) 0;
 }
 
-.forte-consumibles__container{
+.forte-cons2__container{
   width: min(1120px, 92vw);
   margin: 0 auto;
 }
 
-.forte-consumibles__head{
-  margin-bottom: 16px;
+.forte-cons2__kicker{
+  margin: 0 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(11,42,74,.85);
+  font-weight: 950;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-size: 12px;
+      font-family: 'Rajdhani-Bold';
 }
 
-.forte-consumibles__title{
+.forte-cons2__kicker::before{
+  content:"";
+  width: 34px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.forte-cons2__title{
+    font-family: 'Rajdhani-Bold';
   margin: 0 0 8px;
   color: var(--text);
+  font-weight: 950;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.15;
+}
+
+.forte-cons2__title span{
+    font-family: 'Rajdhani-Medium';
+  font-size: .75em;
+  color: #334155;
+  font-weight: 800;
+}
+
+.forte-cons2__lead{
+    font-family: 'Rajdhani-Medium';
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 76ch;
+}
+
+/* layout 2 columnas */
+.forte-cons2__layout{
+  display: grid;
+  grid-template-columns: 1.5fr .9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* panel oscuro */
+.forte-cons2__panel{
+  background: radial-gradient(circle at 20% 20%, rgba(245,158,11,.12), transparent 45%),
+              linear-gradient(180deg, var(--blue-900), var(--blue-800));
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 26px 60px rgba(11,42,74,.18);
+  border: 1px solid rgba(255,255,255,.10);
+  overflow: hidden;
+}
+
+/* feature row */
+.forte-cons2__feature{
+  display: grid;
+  grid-template-columns: 40px 1fr 120px;
+  gap: 12px;
+  align-items: center;
+
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 12px 26px rgba(0,0,0,.16);
+}
+
+.forte-cons2__feature + .forte-cons2__feature{
+  margin-top: 12px;
+}
+
+.forte-cons2__icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(214, 214, 214, 0.95);
+  color: #061428;
+  font-weight: 950;
+  box-shadow: 0 12px 20px rgba(0,0,0,.22);
+  font-size: 15px;
+}
+
+.forte-cons2__txt h3{
+    font-family: 'Rajdhani-Bold';
+  margin: 0 0 4px;
+  color: #fff;
+  font-weight: 950;
+  font-size: 15px;
+}
+
+.forte-cons2__txt p{
+   font-family: 'Rajdhani-Medium';
+  margin: 0;
+  color: rgba(255,255,255,.80);
+  font-weight: 650;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.forte-cons2__thumb{
+  width: 120px;
+  height: 74px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+}
+
+.forte-cons2__thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+/* side */
+.forte-cons2__side{
+  display: grid;
+  gap: 12px;
+  position: sticky;
+  top: 18px;
+}
+
+.forte-cons2__box{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.forte-cons2__boxTitle{
+    font-family: 'Rajdhani-Bold';
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 950;
+  color: var(--blue-900);
+}
+
+.forte-cons2__boxLead{
+    font-family: 'Rajdhani-Medium';
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.forte-cons2__chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.forte-cons2__chip{
+    font-family: 'Rajdhani-Medium';
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #d9e4f2;
+  background: #f8fafc;
+  font-weight: 850;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+/* CTA */
+.forte-cons2__cta{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.forte-cons2__btn{
+    font-family: 'Rajdhani-Bold';
+  display: inline-flex;
+  width: 100%;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--btn);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 950;
+  box-shadow: 0 18px 30px rgba(59,130,246,.22);
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.forte-cons2__btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+.forte-cons2__btn:active{ transform: translateY(0); }
+
+.forte-cons2__micro{
+    font-family: 'Rajdhani-Bold';
+  margin: 10px 0 0;
+  color: #5b667a;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .forte-cons2__layout{
+    grid-template-columns: 1fr;
+  }
+  .forte-cons2__side{
+    position: static;
+  }
+  .forte-cons2__feature{
+    grid-template-columns: 40px 1fr;
+  }
+  .forte-cons2__thumb{
+    display: none;
+  }
+}
+
+
+
+
+/* ====== EQUIPOS (sección pro) ====== */
+.forte-equipos{
+  --bg:#f3f5f8;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#c6c6c6;
+  --muted2:#323232;
+  --line:#e6edf5;
+  --shadow: 0 16px 36px rgba(16,24,40,.10);
+
+  --blue-900:#0b2a4a;
+  --blue-800:#10385f;
+  --accent:#f59e0b;
+  --btn:#3b82f6;
+ /* 👇 IMAGEN DE FONDO */
+  background-image:
+    linear-gradient(0deg, rgba(6,14,24,.78), rgba(6,14,24,.78)),
+    url("../imagenes/gases/fondomaquinas.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: clamp(34px, 4vw, 70px) 0;
+  position: relative;
+ 
+}
+
+.forte-equipos__container{
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.forte-equipos__head{
+  margin-bottom: 14px;
+}
+
+.forte-equipos__title{
+   font-family: 'Rajdhani-Bold';
+  margin: 0 0 8px;
+  color:white;
   font-weight: 950;
   line-height: 1.15;
   font-size: clamp(24px, 2.6vw, 34px);
 }
 
-.forte-consumibles__title span{
+.forte-equipos__title span{
+  font-family: 'Rajdhani-Medium';
   font-weight: 800;
   color: #334155;
   font-size: .75em;
 }
 
-.forte-consumibles__lead{
+.forte-equipos__lead{
+  font-family: 'Rajdhani-Medium';
   margin: 0;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
-  max-width: 70ch;
+  max-width: 78ch;
 }
 
-/* Grid */
-.forte-consumibles__grid{
+/* Subhead motosoldadoras */
+.forte-equipos__subhead{
+  margin: 22px 0 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.forte-equipos__subtitle{
+    font-family: 'Rajdhani-Bold';
+  margin: 0 0 6px;
+  font-size: 25px;
+  font-weight: 950;
+  color: whitesmoke;
+}
+
+.forte-equipos__sublead{
+    font-family: 'Rajdhani-Medium';
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* Grillas */
+.forte-equipos__grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -528,167 +839,308 @@
 }
 
 /* Card */
-.forte-cons-card{
-  background: #fff;
+.forte-equipo-card{
+  background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform .16s ease, box-shadow .16s ease;
 }
 
-.forte-cons-card:hover{
+.forte-equipo-card:hover{
   transform: translateY(-3px);
-  box-shadow: 0 22px 48px rgba(16,24,40,.14);
+  box-shadow: 0 24px 52px rgba(16,24,40,.14);
 }
 
-/* Imagen */
-.forte-cons-card__media{
-  height: 160px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+/* Top badges */
+.forte-equipo-card__top{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 0;
 }
 
-.forte-cons-card__media::after{
-  content:"";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.38));
-}
-
-.forte-cons-card__body{
-  padding: 14px 14px 16px;
-}
-
-.forte-cons-card__tag{
+.forte-badge{
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
   border-radius: 999px;
-  font-weight: 900;
+  font-weight: 950;
   font-size: 12px;
   color: #0b2a4a;
-  background: rgba(245,158,11,.22);
+  background: rgba(245,158,11,.20);
   border: 1px solid rgba(245,158,11,.30);
-  margin-bottom: 10px;
 }
 
-.forte-cons-card__title{
+.forte-chip-mini{
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(11,42,74,.92);
+  background: #eef4fb;
+  border: 1px solid #d7e6f8;
+}
+
+/* Imagen producto */
+.forte-equipo-card__media{
+  padding: 10px 14px 0;
+}
+
+.forte-equipo-card__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* producto completo */
+  background: linear-gradient(180deg, #f8fafc, #eef4fb);
+  border: 1px solid #e5edf7;
+  border-radius: 14px;
+  display: block;
+ 
+}
+
+/* Body */
+.forte-equipo-card__body{
+  padding: 12px 14px 14px;
+}
+
+.forte-equipo-card__title{
   margin: 0 0 6px;
   font-size: 16px;
   font-weight: 950;
   color: var(--text);
+   font-family: 'Rajdhani-Bold';
 }
 
-.forte-cons-card__desc{
+.forte-equipo-card__desc{
   margin: 0 0 10px;
-  color: var(--muted);
+  color: var(--muted2);
   font-size: 13px;
   line-height: 1.45;
+   font-family: 'Rajdhani-Medium';
 }
 
-/* Lista */
-.forte-cons-card__list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 6px;
-}
-
-.forte-cons-card__list li{
-  position: relative;
-  padding-left: 18px;
-  font-size: 12.5px;
+.forte-equipo-card__ideal{
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e8eef7;
   color: #334155;
+  font-size: 13px;
+  line-height: 1.4;
   font-weight: 700;
 }
 
-.forte-cons-card__list li::before{
+.forte-equipo-card__ideal strong{
+  color: var(--blue-900);
+  font-weight: 950;
+}
+
+/* Bullets */
+.forte-equipo-card__bullets{
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.forte-equipo-card__bullets li{
+  position: relative;
+  padding-left: 18px;
+  color: #334155;
+  font-size: 12.5px;
+  font-weight: 750;
+}
+
+.forte-equipo-card__bullets li::before{
   content:"✓";
   position: absolute;
   left: 0;
   top: 0;
   color: var(--accent);
-  font-weight: 900;
-}
-
-/* Materiales */
-.forte-materiales{
-  margin-top: 16px;
-  border-radius: 16px;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: var(--shadow);
-  padding: 14px 14px 16px;
-}
-
-.forte-materiales__label{
   font-weight: 950;
-  color: var(--blue-900);
-  margin-bottom: 10px;
-  font-size: 14px;
 }
 
-.forte-materiales__chips{
-  display: flex;
-  flex-wrap: wrap;
+/* Actions */
+.forte-equipo-card__actions{
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
   gap: 10px;
+  margin-top: 10px;
 }
 
-.forte-chip{
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid #d9e4f2;
-  background: #f8fafc;
-  font-weight: 800;
-  font-size: 12px;
-  color: #0f172a;
-}
-
-/* CTA */
-.forte-consumibles__cta{
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-}
-
-.forte-consumibles__btn{
+.forte-btn2{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  height: 44px;
+  border-radius: 12px;
+  font-weight: 950;
+  text-decoration: none;
+  user-select: none;
+  transition: transform .12s ease, filter .12s ease;
+}
 
-  width: min(360px, 100%);
-  height: 46px;
+.forte-btn2--primary{
+   font-family: 'Rajdhani-Bold';
+  background: var(--btn);
+  color: #fff;
+  font-size: 13px;
+  box-shadow: 0 16px 28px rgba(59,130,246,.22);
+}
+
+.forte-btn2--ghost{
+   font-family: 'Rajdhani-Bold';
+  background: #ffffff;
+  color: var(--blue-900);
+  border: 1px solid #dbe7f6;
+}
+
+.forte-btn2:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.forte-btn2:active{
+  transform: translateY(0);
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 980px){
+  .forte-equipos__grid{
+    grid-template-columns: 1fr;
+  }
+  .forte-equipo-card__actions{
+    grid-template-columns: 1fr;
+  }
+  .forte-equipo-card__media img{
+    height: 210px;
+  }
+}
+
+/* ====== MIG sin gas / Flux (fondo claro) ====== */
+.forte-flux{
+  --bg:#f3f5f8;
+  --text:#0f172a;
+  --muted:#5b667a;
+  --line:#e6edf5;
+  --shadow: 0 16px 36px rgba(16,24,40,.10);
+
+  --blue-900:#0b2a4a;
+  --accent:#f59e0b;
+  --btn:#3b82f6;
+
+  background: var(--bg);
+  padding: clamp(40px, 4vw, 80px) 0;
+}
+
+.forte-flux__overlay{
+  display: none; /* ya no usamos overlay */
+}
+
+.forte-flux__container{
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.4fr .9fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.forte-flux__title{
+  margin: 0 0 12px;
+  color: var(--text);
+   font-family: 'Rajdhani-Bold';
+  font-size: clamp(24px, 2.8vw, 34px);
+  line-height: 1.15;
+}
+
+.forte-flux__text{
+  margin: 0;
+  font-family: 'Rajdhani-Medium';
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+.forte-flux__text strong{
+    font-family: 'Rajdhani-Bold';
+  color: var(--text);
+  font-weight: 900;
+}
+
+/* CTA box */
+.forte-flux__ctaBox{
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+    font-family: 'Rajdhani-Medium';
+}
+
+.forte-flux__ctaInner{
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #e9eff7;
+}
+
+.forte-flux__ctaText{
+  margin: 0 0 12px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Botón */
+.forte-flux__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Rajdhani-Bold';
+  width: 100%;
+  height: 48px;
   border-radius: 12px;
 
   background: var(--btn);
   color: #fff;
   text-decoration: none;
   font-weight: 950;
+  letter-spacing: .2px;
 
-  box-shadow: 0 18px 30px rgba(59,130,246,.22);
+  box-shadow: 0 18px 32px rgba(59,130,246,.28);
   transition: transform .12s ease, filter .12s ease;
 }
 
-.forte-consumibles__btn:hover{
-  transform: translateY(-1px);
-  filter: brightness(1.03);
+.forte-flux__btn span{
+  font-size: 18px;
 }
 
-.forte-consumibles__btn:active{
+.forte-flux__btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.forte-flux__btn:active{
   transform: translateY(0);
 }
 
 /* Responsive */
-@media (max-width: 980px){
-  .forte-consumibles__grid{
+@media (max-width: 900px){
+  .forte-flux__container{
     grid-template-columns: 1fr;
-  }
-  .forte-cons-card__media{
-    height: 180px;
   }
 }

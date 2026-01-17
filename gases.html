@@ -540,17 +540,17 @@
 
 
             <nav class="nav-desktop">
-                <a href="#productos">Líneas</a>
-                <a href="#como-cotizar">Flotas</a>
-                <a href="#logistica">Marcas</a>
-                <a href="#faq">Cómo comprár</a>
-                <a href="#contacto">FAQ</a>
-                <a href="#contacto">Cotizar</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#formulario">Formulario</a>
+                <a href="#consumibles">Consumibles</a>
+                <a href="#equipos">Equipos</a>
+                <a href="#faq">FAQ</a>
+                
             </nav>
 
             <div class="header-actions">
 
-                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
+                <a class="btn btn-primary" href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20con%20stock%20inmediato%20me%20recomiendan%3F" target="_blank" rel="noopener">
                     Cotizar por WhatsApp
                     <small>Respuesta rápida + asesoramiento</small>
                 </a>
@@ -561,12 +561,12 @@
         </div>
 
         <nav class="nav-mobile" id="navMobile">
-            <a href="#productos" onclick="toggleMenu()">Productos</a>
-            <a href="#como-cotizar" onclick="toggleMenu()">Cómo cotizar</a>
-            <a href="#logistica" onclick="toggleMenu()">Logística</a>
-            <a href="#faq" onclick="toggleMenu()">Preguntas</a>
-            <a href="#contacto" onclick="toggleMenu()">Contacto</a>
-            <a class="btn btn-primary" href="https://wa.me/5492975355555" target="_blank" rel="noopener">
+            <a href="#inicio" onclick="toggleMenu()">inicio</a>
+            <a href="#formulario" onclick="toggleMenu()">Formulario</a>
+            <a href="#consumibles" onclick="toggleMenu()">Consumibles</a>
+            <a href="#equipos" onclick="toggleMenu()">Equipos</a>
+            <a href="#faq" onclick="toggleMenu()">FAQ</a>
+            <a class="btn btn-primary" href="https://wa.me/5492974704742?text=Hola%21%20Quiero%20cotizar%20neum%C3%A1ticos.%20Mi%20medida%20es%20___%20y%20el%20uso%20es%20___.%20%C2%BFQu%C3%A9%20opciones%20con%20stock%20inmediato%20me%20recomiendan%3F" target="_blank" rel="noopener">
                 Cotizar por WhatsApp
             </a>
         </nav>
@@ -596,7 +596,7 @@
                         </p>
 
                         <a class="hero-gases__cta"
-                            href="https://wa.me/5492974704742?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
+                            href="https://wa.me/5492974704742?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20de%20FORTE%20-%20Soldadura%20y%20gases.%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F"
                             target="_blank" rel="noopener">
                             <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
                         </a>
@@ -623,12 +623,12 @@
   <div class="forte-quote-sol__container">
 
     <!-- FORM (izquierda) -->
-    <aside class="forte-form-card" aria-label="Formulario de cotización">
+    <aside class="forte-form-card" aria-label="Formulario de cotización" id="formulario">
       <div class="forte-form-card__head">
         <h3 class="forte-form-card__title">Recibí cotización hoy</h3>
       </div>
 
-      <form class="forte-form" action="#" method="post">
+      <form class="forte-form" action="gases.php" method="post" enctype="multipart/form-data">
         <label class="forte-field">
           <span class="forte-field__label">¿Qué necesitás?</span>
           <select name="necesitas" required>
@@ -727,7 +727,7 @@
       </div>
 
       <div class="forte-solution__cta">
-        <a class="forte-btn forte-btn--accent" href="#formulario-cotizacion">
+        <a class="forte-btn forte-btn--accent" href="https://wa.me/5492974704742?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20de%20FORTE%20-%20Soldadura%20y%20gases.%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F">
           Quiero que me asesoren <span aria-hidden="true">›</span>
         </a>
       </div>
@@ -781,7 +781,7 @@
     </div>
 
     <div class="forte-gases__cta">
-      <a class="forte-gases__btn" href="#formulario-cotizacion">
+      <a class="forte-gases__btn" href="#formulario">
         Cotizar gas para soldadura <span aria-hidden="true">›</span>
       </a>
     </div>
@@ -789,99 +789,287 @@
 </section>
 
 
-<section class="forte-consumibles" id="consumibles">
-  <div class="forte-consumibles__container">
+<section class="forte-cons2" id="consumibles">
+  <div class="forte-cons2__container">
 
-    <header class="forte-consumibles__head">
-      <h2 class="forte-consumibles__title">
+    <header class="forte-cons2__head">
+      <p class="forte-cons2__kicker">CONSUMIBLES</p>
+      <h2 class="forte-cons2__title">
         Consumibles para soldadura <span>(alambres y electrodos)</span>
       </h2>
-      <p class="forte-consumibles__lead">
-        Te armamos la opción correcta según material, proceso y uso (taller u obra).
+      <p class="forte-cons2__lead">
+        Elegí rápido el consumible según tu proceso y material. Si no estás seguro, te asesoramos.
       </p>
     </header>
 
-    <div class="forte-consumibles__grid">
-      <!-- Card 1 -->
-      <article class="forte-cons-card">
-        <div class="forte-cons-card__media"
-             style="background-image:url('assets/images/consumibles-alambres.jpg');"></div>
+    <div class="forte-cons2__layout">
+      <!-- IZQUIERDA: panel oscuro con 3 features -->
+      <div class="forte-cons2__panel">
+        <article class="forte-cons2__feature">
+          <div class="forte-cons2__icon">⟲</div>
+          <div class="forte-cons2__txt">
+            <h3>Alambres</h3>
+            <p>Sólidos, tubulares y arco sumergido.</p>
+          </div>
+          <div class="forte-cons2__thumb">
+            <img src="./imagenes/gases/alambre.jpg" alt="Alambres para soldadura">
+          </div>
+        </article>
 
-        <div class="forte-cons-card__body">
-          <div class="forte-cons-card__tag">Alambres</div>
-          <h3 class="forte-cons-card__title">Alambres para MIG/MAG</h3>
-          <p class="forte-cons-card__desc">
-            Sólidos, tubulares y arco sumergido para producción, estructura y herrería.
+        <article class="forte-cons2__feature">
+          <div class="forte-cons2__icon">⚡</div>
+          <div class="forte-cons2__txt">
+            <h3>Electrodos</h3>
+            <p>Revestidos (MMA) para obra y taller.</p>
+          </div>
+          <div class="forte-cons2__thumb">
+            <img src="./imagenes/gases/electrodos.jpg" alt="Electrodos para soldadura">
+          </div>
+        </article>
+
+        <article class="forte-cons2__feature">
+          <div class="forte-cons2__icon">🧰</div>
+          <div class="forte-cons2__txt">
+            <h3>Otros consumibles</h3>
+            <p>Repuestos y complementos para mejorar el proceso.</p>
+          </div>
+          <div class="forte-cons2__thumb">
+            <img src="./imagenes/gases/repuestos.jpg" alt="Otros consumibles">
+          </div>
+        </article>
+      </div>
+
+      <!-- DERECHA: materiales + CTA -->
+      <aside class="forte-cons2__side">
+        <div class="forte-cons2__box">
+          <h3 class="forte-cons2__boxTitle">Materiales habituales</h3>
+          <p class="forte-cons2__boxLead">
+            Trabajamos consumibles para aplicaciones comunes y exigentes.
           </p>
 
-          <ul class="forte-cons-card__list">
-            <li>Sólidos</li>
-            <li>Tubulares</li>
-            <li>Arco sumergido</li>
-          </ul>
+          <div class="forte-cons2__chips">
+            <span class="forte-cons2__chip">Acero inoxidable</span>
+            <span class="forte-cons2__chip">Acero al carbono</span>
+            <span class="forte-cons2__chip">Aluminio</span>
+            <span class="forte-cons2__chip">Cobre</span>
+            <span class="forte-cons2__chip">Níquel</span>
+            <span class="forte-cons2__chip">Baja aleación</span>
+            <span class="forte-cons2__chip">Revestimientos duros</span>
+          </div>
+        </div>
+
+        <div class="forte-cons2__cta">
+          <a class="forte-cons2__btn" href="https://wa.me/5492974704742?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20de%20FORTE%20-%20Soldadura%20y%20gases.%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F">
+            Cotizar consumibles <span aria-hidden="true">›</span>
+          </a>
+          <p class="forte-cons2__micro">
+            Te recomendamos la opción correcta según material, espesor y uso.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="forte-equipos" id="equipos">
+  <div class="forte-equipos__container">
+
+    <header class="forte-equipos__head">
+      <h2 class="forte-equipos__title">
+        Equipos para soldar: elegí según tu trabajo <span>(taller u obra)</span>
+      </h2>
+      <p class="forte-equipos__lead">
+        Te recomendamos el equipo correcto según proceso, material y exigencia. Podés pedir cotización directa por WhatsApp.
+      </p>
+    </header>
+
+    <!-- ===== 3 cards (arriba) ===== -->
+    <div class="forte-equipos__grid">
+      <!-- Card 1 -->
+      <article class="forte-equipo-card">
+        <div class="forte-equipo-card__top">
+          <span class="forte-badge">MIG / MMA / TIG</span>
+          <span class="forte-chip-mini">380V Trifásica</span>
+        </div>
+
+        <div class="forte-equipo-card__media">
+          <img src="./imagenes/gases/maquinas/1.png" alt="FORTE Multipro 3000">
+        </div>
+
+        <div class="forte-equipo-card__body">
+          <h3 class="forte-equipo-card__title">FORTE Multipro 3000</h3>
+          <p class="forte-equipo-card__desc">
+            Multipro 3000 – Inversora MIG / MMA / TIG (Lift Arc) | 380V Trifásica
+          </p>
+
+          <div class="forte-equipo-card__actions">
+            <a class="forte-btn2 forte-btn2--ghost" href="./pdfgases/multipro 3000.pdf" target="_blank"
+   rel="noopener">
+              Ver detalles
+            </a>
+            <a class="forte-btn2 forte-btn2--primary" href="#formulario-cotizacion">
+              Cotizar Multipro 3000 <span aria-hidden="true">›</span>
+            </a>
+          </div>
         </div>
       </article>
 
       <!-- Card 2 -->
-      <article class="forte-cons-card">
-        <div class="forte-cons-card__media"
-             style="background-image:url('assets/images/consumibles-electrodos.jpg');"></div>
+      <article class="forte-equipo-card forte-equipo-card--featured">
+        <div class="forte-equipo-card__top">
+          <span class="forte-badge">MIG / MMA / TIG</span>
+          <span class="forte-chip-mini">380V Trifásica</span>
+        </div>
 
-        <div class="forte-cons-card__body">
-          <div class="forte-cons-card__tag">Electrodos</div>
-          <h3 class="forte-cons-card__title">Electrodos revestidos (MMA)</h3>
-          <p class="forte-cons-card__desc">
-            Para trabajos en obra y taller, con buena penetración y terminación.
+        <div class="forte-equipo-card__media">
+          <img src="./imagenes/gases/maquinas/2.png" alt="FORTE Multipro 5000">
+        </div>
+
+        <div class="forte-equipo-card__body">
+          <h3 class="forte-equipo-card__title">FORTE Multipro 5000</h3>
+          <p class="forte-equipo-card__desc">
+            Multipro 5000 – Inversora MIG / MMA / TIG (Lift Arc) | 380V Trifásica
           </p>
 
-          <ul class="forte-cons-card__list">
-            <li>Revestidos</li>
-            <li>Uso general y específico</li>
-            <li>Distintos diámetros</li>
-          </ul>
+
+          <div class="forte-equipo-card__actions">
+            <a class="forte-btn2 forte-btn2--ghost" href="./pdfgases/multipro 5000.pdf" target="_blank" rel="noopener">
+              Ver detalles
+            </a>
+            <a class="forte-btn2 forte-btn2--primary" href="#formulario-cotizacion">
+              Cotizar Multipro 5000 <span aria-hidden="true">›</span>
+            </a>
+          </div>
         </div>
       </article>
 
       <!-- Card 3 -->
-      <article class="forte-cons-card">
-        <div class="forte-cons-card__media"
-             style="background-image:url('assets/images/consumibles-otros.jpg');"></div>
+      <article class="forte-equipo-card">
+        <div class="forte-equipo-card__top">
+          <span class="forte-badge">Electrodo / MMA</span>
+          <span class="forte-chip-mini">220V</span>
+        </div>
 
-        <div class="forte-cons-card__body">
-          <div class="forte-cons-card__tag">Otros</div>
-          <h3 class="forte-cons-card__title">Otros consumibles</h3>
-          <p class="forte-cons-card__desc">
-            Complementos para mantener estabilidad del proceso y mejorar resultados.
+        <div class="forte-equipo-card__media">
+          <img src="./imagenes/gases/maquinas/3.png" alt="FORTE Indurarc 200 LCD">
+        </div>
+
+        <div class="forte-equipo-card__body">
+          <h3 class="forte-equipo-card__title">FORTE Indurarc 200 LCD</h3>
+          <p class="forte-equipo-card__desc">
+            Indurarc 200 LCD – Inversora MMA (Arco manual) | 220V
           </p>
 
-          <ul class="forte-cons-card__list">
-            <li>Boquillas / puntas</li>
-            <li>Repuestos</li>
-            <li>Accesorios</li>
-          </ul>
+          
+          <div class="forte-equipo-card__actions">
+            <a class="forte-btn2 forte-btn2--ghost" href="./pdfgases/indurarc 200.pdf" target="_blank" rel="noopener">
+              Ver detalles
+            </a>
+            <a class="forte-btn2 forte-btn2--primary" href="#formulario-cotizacion">
+              Cotizar Indurarc 200 LCD <span aria-hidden="true">›</span>
+            </a>
+          </div>
         </div>
       </article>
     </div>
 
-    <!-- Materiales habituales -->
-    <div class="forte-materiales">
-      <div class="forte-materiales__label">Materiales habituales</div>
-      <div class="forte-materiales__chips">
-        <span class="forte-chip">Acero inoxidable</span>
-        <span class="forte-chip">Acero al carbono</span>
-        <span class="forte-chip">Aluminio</span>
-        <span class="forte-chip">Cobre</span>
-        <span class="forte-chip">Níquel</span>
-        <span class="forte-chip">Baja aleación</span>
-        <span class="forte-chip">Revestimientos duros</span>
-      </div>
+    <!-- Separador -->
+    <div class="forte-equipos__subhead">
+      <h3 class="forte-equipos__subtitle">Motosoldadoras (obra / campo / industrial)</h3>
+      <p class="forte-equipos__sublead">
+        Opciones para trabajo pesado y uso continuo en campo u obra.
+      </p>
     </div>
 
-    <!-- CTA -->
-    <div class="forte-consumibles__cta">
-      <a class="forte-consumibles__btn" href="#formulario-cotizacion">
-        Cotizar consumibles <span aria-hidden="true">›</span>
-      </a>
+    <!-- ===== 3 cards (abajo) ===== -->
+    <div class="forte-equipos__grid">
+      <!-- Card 4A -->
+      <article class="forte-equipo-card">
+        <div class="forte-equipo-card__top">
+          <span class="forte-badge">Motosoldadora</span>
+          <span class="forte-chip-mini">Multiproceso</span>
+        </div>
+
+        <div class="forte-equipo-card__media">
+          <img src="./imagenes/gases/maquinas/6.png" alt="BRONCO 255K XD">
+        </div>
+
+        <div class="forte-equipo-card__body">
+          <h3 class="forte-equipo-card__title">BRONCO 255K XD</h3>
+          <p class="forte-equipo-card__desc">
+            Bronco 255K XD – Motosoldadora multiproceso
+          </p>
+
+          <div class="forte-equipo-card__actions">
+            <a class="forte-btn2 forte-btn2--ghost" href="./pdfgases/motosoldadoras Bronco255.pdf" target="_blank" rel="noopener">
+              Ver detalles
+            </a>
+            <a class="forte-btn2 forte-btn2--primary" href="#formulario-cotizacion">
+              Cotizar Bronco 255K XD <span aria-hidden="true">›</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4B -->
+      <article class="forte-equipo-card">
+        <div class="forte-equipo-card__top">
+          <span class="forte-badge">Industrial pesado</span>
+          <span class="forte-chip-mini">Campo / Obra</span>
+        </div>
+
+        <div class="forte-equipo-card__media">
+          <img src="./imagenes/gases/maquinas/4.png" alt="ABACUS 320 KB">
+        </div>
+
+        <div class="forte-equipo-card__body">
+          <h3 class="forte-equipo-card__title">ABACUS 320 KB</h3>
+          <p class="forte-equipo-card__desc">
+            Abacus 320 KB – Trabajo industrial pesado
+          </p>
+
+          <div class="forte-equipo-card__actions">
+            <a class="forte-btn2 forte-btn2--ghost" href="./pdfgases/motosoldadora Abacus320.pdf" target="_blank" rel="noopener">
+              Ver detalles
+            </a>
+            <a class="forte-btn2 forte-btn2--primary" href="#formulario-cotizacion">
+              Cotizar Abacus 320 KB <span aria-hidden="true">›</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4C -->
+      <article class="forte-equipo-card">
+        <div class="forte-equipo-card__top">
+          <span class="forte-badge">Trabajo pesado</span>
+          <span class="forte-chip-mini">CC / CV</span>
+        </div>
+
+        <div class="forte-equipo-card__media">
+          <img src="./imagenes/gases/maquinas/5.png" alt="INSIGNIA 504 P CC/CV">
+        </div>
+
+        <div class="forte-equipo-card__body">
+          <h3 class="forte-equipo-card__title">INSIGNIA 504 P CC/CV</h3>
+          <p class="forte-equipo-card__desc">
+            Insignia 504 P CC/CV – Trabajo industrial pesado
+          </p>
+
+          <div class="forte-equipo-card__actions">
+            <a class="forte-btn2 forte-btn2--ghost" href="./pdfgases/motosoldadora Insignia 504.pdf" target="_blank" rel="noopener">
+              Ver detalles
+            </a>
+            <a class="forte-btn2 forte-btn2--primary" href="#formulario-cotizacion">
+              Cotizar Insignia 504 <span aria-hidden="true">›</span>
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
 
   </div>
@@ -892,287 +1080,108 @@
 
 
 
-    <section class="pasos" aria-label="Cómo comprás" style="background-image:url('assets/images/pasos-bg.jpg');">
 
-        <div class="pasos__overlay" aria-hidden="true"></div>
 
-        <div class="pasos__container">
-            <header class="pasos__header">
-                <h2 class="pasos__h2">Cotizar es simple: <span class="pasos__accent">4 pasos</span> y listo</h2>
-                <p class="pasos__sub">
-                    Nos pasás tu medida (ej: <strong>265/70 R16</strong>) y el uso (ruta / ripio / obra / carga).
-                </p>
-            </header>
 
-            <div class="pasos__panel" role="list" aria-label="Pasos para cotizar">
-                <div class="pasos__step" role="listitem">
-                    <div class="pasos__num">1</div>
-                    <div class="pasos__txt">
-                        <h3 class="pasos__h3">Medida y uso</h3>
-                        <p>Nos pasás tu medida y el tipo de uso.</p>
-                    </div>
-                </div>
 
-                <div class="pasos__arrow" aria-hidden="true">›</div>
 
-                <div class="pasos__step" role="listitem">
-                    <div class="pasos__num">2</div>
-                    <div class="pasos__txt">
-                        <h3 class="pasos__h3">Te recomendamos</h3>
-                        <p>2–3 opciones según tu objetivo.</p>
-                    </div>
-                </div>
 
-                <div class="pasos__arrow" aria-hidden="true">›</div>
 
-                <div class="pasos__step" role="listitem">
-                    <div class="pasos__num">3</div>
-                    <div class="pasos__txt">
-                        <h3 class="pasos__h3">Pago + entrega</h3>
-                        <p>Elegís y coordinamos envío o retiro.</p>
-                    </div>
-                </div>
 
-                <div class="pasos__arrow" aria-hidden="true">›</div>
+<section class="forte-flux" id="mig-sin-gas">
+  <div class="forte-flux__overlay"></div>
 
-                <div class="pasos__step" role="listitem">
-                    <div class="pasos__num">4</div>
-                    <div class="pasos__txt">
-                        <h3 class="pasos__h3">Contacto futuro</h3>
-                        <p>Quedás agendado para reposiciones o flota.</p>
-                    </div>
-                </div>
-            </div>
+  <div class="forte-flux__container">
+    <div class="forte-flux__content">
 
-            <div class="pasos__cta-wrap">
-                <a class="pasos__cta" href="https://wa.me/5492974704742?text=Hola%20quiero%20cotizar%20neum%C3%A1ticos"
-                    target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
-                </a>
-            </div>
+      <h2 class="forte-flux__title">
+        ¿Buscás “soldar con MIG sin gas” o “soldadura flux sin gas”?
+      </h2>
+
+      <p class="forte-flux__text">
+        En algunos casos se usa alambre <strong>Flux Cored</strong> (incluso auto-protegido).  
+        Si tu prioridad es <strong>mejor terminación y control</strong>, normalmente conviene evaluar
+        <strong>gas + consumible correcto</strong>.
+        Contanos qué vas a soldar y te lo armamos.
+      </p>
+
+    </div>
+
+    <div class="forte-flux__ctaBox">
+      <div class="forte-flux__ctaInner">
+        <p class="forte-flux__ctaText">
+          Te recomendamos la opción correcta según material, espesor y tipo de trabajo.
+        </p>
+
+        <a href="https://wa.me/5492974704742?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20de%20FORTE%20-%20Soldadura%20y%20gases.%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F" class="forte-flux__btn">
+          Decime tu caso y te recomiendo <span>›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="faq" id="faq">
+    <div class="container faq__grid">
+
+        <!-- Columna izquierda -->
+        <div class="faq__side">
+            <h2 class="faq__sideTitle">¿Por qué cotizar con FORTE?</h2>
+            <ul class="faq__list">
+                <li>Asesoramiento técnico según proceso y material</li>
+                <li>Gases, consumibles y equipos en un solo pedido</li>
+                <li>Opciones para taller, obra y trabajo industrial</li>
+                <li>Stock y entrega confiable en todo el país</li>
+                <li>Respuesta rápida por WhatsApp</li>
+            </ul>
+
+            <a class="btn btn-primary" href="https://wa.me/5492974704742?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20de%20FORTE%20-%20Soldadura%20y%20gases.%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F" target="_blank" rel="noopener">
+                Cotizar por WhatsApp
+                <small>Asesoramiento técnico inmediato</small>
+            </a>
         </div>
-    </section>
 
+        <!-- Columna derecha -->
+        <div class="faq__main">
+            <h2 class="faq__title">Preguntas frecuentes</h2>
 
-
-
-    <section class="brands">
-        <div class="brands__container">
-
-            <header class="brands__header">
-                <h2 class="brands__h2">Marcas líderes + alternativas de alto rendimiento</h2>
-                <p class="brands__sub">
-                    Trabajamos con un portfolio multimarca para cubrir liviana, transporte y minería/construcción,
-                    con opciones para distintas necesidades y presupuestos.
-                </p>
-            </header>
-
-            <div class="brands__box">
-                <div class="brands__grid">
-
-                    <img src="./imagenes/neumaticos/marcas/4.png" alt="Bridgestone">
-                    <img src="./imagenes/neumaticos/marcas/5.png" alt="Michelin">
-                    <img src="./imagenes/neumaticos/marcas/6.png" alt="Pirelli">
-                    <img src="./imagenes/neumaticos/marcas/7.png" alt="Goodyear">
-                    <img src="./imagenes/neumaticos/marcas/8.png" alt="Firestone">
-
-                    <img src="./imagenes/neumaticos/marcas/9.png" alt="Yokohama">
-                    <img src="./imagenes/neumaticos/marcas/10.png" alt="Cooper">
-                    <img src="./imagenes/neumaticos/marcas/11.png" alt="Roadstone">
-                    <img src="./imagenes/neumaticos/marcas/12.png" alt="Hankook">
-                    <img src="./imagenes/neumaticos/marcas/13.png" alt="Apollo">
-
-
+            <details class="faq__item">
+                <summary class="faq__q">¿Venden argón para soldadura y gases para MIG/MAG?</summary>
+                <div class="faq__a">
+                    Sí. Te asesoramos según el proceso, el material que vas a soldar y el resultado que buscás.
                 </div>
-            </div>
+            </details>
+
+            <details class="faq__item">
+                <summary class="faq__q">¿También venden electrodos y alambres?</summary>
+                <div class="faq__a">
+                    Sí. Trabajamos con alambres y electrodos para acero al carbono, inoxidable, aluminio y otros materiales.
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary class="faq__q">¿Puedo cotizar todo junto (gas + consumibles + equipo)?</summary>
+                <div class="faq__a">
+                    Sí. La idea es que resuelvas todo con un solo pedido: gas, consumibles y el equipo adecuado para tu trabajo.
+                </div>
+            </details>
 
         </div>
-    </section>
+    </div>
+</section>
 
 
-
-
-
-
-
-
-
-    <section class="faq" id="faq">
-        <div class="container faq__grid">
-
-            <!-- Columna izquierda -->
-            <div class="faq__side">
-                <h2 class="faq__sideTitle">Información útil</h2>
-                <ul class="faq__list">
-                    <li>Cotizaciones para línea liviana, transporte y minería</li>
-                    <li>Asesoramiento según uso real</li>
-                    <li>Stock inmediato en múltiples medidas</li>
-                    <li>Envíos a todo el país o retiro en local</li>
-                    <li>Opciones de financiación</li>
-                </ul>
-
-                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
-                    Cotizar por WhatsApp
-                    <small>Respuesta rápida</small>
-                </a>
-            </div>
-
-            <!-- Columna derecha -->
-            <div class="faq__main">
-                <h2 class="faq__title">Preguntas frecuentes</h2>
-
-                <details class="faq__item">
-                    <summary class="faq__q">¿Qué información necesito para cotizar?</summary>
-                    <div class="faq__a">
-                        Medida del neumático + tipo de vehículo + uso principal (ruta, ripio, obra o carga).
-                        Si no sabés la medida, te guiamos paso a paso.
-                    </div>
-                </details>
-
-                <details class="faq__item">
-                    <summary class="faq__q">¿Envían a todo el país?</summary>
-                    <div class="faq__a">
-                        Sí. Hacemos envíos a todo el país y también podés retirar en nuestro local.
-                    </div>
-                </details>
-
-                <details class="faq__item">
-                    <summary class="faq__q">¿Tienen stock inmediato?</summary>
-                    <div class="faq__a">
-                        Sí, trabajamos con stock inmediato en múltiples medidas y líneas.
-                    </div>
-                </details>
-
-                <details class="faq__item">
-                    <summary class="faq__q">¿Qué medios de pago aceptan?</summary>
-                    <div class="faq__a">
-                        Aceptamos todos los medios de pago y contamos con la mejor financiación disponible.
-                    </div>
-                </details>
-
-                <details class="faq__item">
-                    <summary class="faq__q">¿Cómo eligen la mejor opción para mí?</summary>
-                    <div class="faq__a">
-                        Analizamos tu uso, superficie y carga. Buscamos siempre el mejor costo por kilómetro,
-                        combinando duración y rendimiento real.
-                    </div>
-                </details>
-
-                <details class="faq__item">
-                    <summary class="faq__q">¿Cotizan para flotas o empresas?</summary>
-                    <div class="faq__a">
-                        Sí. Armamos propuestas especiales para flotas, transporte y empresas con múltiples unidades.
-                    </div>
-                </details>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="leadform" id="contacto">
-        <div class="container leadform__grid">
-
-            <!-- Columna izquierda (WhatsApp) -->
-            <div class="leadform__copy">
-                <h2>Pedí tu cotización ahora</h2>
-
-                <p class="leadform__sub">
-                    ¿Querés una respuesta rápida?
-                </p>
-
-                <ul class="leadform__bullets">
-                    <li>✅ Cotizá por WhatsApp y te enviamos opciones según tu medida, uso y presupuesto.</li>
-                </ul>
-
-                <p class="leadform__note">
-                    Sin compromiso. Te respondemos con 2–3 alternativas claras.
-                </p>
-
-                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
-                    Cotizar por WhatsApp
-                    <small>Respuesta rápida + asesoramiento</small>
-                </a>
-            </div>
-
-            <!-- Columna derecha (Formulario) -->
-            <div class="leadform__card">
-                <form class="form" action="neumaticos.php" method="post" enctype="multipart/form-data">
-
-                    <h3 class="form__title">Dejá tus datos y te contactamos</h3>
-
-                    <label class="field">
-                        <span>Nombre y apellido *</span>
-                        <input type="text" name="nombre" autocomplete="name" required>
-                    </label>
-
-                    <label class="field">
-                        <span>WhatsApp / Teléfono *</span>
-                        <input type="tel" name="telefono" autocomplete="tel" required>
-                    </label>
-
-                    <div class="form__row form__row--2">
-                        <label class="field">
-                            <span>Ciudad / Provincia *</span>
-                            <input type="text" name="ciudad_provincia" autocomplete="address-level2" required>
-                        </label>
-
-                        <label class="field">
-                            <span>Tipo de vehículo *</span>
-                            <select name="tipo_vehiculo" required>
-                                <option value="" selected disabled>Seleccioná una opción</option>
-                                <option>Auto</option>
-                                <option>Camioneta</option>
-                                <option>Utilitario</option>
-                                <option>Camión</option>
-                                <option>Maquinaria</option>
-                                <option>Otro</option>
-                            </select>
-                        </label>
-                    </div>
-
-                    <label class="field">
-                        <span>Medida del neumático</span>
-                        <input type="text" name="medida" placeholder="Ej: 265/70 R16">
-                    </label>
-
-                    <label class="field">
-                        <span>Uso principal *</span>
-                        <select name="uso_principal" required>
-                            <option value="" selected disabled>Seleccioná una opción</option>
-                            <option>Ruta</option>
-                            <option>Ripio</option>
-                            <option>Barro</option>
-                            <option>Obra</option>
-                            <option>Carga</option>
-                            <option>Mixto</option>
-                        </select>
-                    </label>
-
-                    <label class="field">
-                        <span>Mensaje (opcional)</span>
-                        <textarea name="mensaje" rows="3"
-                            placeholder="Contanos un poco más (marca/modelo, prioridad, urgencia, etc.)"></textarea>
-                    </label>
-                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-
-                    <button class="form__submit" type="submit">Enviar y recibir cotización</button>
-
-                    <p class="form__micro">
-                        Al enviar, aceptás ser contactado para recibir tu cotización.
-                    </p>
-                </form>
-            </div>
-
-        </div>
-    </section>
 
     <!-- Franja superior CTA -->
     <div class="footer-cta">
         <div class="container footer-cta__inner">
-            <p class="footer-cta__text">Cotizá perfiles, chapas y tubos para industria y construcción</p>
+            <p class="footer-cta__text">Cotizá tu solución de soldadura con FORTE</p>
 
             <div class="footer-cta__buttons">
-                <a class="btn btn-primary" href="https://wa.me/5492974704742" target="_blank" rel="noopener">
+                <a class="btn btn-primary" href="https://wa.me/5492974704742?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20de%20FORTE%20-%20Soldadura%20y%20gases.%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F" target="_blank" rel="noopener">
                     Cotizar por WhatsApp
                     <small>Respuesta rápida</small>
                 </a>
