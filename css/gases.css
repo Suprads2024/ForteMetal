@@ -23,10 +23,12 @@
 
    .hero-gases__title {
            text-align: center;
+           font-size: 22px;
         }
 
 .hero-gases__subtitle {
  text-align: center;
+ color: white;
   }
   .hero-gases__content {
     max-width: 100%;

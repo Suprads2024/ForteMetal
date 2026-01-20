@@ -1,15 +1,16 @@
 <?php
-// form.php — Formulario Metales con adjunto opcional
+// form.php — Formulario Metales con adjunto opcional (ENVÍO EN HTML)
 
 // ==========================
 // CONFIG
 // ==========================
-$TO_EMAIL = "ignaciosoraka@gmail.com";        // <-- CAMBIAR
-$FROM_EMAIL = "no-reply@tudominio.com";     // <-- CAMBIAR (ideal del mismo dominio)
-$SUBJECT_BASE = "Nueva solicitud de cotización - Metales";
+$TO_EMAIL      = "grupoforte.mkt@gmail.com";     // <-- CAMBIAR
+$FROM_EMAIL    = "no-reply@tudominio.com";       // <-- CAMBIAR (ideal del mismo dominio)
+$FROM_NAME     = "FORTE Metales";                // nombre visible del remitente
+$SUBJECT_BASE  = "Nueva solicitud de cotización - Metales";
 
-$REDIRECT_OK  = "gracias.html";             // <-- CAMBIAR si querés
-$REDIRECT_ERR = "index.html?error=1";       // <-- CAMBIAR si querés
+$REDIRECT_OK   = "gracias.html";                 // <-- CAMBIAR si querés
+$REDIRECT_ERR  = "index.html?error=1";           // <-- CAMBIAR si querés
 
 // Tamaño máximo del archivo (ej: 5 MB)
 $MAX_FILE_BYTES = 5 * 1024 * 1024;
@@ -73,7 +74,34 @@ $fecha = date("Y-m-d H:i:s");
 // Asunto final
 $subject = $SUBJECT_BASE . " | " . $categoria . " | " . $localidad;
 
-// Cuerpo texto (plano)
+// ==========================
+// CUERPOS (HTML + fallback texto)
+// ==========================
+
+// Cuerpo en HTML (tabla estilo Neumáticos)
+$html = "
+  <div style='font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#111;'>
+    <h2 style='margin:0 0 12px;'>Nueva solicitud de cotización — Metales</h2>
+
+    <table cellpadding='8' cellspacing='0' style='border-collapse:collapse; width:100%; max-width:720px;'>
+      <tr><td style='border:1px solid #ddd; width:220px;'><b>Nombre</b></td><td style='border:1px solid #ddd;'>$nombre</td></tr>
+      <tr><td style='border:1px solid #ddd;'><b>Empresa</b></td><td style='border:1px solid #ddd;'>" . ($empresa !== '' ? $empresa : '—') . "</td></tr>
+      <tr><td style='border:1px solid #ddd;'><b>Teléfono / WhatsApp</b></td><td style='border:1px solid #ddd;'>$telefono</td></tr>
+      <tr><td style='border:1px solid #ddd;'><b>Localidad / Zona</b></td><td style='border:1px solid #ddd;'>$localidad</td></tr>
+      <tr><td style='border:1px solid #ddd;'><b>Categoría</b></td><td style='border:1px solid #ddd;'>$categoria</td></tr>
+      <tr><td style='border:1px solid #ddd; vertical-align:top;'><b>Detalle / Lista</b></td><td style='border:1px solid #ddd;'>" . ($detalle !== '' ? nl2br($detalle) : '—') . "</td></tr>
+      <tr><td style='border:1px solid #ddd; vertical-align:top;'><b>Observaciones</b></td><td style='border:1px solid #ddd;'>" . ($obs !== '' ? nl2br($obs) : '—') . "</td></tr>
+    </table>
+
+    <p style='margin:14px 0 0; color:#555; font-size:12px;'>
+      <b>Fecha:</b> $fecha<br>
+      <b>IP:</b> $ip<br>
+      <b>User Agent:</b> $ua
+    </p>
+  </div>
+";
+
+// Fallback texto (por si algún cliente de mail no renderiza HTML)
 $bodyText =
 "Solicitud de cotización - Metales\n\n" .
 "Nombre: $nombre\n" .
@@ -93,9 +121,13 @@ $bodyText =
 $hasFile = isset($_FILES['archivo']) && ($_FILES['archivo']['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE;
 
 $headers = [];
-$headers[] = "From: Web Metales <{$FROM_EMAIL}>";
+$headers[] = "From: {$FROM_NAME} <{$FROM_EMAIL}>";
+$headers[] = "Reply-To: {$FROM_NAME} <{$FROM_EMAIL}>";
 $headers[] = "MIME-Version: 1.0";
 $headers[] = "X-Mailer: PHP/" . phpversion();
+
+// Recomendado: envelope sender (mejora SPF/entrega)
+$additional_params = "-f {$FROM_EMAIL}";
 
 $message = "";
 $ok = false;
@@ -108,18 +140,18 @@ if ($hasFile) {
   $origName = $_FILES['archivo']['name'] ?? 'archivo';
 
   if ($fileErr !== UPLOAD_ERR_OK) {
-    // Si falla el upload, enviamos igual SIN adjunto
-    $headers[] = "Content-Type: text/plain; charset=UTF-8";
-    $ok = mail($TO_EMAIL, $subject, $bodyText, implode("\r\n", $headers));
+    // Si falla el upload, enviamos igual SIN adjunto (HTML)
+    $headers[] = "Content-Type: text/html; charset=UTF-8";
+    $ok = mail($TO_EMAIL, $subject, $html, implode("\r\n", $headers), $additional_params);
     header("Location: " . ($ok ? $REDIRECT_OK : $REDIRECT_ERR));
     exit;
   }
 
   if ($fileSize <= 0 || $fileSize > $MAX_FILE_BYTES) {
-    // Muy grande o inválido -> enviamos sin adjunto
-    $headers[] = "Content-Type: text/plain; charset=UTF-8";
-    $bodyText .= "\n\n[Adjunto no enviado: tamaño inválido o excede el máximo permitido]";
-    $ok = mail($TO_EMAIL, $subject, $bodyText, implode("\r\n", $headers));
+    // Muy grande o inválido -> enviamos sin adjunto (HTML + nota)
+    $headers[] = "Content-Type: text/html; charset=UTF-8";
+    $html .= "<p style='margin-top:12px; color:#b00020; font-size:12px;'><b>Adjunto no enviado:</b> tamaño inválido o excede el máximo permitido.</p>";
+    $ok = mail($TO_EMAIL, $subject, $html, implode("\r\n", $headers), $additional_params);
     header("Location: " . ($ok ? $REDIRECT_OK : $REDIRECT_ERR));
     exit;
   }
@@ -127,9 +159,9 @@ if ($hasFile) {
   // Validar extensión
   $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
   if (!in_array($ext, $ALLOWED_EXT, true)) {
-    $headers[] = "Content-Type: text/plain; charset=UTF-8";
-    $bodyText .= "\n\n[Adjunto no enviado: extensión no permitida ($ext)]";
-    $ok = mail($TO_EMAIL, $subject, $bodyText, implode("\r\n", $headers));
+    $headers[] = "Content-Type: text/html; charset=UTF-8";
+    $html .= "<p style='margin-top:12px; color:#b00020; font-size:12px;'><b>Adjunto no enviado:</b> extensión no permitida (" . htmlspecialchars($ext, ENT_QUOTES, 'UTF-8') . ").</p>";
+    $ok = mail($TO_EMAIL, $subject, $html, implode("\r\n", $headers), $additional_params);
     header("Location: " . ($ok ? $REDIRECT_OK : $REDIRECT_ERR));
     exit;
   }
@@ -137,9 +169,9 @@ if ($hasFile) {
   // Leer el archivo y armar multipart
   $fileData = file_get_contents($tmpPath);
   if ($fileData === false) {
-    $headers[] = "Content-Type: text/plain; charset=UTF-8";
-    $bodyText .= "\n\n[Adjunto no enviado: no se pudo leer el archivo]";
-    $ok = mail($TO_EMAIL, $subject, $bodyText, implode("\r\n", $headers));
+    $headers[] = "Content-Type: text/html; charset=UTF-8";
+    $html .= "<p style='margin-top:12px; color:#b00020; font-size:12px;'><b>Adjunto no enviado:</b> no se pudo leer el archivo.</p>";
+    $ok = mail($TO_EMAIL, $subject, $html, implode("\r\n", $headers), $additional_params);
     header("Location: " . ($ok ? $REDIRECT_OK : $REDIRECT_ERR));
     exit;
   }
@@ -148,11 +180,11 @@ if ($hasFile) {
 
   $headers[] = "Content-Type: multipart/mixed; boundary=\"{$boundary}\"";
 
-  // Parte texto
+  // Parte texto (HTML)
   $message  = "--{$boundary}\r\n";
-  $message .= "Content-Type: text/plain; charset=UTF-8\r\n";
+  $message .= "Content-Type: text/html; charset=UTF-8\r\n";
   $message .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-  $message .= $bodyText . "\r\n\r\n";
+  $message .= $html . "\r\n\r\n";
 
   // Parte adjunto
   $safeName = preg_replace('/[^a-zA-Z0-9._-]/', '_', $origName);
@@ -165,13 +197,14 @@ if ($hasFile) {
   $message .= chunk_split(base64_encode($fileData)) . "\r\n";
   $message .= "--{$boundary}--\r\n";
 
-  $ok = mail($TO_EMAIL, $subject, $message, implode("\r\n", $headers));
+  $ok = mail($TO_EMAIL, $subject, $message, implode("\r\n", $headers), $additional_params);
 
 } else {
-  // Sin adjunto
-  $headers[] = "Content-Type: text/plain; charset=UTF-8";
-  $ok = mail($TO_EMAIL, $subject, $bodyText, implode("\r\n", $headers));
+  // Sin adjunto (HTML)
+  $headers[] = "Content-Type: text/html; charset=UTF-8";
+  $ok = mail($TO_EMAIL, $subject, $html, implode("\r\n", $headers), $additional_params);
 }
 
 header("Location: " . ($ok ? $REDIRECT_OK : $REDIRECT_ERR));
 exit;
+?>

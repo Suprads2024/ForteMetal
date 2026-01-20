@@ -6,7 +6,7 @@
 // ==========================
 
 // 1) A qué email querés recibir las consultas:
-$TO_EMAIL = "ignaciosoraka@gmail.com"; // <-- CAMBIAR
+$TO_EMAIL = "grupoforte.mkt@gmail.com"; // <-- CAMBIAR
 
 // 2) Asunto base:
 $SUBJECT_BASE = "Nueva consulta de neumáticos";
@@ -115,7 +115,7 @@ $text = "Nueva consulta desde el formulario\n\n"
 $headers = [];
 $headers[] = "MIME-Version: 1.0";
 $headers[] = "Content-type: text/html; charset=UTF-8";
-$headers[] = "From: Web Neumáticos <{$FROM_EMAIL}>";
+$headers[] = "From: FORTE Neumáticos <{$FROM_EMAIL}>";
 $headers[] = "Reply-To: {$FROM_EMAIL}"; // si querés reply-to al cliente, necesito un campo email
 $headers[] = "X-Mailer: PHP/" . phpversion();
 
@@ -126,7 +126,7 @@ if (!$ok) {
   $headers_text = [];
   $headers_text[] = "MIME-Version: 1.0";
   $headers_text[] = "Content-type: text/plain; charset=UTF-8";
-  $headers_text[] = "From: Web Neumáticos <{$FROM_EMAIL}>";
+  $headers_text[] = "From: FORTE Neumáticos <{$FROM_EMAIL}>";
   $headers_text[] = "X-Mailer: PHP/" . phpversion();
   $ok = mail($TO_EMAIL, $subject, $text, implode("\r\n", $headers_text));
 }
